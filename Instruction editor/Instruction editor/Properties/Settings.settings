@@ -1,0 +1,54 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Instruction_editor.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EquipmentType" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;Robot&lt;/string&gt;
+  &lt;string&gt;Aligner&lt;/string&gt;
+  &lt;string&gt;Load Port&lt;/string&gt;
+  &lt;string&gt;OCR&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="CommandType" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;GET&lt;/string&gt;
+  &lt;string&gt;SET&lt;/string&gt;
+  &lt;string&gt;CMD&lt;/string&gt;
+  &lt;string&gt;FUN&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="Command_Parameter_Columns" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;Equipment_Type&lt;/string&gt;
+  &lt;string&gt;Equipment_Supplier&lt;/string&gt;
+  &lt;string&gt;Command_Type&lt;/string&gt;
+  &lt;string&gt;Command_ID&lt;/string&gt;
+  &lt;string&gt;Command_Format&lt;/string&gt;
+  &lt;string&gt;Command_Name&lt;/string&gt;
+  &lt;string&gt;Command_Order&lt;/string&gt;
+  &lt;string&gt;Parameters_Amount&lt;/string&gt;
+  &lt;string&gt;Parameter_Order&lt;/string&gt;
+  &lt;string&gt;Parameter_ID&lt;/string&gt;
+  &lt;string&gt;Parameter_Description&lt;/string&gt;
+  &lt;string&gt;Data_Value&lt;/string&gt;
+  &lt;string&gt;Min_Value&lt;/string&gt;
+  &lt;string&gt;Max_Value&lt;/string&gt;
+  &lt;string&gt;Default_Value&lt;/string&gt;
+  &lt;string&gt;Values_length&lt;/string&gt;
+  &lt;string&gt;Is_Fill&lt;/string&gt;
+  &lt;string&gt;Action_Function&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="Equipment_Supplier" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;SANWA&lt;/string&gt;
+  &lt;string&gt;Kawasaki&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

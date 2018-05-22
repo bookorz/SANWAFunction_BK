@@ -1,0 +1,9 @@
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Release\SANWA Sorter Instruction editor.pdb
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Release\SANWA_Sorter_Instruction_editor.frmInstructionEditor.resources
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Release\SANWA_Sorter_Instruction_editor.Properties.Resources.resources
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Release\SANWA Sorter Instruction editor.csproj.GenerateResource.cache
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Release\SANWA Sorter Instruction editor.csproj.CoreCompileInputs.cache
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Release\SANWA Sorter Instruction editor.pdb
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Release\SANWA Sorter Instruction editor.exe.config
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Release\SANWA Sorter Instruction editor.exe
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Release\SANWA Sorter Instruction editor.exe

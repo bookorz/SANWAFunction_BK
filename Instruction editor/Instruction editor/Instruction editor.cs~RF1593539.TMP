@@ -1,0 +1,101 @@
+﻿using System;
+using System.IO;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Instruction_editor
+{
+    public partial class frmInstructionEditor : Form
+    {
+        public frmInstructionEditor()
+        {
+            InitializeComponent();
+        }
+
+        private string[] strsEquipmentType;
+        private string[] strsCommandType;
+        private string[] strsEquipment_Supplier;
+        private string[] strsCommand_List_Columns;
+        private string[] strsCommand_Parameter_Columns;
+
+        private DataTable dtCommandList;
+        private DataTable dtParameterList;
+
+        private void frmInstructionEditor_Load(object sender, EventArgs e)
+        {
+            SANWA.Utility.Controlling controlling;
+            SANWA.Utility.ContainerSet container;
+
+            try
+            {
+                controlling = new SANWA.Utility.Controlling();
+                container = new SANWA.Utility.ContainerSet();
+                strsEquipmentType = Properties.Settings.Default.EquipmentType.Cast<string>().ToArray();
+                strsCommandType = Properties.Settings.Default.CommandType.Cast<string>().ToArray();
+                strsEquipment_Supplier = Properties.Settings.Default.Equipment_Supplier.Cast<string>().ToArray();
+                strsCommand_List_Columns = Properties.Settings.Default.Command_List_Columns.Cast<string>().ToArray();
+                strsCommand_Parameter_Columns = Properties.Settings.Default.Command_Parameter_Columns.Cast<string>().ToArray();
+
+                controlling.ListBox_ItemChange(ref lsbCreateCommandType, strsCommandType);
+                controlling.ListBox_ItemChange(ref lsbCreateEqpSupplier, strsEquipment_Supplier);
+                controlling.ListBox_ItemChange(ref lsbCreateEqpType, strsEquipmentType);
+
+                container.TableFormatting(ref dtCommandList, "TABLE", strsCommand_List_Columns);
+                container.TableFormatting(ref dtParameterList, "TABLE", strsCommand_Parameter_Columns);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+            }
+            finally
+            {
+                controlling = null;
+                container = null;
+            }
+        }
+
+        private void lsbCreateEqpType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsbCreateCommandType.SelectedIndex < 0)
+                return;
+
+            if (lsbCreateEqpType.SelectedIndex < 0)
+                return;
+
+            if (lsbCreateEqpSupplier.SelectedIndex < 0)
+                return;
+
+            SANWA.Utility.ContainerSet containerSet;
+            SANWA.Utility.Controlling controlling;
+            DataTable dt;
+
+            try
+            {
+                containerSet = new SANWA.Utility.ContainerSet();
+                controlling = new SANWA.Utility.Controlling();
+                dt = new DataTable();
+
+                if (File.Exists(System.AppDomain.CurrentDomain.BaseDirectory + string.Format("{0}.{1}.{2}.xml", lsbCreateEqpSupplier.SelectedItem, lsbCreateEqpType.SelectedItem, lsbCreateCommandType.SelectedItem)))
+                {
+                    containerSet.TableFormatting(ref dt, "Table", new string[] { "Name", "Note" }, string.Format("{0}.{1}.{2}.xml", lsbCreateEqpSupplier.SelectedItem, lsbCreateEqpType.SelectedItem, lsbCreateCommandType.SelectedItem));
+                    controlling.ListBox_ItemChange(ref lsbCreateCommand, dt.Select(), "Name + Note", "Name");
+                }
+                else
+                {
+                    ((DataTable)lsbCreateCommand.DataSource).Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+            }
+        }
+    }
+}

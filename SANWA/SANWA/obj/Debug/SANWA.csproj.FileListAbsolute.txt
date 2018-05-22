@@ -1,0 +1,30 @@
+C:\Users\jevons_chan\source\repos\SANWA\SANWA\obj\Debug\SANWA.csprojResolveAssemblyReference.cache
+C:\Users\jevons_chan\source\repos\SANWA\SANWA\obj\Debug\SANWA.csproj.CoreCompileInputs.cache
+C:\Users\jevons_chan\source\repos\SANWA\SANWA\bin\Debug\SANWA.dll
+C:\Users\jevons_chan\source\repos\SANWA\SANWA\bin\Debug\SANWA.pdb
+C:\Users\jevons_chan\source\repos\SANWA\SANWA\obj\Debug\SANWA.dll
+C:\Users\jevons_chan\source\repos\SANWA\SANWA\obj\Debug\SANWA.pdb
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA\SANWA\bin\Debug\SANWA.dll
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA\SANWA\bin\Debug\SANWA.pdb
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.csproj.CoreCompileInputs.cache
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.dll
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.pdb
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.csprojResolveAssemblyReference.cache
+C:\Users\MyUser\Desktop\新增資料夾 (2)\SANWA Function\SANWA\SANWA\bin\Debug\SANWA.dll
+C:\Users\MyUser\Desktop\新增資料夾 (2)\SANWA Function\SANWA\SANWA\bin\Debug\SANWA.pdb
+C:\Users\MyUser\Desktop\新增資料夾 (2)\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.csproj.CoreCompileInputs.cache
+C:\Users\MyUser\Desktop\新增資料夾 (2)\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.dll
+C:\Users\MyUser\Desktop\新增資料夾 (2)\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.pdb
+C:\Users\MyUser\Desktop\新增資料夾 (2)\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.csprojResolveAssemblyReference.cache
+E:\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.csprojResolveAssemblyReference.cache
+E:\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.csproj.CoreCompileInputs.cache
+E:\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.dll
+E:\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.pdb
+E:\SANWA Function\SANWA\SANWA\bin\Debug\SANWA.dll
+E:\SANWA Function\SANWA\SANWA\bin\Debug\SANWA.pdb
+C:\Users\ethan_huang\source\repos\SANWA Function\SANWA\SANWA\bin\Debug\SANWA.dll
+C:\Users\ethan_huang\source\repos\SANWA Function\SANWA\SANWA\bin\Debug\SANWA.pdb
+C:\Users\ethan_huang\source\repos\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.csprojAssemblyReference.cache
+C:\Users\ethan_huang\source\repos\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.csproj.CoreCompileInputs.cache
+C:\Users\ethan_huang\source\repos\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.dll
+C:\Users\ethan_huang\source\repos\SANWA Function\SANWA\SANWA\obj\Debug\SANWA.pdb

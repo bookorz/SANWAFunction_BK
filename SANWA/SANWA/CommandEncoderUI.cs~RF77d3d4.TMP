@@ -1,0 +1,809 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Collections;
+
+namespace SANWA.Utility.CommandCoder
+{
+    public class Encoder
+    {
+        public void Encoder(string supplier)
+        {
+            Supplier = supplier;
+        }
+
+        private string Supplier;
+        private Robot robot = new Robot();
+
+        public string HOME(string Supplier, string RobotAddress, string Sequence)
+        {
+            string Command = string.Empty;
+
+            try
+            {
+                switch (Supplier.Split('.')[1].ToString().ToUpper())
+                {
+                    case "ROBOT":
+                        Command = robot.HOME(Supplier.Split('.')[0].ToString().ToUpper(), RobotAddress, Sequence);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return Command;
+        }
+        public string HOME_Safety(string Supplier, string RobotAddress, string Sequence)
+        {
+            string Command = string.Empty;
+
+            try
+            {
+                switch (Supplier.Split('.')[1].ToString().ToUpper())
+                {
+                    case "ROBOT":
+                        Command = robot.HOME_Safety(Supplier.Split('.')[0].ToString().ToUpper(), RobotAddress, Sequence);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return Command;
+        }
+        public string GET(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Aligner, string Slot)
+        {
+            string Command = string.Empty;
+
+            try
+            {
+                switch (Supplier.Split('.')[1].ToString().ToUpper())
+                {
+                    case "ROBOT":
+                        Command = robot.GET(Supplier.Split('.')[0].ToString().ToUpper(), RobotAddress, Sequence, Arm, Point, Aligner, Slot);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return Command;
+        }
+        public string PUT(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Slot)
+        {
+            string Command = string.Empty;
+
+            try
+            {
+                switch (Supplier.Split('.')[1].ToString().ToUpper())
+                {
+                    case "ROBOT":
+                        Command = robot.PUT(Supplier.Split('.')[0].ToString().ToUpper(), RobotAddress, Sequence, Arm, Point, Slot);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return Command;
+        }
+        public string GET_StandBy(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Slot)
+        {
+            string Command = string.Empty;
+
+            try
+            {
+                switch (Supplier.Split('.')[1].ToString().ToUpper())
+                {
+                    case "ROBOT":
+                        Command = robot.GET_StandBy(Supplier.Split('.')[0].ToString().ToUpper(), RobotAddress, Sequence, Arm, Point, Slot);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return Command;
+        }
+        public string GET_Ready(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Aligner, string Slot)
+        {
+            string Command = string.Empty;
+
+            try
+            {
+                switch (Supplier.Split('.')[1].ToString().ToUpper())
+                {
+                    case "ROBOT":
+                        Command = robot.GET_Ready(Supplier.Split('.')[0].ToString().ToUpper(), RobotAddress, Sequence, Arm, Point, Aligner, Slot);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return Command;
+        }
+        public string GET_Up(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Aligner, string Slot)
+        {
+            string Command = string.Empty;
+
+            try
+            {
+                switch (Supplier.Split('.')[1].ToString().ToUpper())
+                {
+                    case "ROBOT":
+                        Command = robot.GET_Up(Supplier.Split('.')[0].ToString().ToUpper(), RobotAddress, Sequence, Arm, Point, Aligner,  Slot);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return Command;
+        }
+        public string GET_Continue(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Aligner, string Slot)
+        {
+            string Command = string.Empty;
+
+            try
+            {
+                switch (Supplier.Split('.')[1].ToString().ToUpper())
+                {
+                    case "ROBOT":
+                        Command = robot.GET_Continue(Supplier.Split('.')[0].ToString().ToUpper(), RobotAddress, Sequence, Arm, Point, Aligner, Slot);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return Command;
+        }
+        public string PUT_StandBy(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Slot)
+        {
+            string Command = string.Empty;
+
+            try
+            {
+                switch (Supplier.Split('.')[1].ToString().ToUpper())
+                {
+                    case "ROBOT":
+                        Command = robot.PUT_StandBy(Supplier.Split('.')[0].ToString().ToUpper(), RobotAddress, Sequence, Arm, Point, Slot);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return Command;
+        }
+        public string PUT_Down(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Slot)
+        {
+            string Command = string.Empty;
+
+            try
+            {
+                switch (Supplier.Split('.')[1].ToString().ToUpper())
+                {
+                    case "ROBOT":
+                        Command = robot.PUT_Down(Supplier.Split('.')[0].ToString().ToUpper(), RobotAddress, Sequence, Arm, Point, Slot);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return Command;
+        }
+        public string PUT_Continue(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Slot)
+        {
+            string Command = string.Empty;
+
+            try
+            {
+                switch (Supplier.Split('.')[1].ToString().ToUpper())
+                {
+                    case "ROBOT":
+                        Command = robot.PUT_Continue(Supplier.Split('.')[0].ToString().ToUpper(), RobotAddress, Sequence, Arm, Point, Slot);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return Command;
+        }
+        public string EXCHANGE(string Supplier, string RobotAddress, string Sequence, string Arm_form, string Point_form, string Slot_form, string Arm_to, string Point_to, string Slot_to)
+        {
+            string Command = string.Empty;
+
+            try
+            {
+                switch (Supplier.Split('.')[1].ToString().ToUpper())
+                {
+                    case "ROBOT":
+                        Command = robot.EXCHANGE(Supplier.Split('.')[0].ToString().ToUpper(), RobotAddress, Sequence, Arm_form, Point_form, Slot_form, Arm_to, Point_to, Slot_to);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return Command;
+        }
+
+        class Robot
+        {
+            private DataTable dtCommandList;
+            private DataTable dtParameterList;
+            private Encoder encoder = new Encoder();
+
+            public string HOME(string Supplier, string RobotAddress, string Sequence)
+            {
+                string strCommand = string.Empty;
+                string strCommandFormat = string.Empty;
+                string strCommandFormatParameter = string.Empty;
+                DataTable dtTemp;
+
+                try
+                {
+
+                    if (dtCommandList == null)
+                        encoder.SetCommandList(ref dtCommandList);
+
+                    var query = (from a in dtCommandList.AsEnumerable()
+                                 where a.Field<string>("Equipment_Type") == "Robot"
+                                    && a.Field<string>("Equipment_Supplier") == Supplier
+                                    && a.Field<string>("Command_Type") == "CMD"
+                                    && a.Field<string>("Action_Function") == "HOME"
+                                 select a).ToList();
+
+                    dtTemp = query.CopyToDataTable();
+
+                    switch (Supplier)
+                    {
+                        case "SANWA":
+
+                            strCommandFormat = encoder.SetCommandFormat(dtTemp.Rows[0]["Command_ID"].ToString(), new string[] { RobotAddress, Sequence });
+
+                            break;
+
+                        case "Kawasaki":
+
+                            break;
+
+                        default:
+
+                            break;
+                    }
+
+                    strCommand = strCommandFormat + strCommandFormatParameter;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.ToString());
+                }
+
+                return strCommand;
+            }
+
+            public string HOME_Safety(string Supplier, string RobotAddress, string Sequence)
+            {
+                string strCommand = string.Empty;
+                string strCommandFormat = string.Empty;
+                string strCommandFormatParameter = string.Empty;
+                DataTable dtTemp;
+
+                try
+                {
+
+                    if (dtCommandList == null)
+                        encoder.SetCommandList(ref dtCommandList);
+
+                    var query = (from a in dtCommandList.AsEnumerable()
+                                 where a.Field<string>("Equipment_Type") == "Robot"
+                                    && a.Field<string>("Equipment_Supplier") == Supplier
+                                    && a.Field<string>("Command_Type") == "CMD"
+                                    && a.Field<string>("Action_Function") == "HOME_Safety"
+                                 select a).ToList();
+
+                    dtTemp = query.CopyToDataTable();
+
+                    switch (Supplier)
+                    {
+                        case "SANWA":
+
+                            strCommandFormat = encoder.SetCommandFormat(dtTemp.Rows[0]["Command_ID"].ToString(), new string[] { RobotAddress, Sequence });
+
+                            break;
+
+                        case "Kawasaki":
+
+                            break;
+
+                        default:
+
+                            break;
+                    }
+
+                    strCommand = strCommandFormat + strCommandFormatParameter;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.ToString());
+                }
+
+                return strCommand;
+            }
+
+            public string GET(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Aligner, string Slot)
+            {
+                string strCommand = string.Empty;
+                string strCommandFormat = string.Empty;
+                string strCommandFormatParameter = string.Empty;
+                DataTable dtTemp;
+
+                try
+                {
+
+                    if (dtCommandList == null)
+                        encoder.SetCommandList(ref dtCommandList);
+
+                    var query = (from a in dtCommandList.AsEnumerable()
+                                 where a.Field<string>("Equipment_Type") == "Robot"
+                                    && a.Field<string>("Equipment_Supplier") == Supplier
+                                    && a.Field<string>("Command_Type") == "CMD"
+                                    && a.Field<string>("Action_Function") == "GET"
+                                 select a).ToList();
+
+                    dtTemp = query.CopyToDataTable();
+
+                    switch (Supplier)
+                    {
+                        case "SANWA":
+
+                            strCommandFormat = encoder.SetCommandFormat(dtTemp.Rows[0]["Command_ID"].ToString(), new string[] { RobotAddress, Sequence });
+                            strCommandFormatParameter = encoder.SetCommandFormat(dtTemp.Select(), new string[] { Point, Slot, Arm, Aligner, "0"});
+                            
+                            break;
+
+                        case "Kawasaki":
+
+                            break;
+
+                        default:
+
+                            break;
+                    }
+
+                    strCommand = strCommandFormat + strCommandFormatParameter;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.ToString());
+                }
+
+                return strCommand;
+            }
+
+            public string PUT(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Slot)
+            {
+                string strCommand = string.Empty;
+                string strCommandFormat = string.Empty;
+                string strCommandFormatParameter = string.Empty;
+                DataTable dtTemp;
+
+                try
+                {
+                    if (dtCommandList == null)
+                        encoder.SetCommandList(ref dtCommandList);
+
+                    var query = (from a in dtCommandList.AsEnumerable()
+                                 where a.Field<string>("Equipment_Type") == "Robot"
+                                    && a.Field<string>("Equipment_Supplier") == Supplier
+                                    && a.Field<string>("Command_Type") == "CMD"
+                                    && a.Field<string>("Action_Function") == "PUT"
+                                 select a).ToList();
+
+                    dtTemp = query.CopyToDataTable();
+
+                    switch (Supplier)
+                    {
+                        case "SANWA":
+
+                            strCommandFormat = encoder.SetCommandFormat(dtTemp.Rows[0]["Command_ID"].ToString(), new string[] { RobotAddress, Sequence });
+                            strCommandFormatParameter = encoder.SetCommandFormat(dtTemp.Select(), new string[] { Point, Slot, Arm, "0" });
+
+                            break;
+
+                        case "Kawasaki":
+
+                            break;
+
+                        default:
+
+                            break;
+                    }
+
+                    strCommand = strCommandFormat + strCommandFormatParameter;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.ToString());
+                }
+
+                return strCommand;
+            }
+
+            public string GET_StandBy(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Slot)
+            {
+                string strCommand = string.Empty;
+                string strCommandFormat = string.Empty;
+                string strCommandFormatParameter = string.Empty;
+                DataTable dtTemp;
+
+                try
+                {
+                    if (dtCommandList == null)
+                        encoder.SetCommandList(ref dtCommandList);
+
+                    var query = (from a in dtCommandList.AsEnumerable()
+                                 where a.Field<string>("Equipment_Type") == "Robot"
+                                    && a.Field<string>("Equipment_Supplier") == Supplier
+                                    && a.Field<string>("Command_Type") == "CMD"
+                                    && a.Field<string>("Action_Function") == "GETW"
+                                 select a).ToList();
+
+                    dtTemp = query.CopyToDataTable();
+
+                    switch (Supplier)
+                    {
+                        case "SANWA":
+
+                            strCommandFormat = encoder.SetCommandFormat(dtTemp.Rows[0]["Command_ID"].ToString(), new string[] { RobotAddress, Sequence });
+                            strCommandFormatParameter = encoder.SetCommandFormat(dtTemp.Select(), new string[] { Point, Slot, Arm });
+
+                            break;
+
+                        default:
+
+                            break;
+                    }
+
+                    strCommand = strCommandFormat + strCommandFormatParameter;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.ToString());
+                }
+
+                return strCommand;
+            }
+
+            public string GET_Ready(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Aligner, string Slot)
+            {
+                return GETWAIT(Supplier, RobotAddress, Sequence, Arm, Point, Aligner, Slot, 1);
+            }
+
+            public string GET_Up(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Aligner, string Slot)
+            {
+                return GETWAIT(Supplier, RobotAddress, Sequence, Arm, Point, Aligner, Slot, 2);
+            }
+
+            public string GET_Continue(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Aligner, string Slot)
+            {
+                return GETWAIT(Supplier, RobotAddress, Sequence, Arm, Point, Aligner, Slot, 3);
+            }
+
+            public string PUT_StandBy(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Slot)
+            {
+                string strCommand = string.Empty;
+                string strCommandFormat = string.Empty;
+                string strCommandFormatParameter = string.Empty;
+                DataTable dtTemp;
+
+                try
+                {
+                    if (dtCommandList == null)
+                        encoder.SetCommandList(ref dtCommandList);
+
+                    var query = (from a in dtCommandList.AsEnumerable()
+                                 join b in dtParameterList.AsEnumerable() on a.Field<string>("Command_Order") equals b.Field<string>("Command_Order")
+                                 where a.Field<string>("Equipment_Type") == "Robot"
+                                    && a.Field<string>("Equipment_Supplier") == Supplier
+                                    && a.Field<string>("Action_Function") == "PUTW"
+                                 select b).ToList();
+
+                    dtTemp = query.CopyToDataTable();
+
+                    switch (Supplier)
+                    {
+                        case "SANWA":
+
+                            strCommandFormat = encoder.SetCommandFormat(dtTemp.Rows[0]["Command_ID"].ToString(), new string[] { RobotAddress, Sequence });
+                            strCommandFormatParameter = encoder.SetCommandFormat(dtTemp.Select(), new string[] { Point, Slot, Arm });
+
+                            break;
+
+                        default:
+
+                            break;
+                    }
+
+                    strCommand = strCommandFormat + strCommandFormatParameter;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.ToString());
+                }
+
+                return strCommand;
+            }
+
+            public string PUT_Ready(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Slot)
+            {
+                return PUTWAIT(Supplier, RobotAddress, Sequence, Arm, Point, Slot, 1);
+            }
+
+            public string PUT_Down(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Slot)
+            {
+                return PUTWAIT(Supplier, RobotAddress, Sequence, Arm, Point, Slot, 2);
+            }
+
+            public string PUT_Continue(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Slot)
+            {
+                return PUTWAIT(Supplier, RobotAddress, Sequence, Arm, Point, Slot, 3);
+            }
+
+            private string PUTWAIT(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Slot, Int32 option)
+            {
+                string strCommand = string.Empty;
+                string strCommandFormat = string.Empty;
+                string strCommandFormatParameter = string.Empty;
+                DataTable dtTemp;
+
+                try
+                {
+                    if (dtCommandList == null)
+                        encoder.SetCommandList(ref dtCommandList);
+
+                    var query = (from a in dtCommandList.AsEnumerable()
+                                 where a.Field<string>("Equipment_Type") == "Robot"
+                                    && a.Field<string>("Equipment_Supplier") == Supplier
+                                    && a.Field<string>("Command_Type") == "CMD"
+                                    && a.Field<string>("Action_Function") == "PUT"
+                                 select a).ToList();
+
+                    dtTemp = query.CopyToDataTable();
+
+                    switch (Supplier)
+                    {
+                        case "SANWA":
+
+                            strCommandFormat = encoder.SetCommandFormat(dtTemp.Rows[0]["Command_ID"].ToString(), new string[] { RobotAddress, Sequence });
+                            strCommandFormatParameter = encoder.SetCommandFormat(dtTemp.Select(), new string[] { Point, Slot, Arm, option.ToString() });
+
+                            break;
+
+                        default:
+
+                            break;
+                    }
+
+                    strCommand = strCommandFormat + strCommandFormatParameter;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.ToString());
+                }
+
+                return strCommand;
+            }
+
+            private string GETWAIT(string Supplier, string RobotAddress, string Sequence, string Arm, string Point, string Aligner, string Slot, Int32 option)
+            {
+                string strCommand = string.Empty;
+                string strCommandFormat = string.Empty;
+                string strCommandFormatParameter = string.Empty;
+                DataTable dtTemp;
+
+                try
+                {
+                    if (dtCommandList == null)
+                        encoder.SetCommandList(ref dtCommandList);
+
+                    var query = (from a in dtCommandList.AsEnumerable()
+                                 where a.Field<string>("Equipment_Type") == "Robot"
+                                    && a.Field<string>("Equipment_Supplier") == Supplier
+                                    && a.Field<string>("Command_Type") == "CMD"
+                                    && a.Field<string>("Action_Function") == "GET"
+                                 select a).ToList();
+
+                    dtTemp = query.CopyToDataTable();
+
+                    switch (Supplier)
+                    {
+                        case "SANWA":
+
+                            strCommandFormat = encoder.SetCommandFormat(dtTemp.Rows[0]["Command_ID"].ToString(), new string[] { RobotAddress, Sequence });
+                            strCommandFormatParameter = encoder.SetCommandFormat(dtTemp.Select(), new string[] { Point, Slot, Arm, Aligner, option.ToString() });
+
+                            break;
+
+                        default:
+
+                            break;
+                    }
+
+                    strCommand = strCommandFormat + strCommandFormatParameter;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.ToString());
+                }
+
+                return strCommand;
+            }
+
+            public string EXCHANGE(string Supplier, string RobotAddress, string Sequence, string Arm_form, string Point_form, string Slot_form, string Arm_to, string Point_to, string Slot_to)
+            {
+                string strCommand = string.Empty;
+                string strCommandFormat = string.Empty;
+                string strCommandFormatParameter = string.Empty;
+                DataTable dtTemp;
+
+                try
+                {
+                    if (dtCommandList == null)
+                        encoder.SetCommandList(ref dtCommandList);
+
+
+                    var query = (from a in dtCommandList.AsEnumerable()
+                                 where a.Field<string>("Equipment_Type") == "Robot"
+                                    && a.Field<string>("Equipment_Supplier") == Supplier
+                                    && a.Field<string>("Command_Type") == "CMD"
+                                    && a.Field<string>("Action_Function") == "EXCHANGE"
+                                 select a).ToList();
+
+                    dtTemp = query.CopyToDataTable();
+
+                    switch (Supplier)
+                    {
+                        case "SANWA":
+
+                            strCommandFormat = encoder.SetCommandFormat(dtTemp.Rows[0]["Command_ID"].ToString(), new string[] { RobotAddress, Sequence });
+                            strCommandFormatParameter = encoder.SetCommandFormat(dtTemp.Select(), new string[] { Point_form, Slot_form, Arm_form, Point_to, Slot_to, Arm_to });
+
+                            break;
+
+                        case "Kawasaki":
+
+                            break;
+
+                        default:
+
+                            break;
+                    }
+
+                    strCommand = strCommandFormat + strCommandFormatParameter;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.ToString());
+                }
+
+                return strCommand;
+            }
+
+            private string SetCommandFormat(string Format, string[] Param)
+            {
+                string strCommand = string.Empty;
+
+                try
+                {
+                    strCommand = string.Format(Format, Param);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.ToString());
+                }
+
+                return strCommand;
+            }
+
+            private string SetCommandFormat(DataRow[] drs, string[] Param)
+            {
+                string strCommand = string.Empty;
+                string strCommandFormat = string.Empty;
+
+                try
+                {
+                    for (int i = 0; i < drs.Length; i++)
+                    {
+                        if (drs[0]["Parameter_ID"].ToString() != "Null")
+                        {
+                            strCommandFormat = ":";
+                        }
+
+                        strCommandFormat = strCommandFormat + "{" + i.ToString() + "}";
+                    }
+
+                    strCommand = SetCommandFormat(strCommandFormat, Param);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.ToString());
+                }
+
+                return strCommand;
+            }
+
+            private void SetCommandList(ref DataTable dtTemp)
+            {
+                ContainerSet containerSet;
+
+                try
+                {
+                    containerSet = new ContainerSet();
+
+                    dtTemp.Dispose();
+
+                    dtTemp = new DataTable();
+
+                    containerSet.TableFormatting(ref dtTemp, "Table", new string[] { "Equipment_Type", "Equipment_Supplier", "Command_Type", "Command_ID", "Command_Name", "Command_Order", "Parameters_Amount", "Parameter_Order", "Parameter_ID", "Parameter_Description", "Data_Value", "Min_Value", "Max_Value", "Default_Value", "Values_length", "Is_Fill", "ActionFunction" }, System.AppDomain.CurrentDomain.BaseDirectory + "CommandList.xml");
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.ToString());
+                }
+            }
+        }
+
+        class Aligner
+        {
+
+        }
+
+        class OCR
+        {
+
+        }
+
+        class LoadPort
+        {
+
+        }
+
+        class DIO
+        {
+
+        }
+    }
+}

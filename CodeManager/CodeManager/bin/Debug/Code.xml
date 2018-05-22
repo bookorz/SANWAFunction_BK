@@ -1,0 +1,1722 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Robot 狀態取得</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>STS__</Code_ID>
+    <Code_Cause>Robot 狀態取得</Code_Cause>
+    <Code_Cause_English>Robot get status</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>IO 狀態取得</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>RIO__</Code_ID>
+    <Code_Cause>IO 狀態取得</Code_Cause>
+    <Code_Cause_English>IO ststus get</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Speed 限制取得</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>SP___</Code_ID>
+    <Code_Cause>Speed 限制取得</Code_Cause>
+    <Code_Cause_English>Get speed limit</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Error 履歷取得</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>ERR__</Code_ID>
+    <Code_Cause>Error 履歷取得</Code_Cause>
+    <Code_Cause_English>Get error history</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Mapping 結果取得</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>MAP__</Code_ID>
+    <Code_Cause>Mapping 結果取得</Code_Cause>
+    <Code_Cause_English>Get Wafer/Glass Mapping</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>電磁閥狀態取得</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>SV___</Code_ID>
+    <Code_Cause>電磁閥狀態取得</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>讀取 Point Data 裡的各軸位置(R~R1 六軸)</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>TEACH</Code_ID>
+    <Code_Cause>讀取 Point Data 裡的各軸位置(R~R1 六軸)</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>取得 Robot 參數值</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>PARAM</Code_ID>
+    <Code_Cause>取得 Robot 參數值</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>取得 Robot 參數詳細資料</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>PARSY</Code_ID>
+    <Code_Cause>取得 Robot 參數詳細資料</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>取得指定點位欄位的資訊</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>PDATA</Code_ID>
+    <Code_Cause>取得指定點位欄位的資訊</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>取得 Panel(Wafer) 的狀態</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>PNSTS</Code_ID>
+    <Code_Cause>取得 Panel(Wafer) 的狀態</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>取得目前 Robot 各軸的位置</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>POS__</Code_ID>
+    <Code_Cause>取得目前 Robot 各軸的位置</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>取得 Mapping 厚度結果</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>MAPT_</Code_ID>
+    <Code_Cause>取得 Mapping 厚度結果</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>IO 狀態設定</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>RIO__</Code_ID>
+    <Code_Cause>IO 狀態設定</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>速度限制設定</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>SP___</Code_ID>
+    <Code_Cause>速度限制設定</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>動作暫停</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>PAUSE</Code_ID>
+    <Code_Cause>動作暫停</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>暫停解除</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>CONT_</Code_ID>
+    <Code_Cause>暫停解除</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>動作停止</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>STOP_</Code_ID>
+    <Code_Cause>動作停止</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Robot 動作模式選擇設定</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>MODE_</Code_ID>
+    <Code_Cause />
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Step 動作等待解除</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>STPDO</Code_ID>
+    <Code_Cause>Step 動作等待解除</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Error 解除</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>RESET</Code_ID>
+    <Code_Cause>Error 解除</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Servo On</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>SERVO</Code_ID>
+    <Code_Cause>Servo On</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>電磁閥狀態設定</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>SV___</Code_ID>
+    <Code_Cause>電磁閥狀態設定</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>設定 Log file 儲存</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>LOGSV</Code_ID>
+    <Code_Cause>設定 Log file 儲存</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>將目前各軸的位置寫入指定的 Point Data</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>TEACH</Code_ID>
+    <Code_Cause>將目前各軸的位置寫入指定的 Point Data</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>將 Point Data 存入 CF 卡</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>SAVEP</Code_ID>
+    <Code_Cause>將 Point Data 存入 CF 卡</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>將 Point Data 從 CF 卡載入</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>LOADP</Code_ID>
+    <Code_Cause>將 Point Data 從 CF 卡載入</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>設定 Robot 參數值</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>PARAM</Code_ID>
+    <Code_Cause>設定 Robot 參數值</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>儲存 Robot 參數</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>SAVE_</Code_ID>
+    <Code_Cause>儲存 Robot 參數</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Absolute Encoder Alarm Clear</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>ENCCL</Code_ID>
+    <Code_Cause>Absolute Encoder Alarm Clear</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Abssolute Encoder Offset</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>ENCOF</Code_ID>
+    <Code_Cause>Abssolute Encoder Offset</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Battery Alarm Clear</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>BATCL</Code_ID>
+    <Code_Cause>Battery Alarm Clear</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>設定指定點位參數</Code_Name>
+    <Code_Type>SET</Code_Type>
+    <Code_ID>PDATA</Code_ID>
+    <Code_Cause>設定指定點位參數</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>各軸移動至 HOME 位置</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>HOME_</Code_ID>
+    <Code_Cause>各軸移動至 HOME 位置</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>各軸安全回 HOME 位置</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>SHOME</Code_ID>
+    <Code_Cause>各軸安全回 HOME 位置</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>各軸回 ORG 的位置</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RHOME</Code_ID>
+    <Code_Cause>各軸回 ORG 的位置</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>取片</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>GET__</Code_ID>
+    <Code_Cause>取片</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>放片</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>PUT__</Code_ID>
+    <Code_Cause>放片</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>取片+放片 動作指令(Exchange)</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>CARRY</Code_ID>
+    <Code_Cause>取片+放片 動作指令(Exchange)</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>取片 SXZ 軸到位後停止</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>GETW_</Code_ID>
+    <Code_Cause>取片 SXZ 軸到位後停止</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>放片 SXZ 軸到位後停止</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>PUTW_</Code_ID>
+    <Code_Cause>放片 SXZ 軸到位後停止</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Arm 回 HOME 位置</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RET__</Code_ID>
+    <Code_Cause>Arm 回 HOME 位置</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>移動指定軸到指定點位</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>MOVED</Code_ID>
+    <Code_Cause>移動指定軸到指定點位</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>ORG Search</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>ORG__</Code_ID>
+    <Code_Cause>ORG Search</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>單軸 ORG Search</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>EORG_</Code_ID>
+    <Code_Cause>單軸 ORG Search</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Panel(Wafer) 保持</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>WHLD_</Code_ID>
+    <Code_Cause>Panel(Wafer) 保持</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Panel(Wafer) 解除</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>WRLS_</Code_ID>
+    <Code_Cause>Panel(Wafer) 解除</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>端面檢出 (option)</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>ALX__</Code_ID>
+    <Code_Cause>端面檢出 (option)</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Fork 開合位置變更 (option)</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>FORK_</Code_ID>
+    <Code_Cause>Fork 開合位置變更 (option)</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Fork Calibration (option)</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>FRKCB</Code_ID>
+    <Code_Cause>Fork Calibration (option)</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Mapping (option)</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>MAP__</Code_ID>
+    <Code_Cause>Mapping (option)</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>SANWA.Robot</Category_ID>
+    <Category_Description>機器人命令</Category_Description>
+    <Code_Name>Multi Panel 選擇命令 (option)</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>MULSE</Code_ID>
+    <Code_Cause>Multi Panel 選擇命令 (option)</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_GNR_NORMAL_STOP</Code_Name>
+    <Code_Type>General Alarm</Code_Type>
+    <Code_ID>80800000</Code_ID>
+    <Code_Cause>停止按鈕被觸發</Code_Cause>
+    <Code_Cause_English>Normal Stop(Stop Button Locked)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_GNR_FILE_FAIL</Code_Name>
+    <Code_Type>General Alarm</Code_Type>
+    <Code_ID>80801000</Code_ID>
+    <Code_Cause>File Read/Write Fail</Code_Cause>
+    <Code_Cause_English>讀取或寫入記憶卡失敗</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_GNR_BUG_TIMER</Code_Name>
+    <Code_Type>General Alarm</Code_Type>
+    <Code_ID>80802000</Code_ID>
+    <Code_Cause>Memory Process Fail</Code_Cause>
+    <Code_Cause_English>記憶體處理錯誤</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_GNR_INTERNAL_FAIL</Code_Name>
+    <Code_Type>General Alarm</Code_Type>
+    <Code_ID>80803000</Code_ID>
+    <Code_Cause>Internal Fail</Code_Cause>
+    <Code_Cause_English>內部錯誤(一般是因為控制器硬體異常)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_GNR_DIO_FAIL</Code_Name>
+    <Code_Type>General Alarm</Code_Type>
+    <Code_ID>80804000</Code_ID>
+    <Code_Cause>DIO Fail</Code_Cause>
+    <Code_Cause_English>DIO 錯誤(控制器異常)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_POSITION_OD</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>91800000</Code_ID>
+    <Code_Cause>Over Deviation(Static)</Code_Cause>
+    <Code_Cause_English>脫條(由控制器端引發)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_SOFT_LIMIT_P</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>91801000</Code_ID>
+    <Code_Cause>Soft Limit+</Code_Cause>
+    <Code_Cause_English>位置超出軟體正極限</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_SOFT_LIMIT_M</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>91802000</Code_ID>
+    <Code_Cause>Soft Limit-</Code_Cause>
+    <Code_Cause_English>位置超出軟體負極限</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_HARD_LIMIT_P</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>91803000</Code_ID>
+    <Code_Cause>Hard Limit+</Code_Cause>
+    <Code_Cause_English>位置超出硬體正極限</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_HARD_LIMIT_M</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>91804000</Code_ID>
+    <Code_Cause>Hard Limit-</Code_Cause>
+    <Code_Cause_English>位置超出硬體負極限</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_SERVO_NOT_READY</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>81805000</Code_ID>
+    <Code_Cause>Servo not Ready</Code_Cause>
+    <Code_Cause_English>馬達驅動器異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_ORG_DISABLED</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>91806000</Code_ID>
+    <Code_Cause>ORG Search Disabled</Code_Cause>
+    <Code_Cause_English>原點復歸在參數中被關閉</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_ARM_EXTEND</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>91807000</Code_ID>
+    <Code_Cause>Arm Extend(Retract First)</Code_Cause>
+    <Code_Cause_English>手臂伸出未退回，無法進行其他動作。</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_FINISH_TMO</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>91808000</Code_ID>
+    <Code_Cause>Wait Finish Timeout</Code_Cause>
+    <Code_Cause_English>等待移動結束超時</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_FOLLOWING_OD</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>91809000</Code_ID>
+    <Code_Cause>Over Deviation(Dynamic)</Code_Cause>
+    <Code_Cause_English>動態脫條(由控制器端引發)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_MAP_FAIL</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>81810000</Code_ID>
+    <Code_Cause>Mapping Fail</Code_Cause>
+    <Code_Cause_English>Mapping 失敗</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_MAP_INTERFERE</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>81811000</Code_ID>
+    <Code_Cause>Mapping Interfere</Code_Cause>
+    <Code_Cause_English>Mapping 干涉</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_MOVE_ORG_FAIL</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>81812000</Code_ID>
+    <Code_Cause>ORG Search Fail</Code_Cause>
+    <Code_Cause_English>原點復歸失敗</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_REQUIRE_ORG</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>81813000</Code_ID>
+    <Code_Cause>Require ORG Search</Code_Cause>
+    <Code_Cause_English>需要先執行原點復歸</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_SERVO_OFF</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>81814000</Code_ID>
+    <Code_Cause>Servo Off(Need Servo On)</Code_Cause>
+    <Code_Cause_English>在 Servo Off 時執行 Motion 命令</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_ROBOT_IN_ALARM</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>81815000</Code_ID>
+    <Code_Cause>Robot in Alarm(Reset First)</Code_Cause>
+    <Code_Cause_English>目前有錯誤發生, 請先排除錯誤。</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_ROBOT_PAUSED</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>81816000</Code_ID>
+    <Code_Cause>Robot Paused</Code_Cause>
+    <Code_Cause_English>Robot目前在暫停狀態，無法動作。</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_SHOME_FAIL</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>81817000</Code_ID>
+    <Code_Cause>SHOME Command Fail</Code_Cause>
+    <Code_Cause_English>SHOME 命令失敗</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_SHOME_OVER_LIMIT</Code_Name>
+    <Code_Type>Motion Alarm</Code_Type>
+    <Code_ID>91818000</Code_ID>
+    <Code_Cause>SHOME Position Over Safety Limit</Code_Cause>
+    <Code_Cause_English>SHOME 命令失敗，位置處於不安全範圍。</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_ALIGN_OVER_LIMIT_R</Code_Name>
+    <Code_Type>for Alignment Error</Code_Type>
+    <Code_ID>81820000</Code_ID>
+    <Code_Cause>Align Over Limit R</Code_Cause>
+    <Code_Cause_English>Alignment: Arm 軸的補正設定值過大</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_ALIGN_PARAMETER1</Code_Name>
+    <Code_Type>for Alignment Error</Code_Type>
+    <Code_ID>81821000</Code_ID>
+    <Code_Cause>Align Parameter1</Code_Cause>
+    <Code_Cause_English>Alignment: 設定值 1 異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_ALIGN_PARAMETER2</Code_Name>
+    <Code_Type>for Alignment Error</Code_Type>
+    <Code_ID>81822000</Code_ID>
+    <Code_Cause>Align Parameter2</Code_Cause>
+    <Code_Cause_English>Alignment: 設定值 2 異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_ALIGN_NO_SENSING_R</Code_Name>
+    <Code_Type>for Alignment Error</Code_Type>
+    <Code_ID>81823000</Code_ID>
+    <Code_Cause>Align No Sensing R</Code_Cause>
+    <Code_Cause_English>Alignment: R 側無 Sensor 檢出</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_ALIGN_NO_SENSING_L</Code_Name>
+    <Code_Type>for Alignment Error</Code_Type>
+    <Code_ID>81824000</Code_ID>
+    <Code_Cause>Align No Sensing L</Code_Cause>
+    <Code_Cause_English>Alignment: L 側無 Sensor 檢出</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_ALIGN_OVER_SENSING</Code_Name>
+    <Code_Type>for Alignment Error</Code_Type>
+    <Code_ID>81825000</Code_ID>
+    <Code_Cause>Align Over Sensing</Code_Cause>
+    <Code_Cause_English>Alignment: Sensor ON/OFF 次數過多</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_ALIGN_OVER_DELTA</Code_Name>
+    <Code_Type>for Alignment Error</Code_Type>
+    <Code_ID>81826000</Code_ID>
+    <Code_Cause>Align Over Limit Delta</Code_Cause>
+    <Code_Cause_English>Alignment: 補正角度過大</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_ALIGN_OVER_LIMIT_X</Code_Name>
+    <Code_Type>for Alignment Error</Code_Type>
+    <Code_ID>81827000</Code_ID>
+    <Code_Cause>Align Over Limit X</Code_Cause>
+    <Code_Cause_English>Alignment: X 軸補正過大</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_EDGE_UNKNOWN</Code_Name>
+    <Code_Type>for Edge Detect Error</Code_Type>
+    <Code_ID>81830000</Code_ID>
+    <Code_Cause>Edge Unknown</Code_Cause>
+    <Code_Cause_English>端面檢知異常失敗</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_EDGE_PARAMETER</Code_Name>
+    <Code_Type>for Edge Detect Error</Code_Type>
+    <Code_ID>81831000</Code_ID>
+    <Code_Cause>Edge Parameter</Code_Cause>
+    <Code_Cause_English>端面檢知參數錯誤</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_EDGE_OVER_SENSING</Code_Name>
+    <Code_Type>for Edge Detect Error</Code_Type>
+    <Code_ID>81832000</Code_ID>
+    <Code_Cause>Edge Over Sensing</Code_Cause>
+    <Code_Cause_English>端面檢知 Sensor ON/OFF 次數過多</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_EDGE_NO_SENSING</Code_Name>
+    <Code_Type>for Edge Detect Error</Code_Type>
+    <Code_ID>81833000</Code_ID>
+    <Code_Cause>Edge No Sensing</Code_Cause>
+    <Code_Cause_English>端面檢知無 Sensor 檢出</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_EDGE_SENSERROR</Code_Name>
+    <Code_Type>for Edge Detect Error</Code_Type>
+    <Code_ID>81834000</Code_ID>
+    <Code_Cause>Edge Sense Error</Code_Cause>
+    <Code_Cause_English>端面檢知偵測錯誤</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_EDGE_OVER_LIMIT</Code_Name>
+    <Code_Type>for Edge Detect Error</Code_Type>
+    <Code_ID>81835000</Code_ID>
+    <Code_Cause>Edge Over Limit</Code_Cause>
+    <Code_Cause_English>端面檢知超出範圍</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_FORK_POSITION</Code_Name>
+    <Code_Type>for Fork Error</Code_Type>
+    <Code_ID>91840000</Code_ID>
+    <Code_Cause>Fork Position Fail</Code_Cause>
+    <Code_Cause_English>Fork 位置錯誤</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_FORK_OVER_CURRENT</Code_Name>
+    <Code_Type>for Fork Error</Code_Type>
+    <Code_ID>91841000</Code_ID>
+    <Code_Cause>Fork Over Current</Code_Cause>
+    <Code_Cause_English>Fork馬達過電流(Fork開闔並使用馬達)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_FORK_OC_PEAK</Code_Name>
+    <Code_Type>for Fork Error</Code_Type>
+    <Code_ID>91842000</Code_ID>
+    <Code_Cause>Fork Over Current(Peak)</Code_Cause>
+    <Code_Cause_English>Fork 馬達過電流(峰值)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_FORK_ENCODER_LOST</Code_Name>
+    <Code_Type>for Fork Error</Code_Type>
+    <Code_ID>91843000</Code_ID>
+    <Code_Cause>Fork Encoder Lost</Code_Cause>
+    <Code_Cause_English>Fork Encoder 異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_FORK_PARAM_ERROR</Code_Name>
+    <Code_Type>for Fork Error</Code_Type>
+    <Code_ID>81844000</Code_ID>
+    <Code_Cause>Fork Control Parameter Error</Code_Cause>
+    <Code_Cause_English>Fork開闔參數設定錯誤</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_EMERGENCY_STOP</Code_Name>
+    <Code_Type>for Motion Controller</Code_Type>
+    <Code_ID>91850000</Code_ID>
+    <Code_Cause>Emergency Stop</Code_Cause>
+    <Code_Cause_English>緊急停止</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_COUNT_OVERFLOW</Code_Name>
+    <Code_Type>for Motion Controller</Code_Type>
+    <Code_ID>91851000</Code_ID>
+    <Code_Cause>Pulse Counter Overflow</Code_Cause>
+    <Code_Cause_English>脈波計數器溢位</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_ENCODER_ERROR</Code_Name>
+    <Code_Type>for Motion Controller</Code_Type>
+    <Code_ID>91852000</Code_ID>
+    <Code_Cause>Encoder Pulse Error</Code_Cause>
+    <Code_Cause_English>編碼器脈波輸入異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_MJS_FAIL</Code_Name>
+    <Code_Type>for Multi-Joint Simulation</Code_Type>
+    <Code_ID>91860000</Code_ID>
+    <Code_Cause>Multi-Joint Simulation Fail</Code_Cause>
+    <Code_Cause_English>擬似多軸錯誤</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_MJS_ARM_INTERFERE</Code_Name>
+    <Code_Type>for Multi-Joint Simulation</Code_Type>
+    <Code_ID>81861000</Code_ID>
+    <Code_Cause>MJS Arm Interfere</Code_Cause>
+    <Code_Cause_English>擬似多軸 Arm 動作干涉</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_MJS_HARDWARE_ERROR</Code_Name>
+    <Code_Type>for Multi-Joint Simulation</Code_Type>
+    <Code_ID>81862000</Code_ID>
+    <Code_Cause>MJS Hardware Error</Code_Cause>
+    <Code_Cause_English>硬體不支援擬似多軸功能</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_MTN_MJS_OVER_ARM_LENGT</Code_Name>
+    <Code_Type>for Multi-Joint Simulation</Code_Type>
+    <Code_ID>81863000</Code_ID>
+    <Code_Cause>MJS Over Link-Arm Length</Code_Cause>
+    <Code_Cause_English>超出  Link-Arm  的最大到達範圍</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_DRV_UNKNOWN_FAIL</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92800000</Code_ID>
+    <Code_Cause>SI-Driver Unknown Fail</Code_Cause>
+    <Code_Cause_English>馬達驅動器異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_INITIAL_FAIL</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92801000</Code_ID>
+    <Code_Cause>SI-Driver Initial Fail</Code_Cause>
+    <Code_Cause_English>馬達驅動器初始化失敗</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_ALARM</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92802000</Code_ID>
+    <Code_Cause>SI-Driver Alarm</Code_Cause>
+    <Code_Cause_English>馬達驅動器異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_TEMPERATURE</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92803000</Code_ID>
+    <Code_Cause>SI-Driver Over Temperature</Code_Cause>
+    <Code_Cause_English>馬達驅動器溫度異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_OVER_CURRENT</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92804000</Code_ID>
+    <Code_Cause>SI-Driver Over Current</Code_Cause>
+    <Code_Cause_English>馬達驅動器過電流</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_POSITION_OD</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92805000</Code_ID>
+    <Code_Cause>SI-Driver Over Deviation(Static)</Code_Cause>
+    <Code_Cause_English>馬達驅動器靜態脫調</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_FOLLOWING_OD</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92806000</Code_ID>
+    <Code_Cause>SI-Driver Over Deviation(Dynamic)</Code_Cause>
+    <Code_Cause_English>馬達驅動器動態脫調</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_OVER_SPEED</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92807000</Code_ID>
+    <Code_Cause>SI-Driver Over Speed</Code_Cause>
+    <Code_Cause_English>馬達驅動器速度異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_LOW_VOLTAGE</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92808000</Code_ID>
+    <Code_Cause>SI-Driver Low Voltage</Code_Cause>
+    <Code_Cause_English>馬達驅動器電壓異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_ORG_CMD_FAIL</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92809000</Code_ID>
+    <Code_Cause>SI-Driver ORG Search Fail</Code_Cause>
+    <Code_Cause_English>馬達驅動器 ORG Search 失敗</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_PULSE_GEN</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>9280A000</Code_ID>
+    <Code_Cause>SI-Driver Pulse Generator Fail</Code_Cause>
+    <Code_Cause_English>馬達驅動器脈波產生異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_V_MOTOR_LOW</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>9280B000</Code_ID>
+    <Code_Cause>SI-Driver Low Motor Voltage</Code_Cause>
+    <Code_Cause_English>馬達驅動器馬達電壓異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_POWER_ON</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92810000</Code_ID>
+    <Code_Cause>SI-Driver Power On Fail</Code_Cause>
+    <Code_Cause_English>馬達驅動器電源異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_SERVO_ON</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92811000</Code_ID>
+    <Code_Cause>SI-Driver Servo On Fail</Code_Cause>
+    <Code_Cause_English>馬達驅動器無法 Servo On</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_RESET_ALARM</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92812000</Code_ID>
+    <Code_Cause>SI-Driver Reset Alarm Fail</Code_Cause>
+    <Code_Cause_English>馬達驅動器清除警報失敗</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ DRV_COMMUNICATION</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92813000</Code_ID>
+    <Code_Cause>SI-Driver Communication Fail</Code_Cause>
+    <Code_Cause_English>無法與馬達驅動器通訊</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_DRV_ENCODER_UNSTABLE</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92814000</Code_ID>
+    <Code_Cause>ABS Encoder Unstable</Code_Cause>
+    <Code_Cause_English>ABS Encoder 異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_DRV_ENCODER_FAIL</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92815000</Code_ID>
+    <Code_Cause>ABS Encoder Read Fail</Code_Cause>
+    <Code_Cause_English>ABS Encoder  讀取失敗</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_DRV_Z_PAHSE_ERR</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92816000</Code_ID>
+    <Code_Cause>ABS Encoder Z-Phase Error</Code_Cause>
+    <Code_Cause_English>ABS Encoder Z-Phase 錯誤</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_DRV_MOTOR_IN_MOVING</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92817000</Code_ID>
+    <Code_Cause>Motor in Moving</Code_Cause>
+    <Code_Cause_English>馬達還未停止就進行下一個命令</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_DRV_MOTOR_MODEL_ERROR</Code_Name>
+    <Code_Type>Motor Driver Alarm</Code_Type>
+    <Code_ID>92818000</Code_ID>
+    <Code_Cause>Motor Model Error</Code_Cause>
+    <Code_Cause_English>馬達序號不匹配</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_EXT_IO_INIT_FAIL</Code_Name>
+    <Code_Type>for Ext-IO Board Error</Code_Type>
+    <Code_ID>92820000</Code_ID>
+    <Code_Cause>Ext-IO Initial Fail</Code_Cause>
+    <Code_Cause_English>IO 擴展板初始化失敗</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_TIMEOUT</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>83800000</Code_ID>
+    <Code_Cause>Sensor Timeout</Code_Cause>
+    <Code_Cause_English>等待感測器超時</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_REQ_ENTER_TMO</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>83801000</Code_ID>
+    <Code_Cause>PCL REQ_ENTER Timeout</Code_Cause>
+    <Code_Cause_English>PCL REQ_ENTER 訊號沒回應</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_REQ_ENTER_ON</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>83802000</Code_ID>
+    <Code_Cause>PCL REQ_ENTER 'ON' Fail</Code_Cause>
+    <Code_Cause_English>PCL REQ_ENTER 訊號 "ON" 異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_PRESENT_ON</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>93803000</Code_ID>
+    <Code_Cause>Present Sensor 'ON' Fail</Code_Cause>
+    <Code_Cause_English>在席感測器訊號 "ON" 異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_PRESENT_OFF</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>93804000</Code_ID>
+    <Code_Cause>Present Sensor 'OFF' Fail</Code_Cause>
+    <Code_Cause_English>在席感測器訊號 "OFF" 異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_CONTROLLER_FAN</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>83805000</Code_ID>
+    <Code_Cause>Controller Fan Fail</Code_Cause>
+    <Code_Cause_English>控制器風扇異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_ROBOT_FAN1</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>83806000</Code_ID>
+    <Code_Cause>Robot Fan1 Fail</Code_Cause>
+    <Code_Cause_English>Robot 風扇 1 異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_ROBOT_FAN2</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>83807000</Code_ID>
+    <Code_Cause>Robot Fan2 Fail</Code_Cause>
+    <Code_Cause_English>Robot 風扇 2 異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_ROBOT_FAN3</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>83808000</Code_ID>
+    <Code_Cause>Robot Fan3 Fail</Code_Cause>
+    <Code_Cause_English>Robot 風扇 3 異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_ORG</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>93809000</Code_ID>
+    <Code_Cause>ORG Sensor 'ON' Fail</Code_Cause>
+    <Code_Cause_English>原點感測器訊號 "ON" 異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_WAFER_HOLD_TMO</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>9380A000</Code_ID>
+    <Code_Cause>Wafer Hold Timeout</Code_Cause>
+    <Code_Cause_English>晶圓保持(吸附)失敗(有 Timeout 參數)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_WAFER_RELEASE_TMO</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>9380B000</Code_ID>
+    <Code_Cause>Wafer Release Timeout</Code_Cause>
+    <Code_Cause_English>晶圓釋放失敗(有 Timeout 參數)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_WAFER_HOLD_FAIL</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>9380C000</Code_ID>
+    <Code_Cause>Wafer Hold Fail</Code_Cause>
+    <Code_Cause_English>晶圓保持(吸附)失敗(直接判斷無 Timeout)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_WAFER_RELEASE_FAIL</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>9380D000</Code_ID>
+    <Code_Cause>Wafer Release Fail</Code_Cause>
+    <Code_Cause_English>晶圓釋放失敗(直接判斷無 Timeout)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_WAFER_SENSOR</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>9380F000</Code_ID>
+    <Code_Cause>Wafer Sensor Fail</Code_Cause>
+    <Code_Cause_English>晶圓感測器訊號異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_PRESSURE</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>83810000</Code_ID>
+    <Code_Cause>Abnormal Pressure</Code_Cause>
+    <Code_Cause_English>壓力異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_CRASH</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>83820000</Code_ID>
+    <Code_Cause>Crash(Detected Shock Sensor)</Code_Cause>
+    <Code_Cause_English>撞機(震動感知器觸發)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_SSR_BELT_BREAK</Code_Name>
+    <Code_Type>Sensor Alarm</Code_Type>
+    <Code_ID>83830000</Code_ID>
+    <Code_Cause>Belt Break</Code_Cause>
+    <Code_Cause_English>皮帶斷裂</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_CMD_UNLNOWN_CMD</Code_Name>
+    <Code_Type>Host Command Alarm</Code_Type>
+    <Code_ID>84800000</Code_ID>
+    <Code_Cause>Unknown Command</Code_Cause>
+    <Code_Cause_English>未知的命令</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_CMD_IN_EXECUTE</Code_Name>
+    <Code_Type>Host Command Alarm</Code_Type>
+    <Code_ID>84801000</Code_ID>
+    <Code_Cause>Command Executing</Code_Cause>
+    <Code_Cause_English>上一個命令還在執行中</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_CMD_ACK_TMO</Code_Name>
+    <Code_Type>Host Command Alarm</Code_Type>
+    <Code_ID>84802000</Code_ID>
+    <Code_Cause>Command Internal Ack Timeout</Code_Cause>
+    <Code_Cause_English>控制器異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_CMD_EXECUTE_TIMEOUT</Code_Name>
+    <Code_Type>Host Command Alarm</Code_Type>
+    <Code_ID>84803000</Code_ID>
+    <Code_Cause>Command Execute Timeout</Code_Cause>
+    <Code_Cause_English>命令未在時間內完成</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_CMD_EXECUTE_FAIL</Code_Name>
+    <Code_Type>Host Command Alarm</Code_Type>
+    <Code_ID>84804000</Code_ID>
+    <Code_Cause>Command Execute Fail</Code_Cause>
+    <Code_Cause_English>命令執行失敗</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_CMD_ABORT</Code_Name>
+    <Code_Type>Host Command Alarm</Code_Type>
+    <Code_ID>84805000</Code_ID>
+    <Code_Cause>Command Abort</Code_Cause>
+    <Code_Cause_English>命令中斷</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_CMD_IN_MANUAL_MODE</Code_Name>
+    <Code_Type>Host Command Alarm</Code_Type>
+    <Code_ID>84806000</Code_ID>
+    <Code_Cause>Aligner in Manual Mode</Code_Cause>
+    <Code_Cause_English>Aligner目前切換到手動模式</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_CMD_PARAMETER</Code_Name>
+    <Code_Type>Host Command Alarm</Code_Type>
+    <Code_ID>84807000</Code_ID>
+    <Code_Cause>Command Parameter Over Range</Code_Cause>
+    <Code_Cause_English>命令所帶的參數超過容許範圍</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_CMD_CONTINUE_FAIL</Code_Name>
+    <Code_Type>Host Command Alarm</Code_Type>
+    <Code_ID>84808000</Code_ID>
+    <Code_Cause>Command Continue Fail (Error Occurred)</Code_Cause>
+    <Code_Cause_English>命令暫停後無法繼續(有錯誤發生)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_CMD_RESET_IN_ROBOT_RUN</Code_Name>
+    <Code_Type>Host Command Alarm</Code_Type>
+    <Code_ID>84809000</Code_ID>
+    <Code_Cause>Reset Alarm Fail (Command Executing)</Code_Cause>
+    <Code_Cause_English>命令還未結束無法執行 Reset 動作</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_CMD_UNLNOWN_FLAG</Code_Name>
+    <Code_Type>Host Command Alarm</Code_Type>
+    <Code_ID>8480A000</Code_ID>
+    <Code_Cause>Command Flag Unknown</Code_Cause>
+    <Code_Cause_English>未知的命令類型</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_CMD_FORMAT_ERROR</Code_Name>
+    <Code_Type>Host Command Alarm</Code_Type>
+    <Code_ID>8480B000</Code_ID>
+    <Code_Cause>Command Format Error</Code_Cause>
+    <Code_Cause_English>命令格式錯誤</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_CMD_PAUSE_FAIL</Code_Name>
+    <Code_Type>Host Command Alarm</Code_Type>
+    <Code_ID>8480C000</Code_ID>
+    <Code_Cause>Command Pause Error</Code_Cause>
+    <Code_Cause_English>執行暫停命令失敗</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_SPD_OVER_RANGE</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>85800000</Code_ID>
+    <Code_Cause>Speed Over Range(0~100)</Code_Cause>
+    <Code_Cause_English>速度超出範圍</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_SPD_TYPE_ERROR</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>85801000</Code_ID>
+    <Code_Cause>Speed Type Error</Code_Cause>
+    <Code_Cause_English>速度的選擇超出範圍(Normal, Teach, ORG)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_POINT_NO</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>85802000</Code_ID>
+    <Code_Cause>Point No. Over Range</Code_Cause>
+    <Code_Cause_English>移動命令的點位參數超出範圍</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_ARM_NO</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>85803000</Code_ID>
+    <Code_Cause>Arm No. Over Range</Code_Cause>
+    <Code_Cause_English>移動命令的 Arm 參數超出範圍</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_SIDE_NO</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>85804000</Code_ID>
+    <Code_Cause>Side No. Over Range</Code_Cause>
+    <Code_Cause_English>Side Number 超出範圍</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_REFS_CASSETTE</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>85805000</Code_ID>
+    <Code_Cause>Refs Cassette No. Fail(Equal to Itself)</Code_Cause>
+    <Code_Cause_English>Point Data 中 "Reference Cassette" 指向自己 </Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_REFS_POSITION</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>85806000</Code_ID>
+    <Code_Cause>Refs Position No. Fail(Equal to Itself)</Code_Cause>
+    <Code_Cause_English>Point Data 中 "Reference Position" 指向自己 </Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_SLOT_NO</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>85807000</Code_ID>
+    <Code_Cause>Cassette Slot No. Over Range</Code_Cause>
+    <Code_Cause_English>移動命令的 Slot 參數超出範圍</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_COLUMN_NO</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>85808000</Code_ID>
+    <Code_Cause>Cassette Column No. Over Range</Code_Cause>
+    <Code_Cause_English>移動命令的 Column 參數超出範圍</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_ROW_NO</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>85809000</Code_ID>
+    <Code_Cause>Cassette Row No. Over Range</Code_Cause>
+    <Code_Cause_English>移動命令的 Row 參數超出範圍</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_POSITION_DATA_EMPTY</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>8580A000</Code_ID>
+    <Code_Cause>Position Data is Empty</Code_Cause>
+    <Code_Cause_English>移動命令的點位資料沒有被設定</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_RL_GOR_P_DISABLE</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>8580B000</Code_ID>
+    <Code_Cause>RL-GorP Disabled</Code_Cause>
+    <Code_Cause_English>R/L 軸同動功能被關閉</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_SLOT_TYPE</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>8580C000</Code_ID>
+    <Code_Cause>Slot Type Error</Code_Cause>
+    <Code_Cause_English>移動命令所指定的 Slot 型式錯誤</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_AXIS_DISABLED</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>95810000</Code_ID>
+    <Code_Cause>Axis Disabled</Code_Cause>
+    <Code_Cause_English>軸已被關閉，無法進行動作</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_OVER_RANGE</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>95811000</Code_ID>
+    <Code_Cause>Move Over Range</Code_Cause>
+    <Code_Cause_English>要移動的位置超出可移動範圍</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_OVER_SOFT_LIMIT</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>95812000</Code_ID>
+    <Code_Cause>Over Soft Limit</Code_Cause>
+    <Code_Cause_English>要移動的位置超出軟體極限值</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_SET_SPEED</Code_Name>
+    <Code_Type>Point to Piont Alarm</Code_Type>
+    <Code_ID>95813000</Code_ID>
+    <Code_Cause>Set Speed Fail</Code_Cause>
+    <Code_Cause_English>速度參數錯誤導致設定失敗</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_PARAM_SPD_HIGH</Code_Name>
+    <Code_Type>for Parameter Setting Error</Code_Type>
+    <Code_ID>95821000</Code_ID>
+    <Code_Cause>Param. Speed High</Code_Cause>
+    <Code_Cause_English>移動速度參數設定錯誤(高速)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_PARAM_SPD_LOW</Code_Name>
+    <Code_Type>for Parameter Setting Error</Code_Type>
+    <Code_ID>95822000</Code_ID>
+    <Code_Cause>Param. Speed Low</Code_Cause>
+    <Code_Cause_English>移動速度參數設定錯誤(低速)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_PARAM_SPD_UAC</Code_Name>
+    <Code_Type>for Parameter Setting Error</Code_Type>
+    <Code_ID>95823000</Code_ID>
+    <Code_Cause>Param. Speed UAC</Code_Cause>
+    <Code_Cause_English>移動速度參數設定錯誤(加速度)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_PARAM_SPD_USC</Code_Name>
+    <Code_Type>for Parameter Setting Error</Code_Type>
+    <Code_ID>95824000</Code_ID>
+    <Code_Cause>Param. Speed USC</Code_Cause>
+    <Code_Cause_English>移動速度參數設定錯誤(S-Curve 加速度)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_PARAM_SPD_OFFSET</Code_Name>
+    <Code_Type>for Parameter Setting Error</Code_Type>
+    <Code_ID>95825000</Code_ID>
+    <Code_Cause>Param. Speed Offset</Code_Cause>
+    <Code_Cause_English>移動速度參數設定錯誤(Offset)</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_PARAM_PULSE_BUNSI</Code_Name>
+    <Code_Type>for Parameter Setting Error</Code_Type>
+    <Code_ID>95826000</Code_ID>
+    <Code_Cause>Param. Pulse Bunsi</Code_Cause>
+    <Code_Cause_English>齒輪比分子設定錯誤</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_PARAM_PULSE_BUNBO</Code_Name>
+    <Code_Type>for Parameter Setting Error</Code_Type>
+    <Code_ID>95827000</Code_ID>
+    <Code_Cause>Param. Pulse Bunbo</Code_Cause>
+    <Code_Cause_English>齒輪比分母設定錯誤</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_PARAM_LEAD</Code_Name>
+    <Code_Type>for Parameter Setting Error</Code_Type>
+    <Code_ID>95828000</Code_ID>
+    <Code_Cause>Param. Lead</Code_Cause>
+    <Code_Cause_English>導程設定錯誤</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_P2P_PARAM_LINKARM</Code_Name>
+    <Code_Type>for Parameter Setting Error</Code_Type>
+    <Code_ID>85829000</Code_ID>
+    <Code_Cause>Param. Link-Arm</Code_Cause>
+    <Code_Cause_English>Link-Arm 參數設定錯誤</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ALN_DATA_CHECKSUM</Code_Name>
+    <Code_Type>Aligner Alarm</Code_Type>
+    <Code_ID>86800000</Code_ID>
+    <Code_Cause>Data Checksum Error</Code_Cause>
+    <Code_Cause_English>控制器內部硬體異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ALN_DATA_INDEX</Code_Name>
+    <Code_Type>Aligner Alarm</Code_Type>
+    <Code_ID>86801000</Code_ID>
+    <Code_Cause>Data Index Error</Code_Cause>
+    <Code_Cause_English>控制器內部硬體異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ALN_PHOTO_CH0</Code_Name>
+    <Code_Type>Aligner Alarm</Code_Type>
+    <Code_ID>86802000</Code_ID>
+    <Code_Cause>Read Photo Sens. Ch0 N.G.</Code_Cause>
+    <Code_Cause_English>控制器讀Photo Sensor Ch0 異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ ALN_PHOTO_CH1</Code_Name>
+    <Code_Type>Aligner Alarm</Code_Type>
+    <Code_ID>86803000</Code_ID>
+    <Code_Cause>Read Photo Sens. Ch1 N.G.</Code_Cause>
+    <Code_Cause_English>控制器讀Photo Sensor Ch1 異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ALN_OVER_CCD_LIMITP</Code_Name>
+    <Code_Type>Aligner Alarm</Code_Type>
+    <Code_ID>86810000</Code_ID>
+    <Code_Cause>Over CCD Limit +</Code_Cause>
+    <Code_Cause_English>Wafer邊緣位置未到CCD範圍</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ALN_OVER_CCD_LIMITN</Code_Name>
+    <Code_Type>Aligner Alarm</Code_Type>
+    <Code_ID>86811000</Code_ID>
+    <Code_Cause>Over CCD Limit -</Code_Cause>
+    <Code_Cause_English>Wafer邊緣位置超過CCD範圍</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ALN_WAFER_EDGE</Code_Name>
+    <Code_Type>Aligner Alarm</Code_Type>
+    <Code_ID>86812000</Code_ID>
+    <Code_Cause>Wafer Edge Error</Code_Cause>
+    <Code_Cause_English>Wafer 邊緣異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ALN_ENCODER</Code_Name>
+    <Code_Type>Aligner Alarm</Code_Type>
+    <Code_ID>86813000</Code_ID>
+    <Code_Cause>Encoder Data Less 1 Rev</Code_Cause>
+    <Code_Cause_English>Encoder Data未達1圈</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ALN_CALC_OFFSET</Code_Name>
+    <Code_Type>Aligner Alarm</Code_Type>
+    <Code_ID>86820000</Code_ID>
+    <Code_Cause>Calc.Offset Error</Code_Cause>
+    <Code_Cause_English>Offset 計算異常</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>Error</Category_ID>
+    <Category_Description>機台錯誤訊息</Category_Description>
+    <Code_Name>ECD_ALN_CALC_NOTCH</Code_Name>
+    <Code_Type>Aligner Alarm</Code_Type>
+    <Code_ID>86821000</Code_ID>
+    <Code_Cause>Calc. Notch Error</Code_Cause>
+    <Code_Cause_English>Notch 位置計算異常</Code_Cause_English>
+  </Table>
+</DocumentElement>

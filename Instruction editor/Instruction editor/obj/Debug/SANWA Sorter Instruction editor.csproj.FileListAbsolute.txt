@@ -1,0 +1,25 @@
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Debug\SANWA Sorter Instruction editor.pdb
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Debug\SANWA_Sorter_Instruction_editor.Properties.Resources.resources
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Debug\SANWA Sorter Instruction editor.csproj.GenerateResource.cache
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Debug\SANWA Sorter Instruction editor.csproj.CoreCompileInputs.cache
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Debug\SANWA Sorter Instruction editor.pdb
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Debug\SANWA_Sorter_Instruction_editor.frmInstructionEditor.resources
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Debug\SANWA Sorter Instruction editor.exe.config
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Debug\SANWA Sorter Instruction editor.exe
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Debug\SANWA Sorter Instruction editor.exe
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Debug\SANWA.Robot.CMD.xml
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Debug\SANWA.Robot.GET.xml
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Debug\SANWA.Robot.SET.xml
+C:\Users\jevons_chan\source\repos\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Debug\SANWA Sorter Instruction editor.csprojResolveAssemblyReference.cache
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Debug\Instruction_editor.frmInstructionEditor.resources
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Debug\Instruction_editor.Properties.Resources.resources
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Debug\SANWA Sorter Instruction editor.csproj.GenerateResource.cache
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Debug\SANWA Sorter Instruction editor.csproj.CoreCompileInputs.cache
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Debug\SANWA.Robot.CMD.xml
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Debug\SANWA.Robot.GET.xml
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Debug\SANWA.Robot.SET.xml
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Debug\Instruction editor.exe.config
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Debug\Instruction editor.exe
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\bin\Debug\Instruction editor.pdb
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Debug\Instruction editor.exe
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA Sorter Instruction editor\SANWA Sorter Instruction editor\obj\Debug\Instruction editor.pdb

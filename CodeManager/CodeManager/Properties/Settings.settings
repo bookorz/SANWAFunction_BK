@@ -1,0 +1,32 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CodeManager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Code_Columns" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;Category_ID&lt;/string&gt;
+  &lt;string&gt;Category_Description&lt;/string&gt;
+  &lt;string&gt;Code_Name&lt;/string&gt;
+  &lt;string&gt;Code_Type&lt;/string&gt;
+  &lt;string&gt;Code_ID&lt;/string&gt;
+  &lt;string&gt;Code_Cause&lt;/string&gt;
+  &lt;string&gt;Code_Cause_English&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="Category" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;SANWA.Robot,Robot 命令&lt;/string&gt;
+  &lt;string&gt;SANWA.Aligner,Aligner 命令&lt;/string&gt;
+  &lt;string&gt;COGNEX.OCR,OCR 命令&lt;/string&gt;
+  &lt;string&gt;HST.OCR,OCR 命令&lt;/string&gt;
+  &lt;string&gt;TDK.LoadPort,LoadPort 命令&lt;/string&gt;
+  &lt;string&gt;00,SANWA Robot Error 機台錯誤訊息&lt;/string&gt;
+  &lt;string&gt;A0,SANWA Aligner Error 機台錯誤訊息&lt;/string&gt;
+  &lt;string&gt;11,TDK LoadPort Error 機台錯誤訊息&lt;/string&gt;
+  &lt;string&gt;System,系統訊息&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

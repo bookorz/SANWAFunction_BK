@@ -1,0 +1,25 @@
+c:\users\jevons_chan\source\repos\CodeManager\CodeManager\bin\Debug\CodeManager.exe.config
+c:\users\jevons_chan\source\repos\CodeManager\CodeManager\bin\Debug\CodeManager.exe
+c:\users\jevons_chan\source\repos\CodeManager\CodeManager\bin\Debug\CodeManager.pdb
+c:\users\jevons_chan\source\repos\CodeManager\CodeManager\obj\Debug\CodeManager.csprojResolveAssemblyReference.cache
+c:\users\jevons_chan\source\repos\CodeManager\CodeManager\obj\Debug\CodeManager.Properties.Resources.resources
+c:\users\jevons_chan\source\repos\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.GenerateResource.cache
+c:\users\jevons_chan\source\repos\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.CoreCompileInputs.cache
+c:\users\jevons_chan\source\repos\CodeManager\CodeManager\obj\Debug\CodeManager.exe
+c:\users\jevons_chan\source\repos\CodeManager\CodeManager\obj\Debug\CodeManager.pdb
+C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\bin\Debug\CodeManager.exe.config
+C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\bin\Debug\CodeManager.exe
+C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\bin\Debug\CodeManager.pdb
+C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\bin\Debug\SANWA.dll
+C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\bin\Debug\SANWA.pdb
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA\SANWA\bin\Debug\CodeManager.exe.config
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA\SANWA\bin\Debug\CodeManager.exe
+C:\Users\jevons_chan\source\repos\SANWA Function\SANWA\SANWA\bin\Debug\CodeManager.pdb
+C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.csprojResolveAssemblyReference.cache
+C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.frmCodeManager.resources
+C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.Properties.Resources.resources
+C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.GenerateResource.cache
+C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.CoreCompileInputs.cache
+C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.CopyComplete
+C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.exe
+C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.pdb
