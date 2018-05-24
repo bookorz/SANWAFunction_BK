@@ -38,17 +38,17 @@ namespace SANWA.Utility
 
         public string Read()
         {
-            return CommandAssembly(Supplier, "CMD", "Read", "-1");
+            return CommandAssembly("CMD", "Read", "-1");
         }
 
         public string SetOnline(OnlineStatus online)
         {
-            return CommandAssembly(Supplier, "CMD", "OnlineStatus", ((int)online).ToString());
+            return CommandAssembly("CMD", "OnlineStatus", ((int)online).ToString());
         }
 
         public string GetOnline()
         {
-            return CommandAssembly(Supplier, "CMD", "GetOnline");
+            return CommandAssembly("CMD", "GetOnline");
         }
 
         private string CommandAssembly(string CommandType, string Command, params string[] Parameter)
@@ -67,21 +67,21 @@ namespace SANWA.Utility
                 container = new ContainerSet();
                 sbTemp = new StringBuilder();
 
-                var query = (from a in dtRobotCommand.AsEnumerable()
-                             where a.Field<string>("Equipment_Type") == "ORC"
-                                && a.Field<string>("Equipment_Supplier") == Supplier
-                                && a.Field<string>("Command_Type") == CommandType
-                                && a.Field<string>("Action_Function") == Command
-                             select a).ToList();
+                //var query = (from a in dtRobotCommand.AsEnumerable()
+                //             where a.Field<string>("Equipment_Type") == "ORC"
+                //                && a.Field<string>("Equipment_Supplier") == Supplier
+                //                && a.Field<string>("Command_Type") == CommandType
+                //                && a.Field<string>("Action_Function") == Command
+                //             select a).ToList();
 
-                if (query.Count == 0)
-                {
-                    throw new RowNotInTableException();
-                }
+                //if (query.Count == 0)
+                //{
+                //    throw new RowNotInTableException();
+                //}
 
-                dtTemp = query.CopyToDataTable();
-                dtTemp.DefaultView.Sort = "Parameter_Order ASC";
-                dvTemp = dtTemp.DefaultView;
+                //dtTemp = query.CopyToDataTable();
+                //dtTemp.DefaultView.Sort = "Parameter_Order ASC";
+                //dvTemp = dtTemp.DefaultView;
 
                 switch (Supplier)
                 {
@@ -104,7 +104,7 @@ namespace SANWA.Utility
                         {
                             strCommandFormat = string.Format("{0}{1}{2}{3}{4}", "SM", ((char)34).ToString(), "READ", ((char)34).ToString(), "0");
                         }
-                        else if (Command.Equals("SetOnline"))
+                        else if (Command.Equals("OnlineStatus"))
                         {
                             strCommandFormat = string.Format("SO{0}", Parameter);
                         }

@@ -28,16 +28,60 @@ namespace SANWA.Utility
                         break;
 
                     case "TDKCONTROLLER":
-					    result = TDKCodeAnalysis(Message);
-					    break;
+                        result = TDKCodeAnalysis(Message);
+                        break;
 
                     case "KAWASAKICONTROLLER":
                         result = KAWASAKICodeAnalysis(Message);
+                        break;
+                    case "HSTCONTROLLER":
+                        result = HSTCodeAnalysis(Message);
                         break;
 
                     default:
                         throw new NotImplementedException();
 
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return result;
+        }
+
+        private List<ReturnMessage> HSTCodeAnalysis(string Message)
+        {
+            List<ReturnMessage> result;
+            string[] msgAry;
+
+            try
+            {
+                result = new List<ReturnMessage>();
+                msgAry = Message.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+                foreach (string Msg in msgAry)
+                {
+                    if (Msg.Trim().Equals(""))
+                    {
+                        continue;
+                    }
+                    ReturnMessage each = new ReturnMessage();
+                    each.NodeAdr = "1";
+                    each.Command = "";
+                    switch (Msg)
+                    {
+                        case "1": 
+                        case "0":
+                            each.Type = ReturnMessage.ReturnType.Excuted;
+                            each.Value = Msg;
+                            break;
+                        default:
+                            each.Type = ReturnMessage.ReturnType.Finished;
+                            each.Value = Msg;
+                            break;
+                    }
+                    result.Add(each);
                 }
             }
             catch (Exception ex)
