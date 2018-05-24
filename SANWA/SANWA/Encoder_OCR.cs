@@ -30,12 +30,28 @@ namespace SANWA.Utility
             }
         }
 
-        public string Read(string Address, string Sequence)
+        public enum OnlineStatus
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "Read", "-1");
+            Offline,
+            Online
         }
 
-        private string CommandAssembly(string Supplier, string Address, string Sequence, string CommandType, string Command, params string[] Parameter)
+        public string Read()
+        {
+            return CommandAssembly(Supplier, "CMD", "Read", "-1");
+        }
+
+        public string SetOnline(OnlineStatus online)
+        {
+            return CommandAssembly(Supplier, "CMD", "OnlineStatus", ((int)online).ToString());
+        }
+
+        public string GetOnline()
+        {
+            return CommandAssembly(Supplier, "CMD", "GetOnline");
+        }
+
+        private string CommandAssembly(string CommandType, string Command, params string[] Parameter)
         {
             string strCommand = string.Empty;
             string strCommandFormat = string.Empty;
@@ -75,6 +91,10 @@ namespace SANWA.Utility
                         {
                             strCommandFormat = container.StringFormat("READ({0})", Parameter);
                         }
+                        else
+                        {
+                            throw new DriveNotFoundException();
+                        }
 
                         break;
 
@@ -83,6 +103,18 @@ namespace SANWA.Utility
                         if (Command.Equals("Read"))
                         {
                             strCommandFormat = string.Format("{0}{1}{2}{3}{4}", "SM", ((char)34).ToString(), "READ", ((char)34).ToString(), "0");
+                        }
+                        else if (Command.Equals("SetOnline"))
+                        {
+                            strCommandFormat = string.Format("SO{0}", Parameter);
+                        }
+                        else if (Command.Equals("GetOnline"))
+                        {
+                            strCommandFormat = "GO";
+                        }
+                        else
+                        {
+                            throw new DriveNotFoundException();
                         }
 
                         break;
@@ -97,8 +129,74 @@ namespace SANWA.Utility
                 throw new Exception(ex.ToString());
             }
 
-            return strCommand + "\r";
+            return strCommand;
         }
 
+        private string COGNEXImageStore()
+        {
+            FTP fTP = null;
+
+            string strIpAddress = string.Empty;
+            string strLoginUser = string.Empty;
+            string strFtpPort = string.Empty;
+            string strSavePath = string.Empty;
+            string strFileName = string.Empty;
+            string strRemoteFileName = string.Empty;
+            string strLocalFilePath = string.Empty;
+
+            try
+            {
+                strIpAddress = "192.168.0.5";
+                strLoginUser = "admin";
+                strFtpPort = "21";
+                strSavePath = System.AppDomain.CurrentDomain.BaseDirectory + "CognexReadImage\\";
+                strFileName = DateTime.Now.ToString("yyyyMMdd_HHmmssfff") + ".bmp";
+                strRemoteFileName = "Image.bmp";
+
+                fTP = new FTP(strIpAddress, strFtpPort, string.Empty, strLoginUser, string.Empty);
+                strLocalFilePath = fTP.Get(strRemoteFileName, strFileName, strSavePath);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return strLocalFilePath;
+        }
+
+        private string HSTImageStore()
+        {
+
+            string strSavePath = string.Empty;
+            string strFileName = string.Empty;
+            string strLocalFilePath = string.Empty;
+
+            try
+            {
+                strSavePath = System.AppDomain.CurrentDomain.BaseDirectory + "HSTReadImage\\";
+                strFileName = DateTime.Now.ToString("yyyyMMdd_HHmmssfff") + ".bmp";
+                string lastCreateFileName = String.Empty;
+                DateTime lastCreateFileTime = DateTime.MinValue;
+
+                DirectoryInfo dirInfo = new DirectoryInfo("C:\\新資料夾");
+                foreach (FileInfo fileInfo in dirInfo.GetFiles())
+                {
+                    if (fileInfo.CreationTime > lastCreateFileTime)
+                    {
+                        lastCreateFileTime = fileInfo.CreationTime;
+                        lastCreateFileName = fileInfo.Name;
+                    }
+                }
+
+                System.IO.File.Copy(lastCreateFileName, System.IO.Path.Combine(strSavePath, strFileName), true);
+                strLocalFilePath = System.IO.Path.Combine(strSavePath, strFileName);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return strLocalFilePath;
+        }
     }
 }

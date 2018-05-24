@@ -1,0 +1,183 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SANWA.Utility
+{
+    public class Decoder
+    {
+        private string Supplier;
+
+        public Decoder(string supplier, string Message)
+        {
+            Supplier = supplier.ToUpper();
+        }
+
+        public List<ReturnMessage> GetMessage(string Message)
+        {
+            List<ReturnMessage> result = null;
+
+            try
+            {
+                switch (Supplier)
+                {
+                    case "SAWAN":
+                        result = SANWACodeAnalysis(Message);
+                        break;
+
+                    case "TDK":
+                        break;
+
+                    default:
+                        throw new NotImplementedException();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return result;
+        }
+
+        private List<ReturnMessage> SANWACodeAnalysis(string Message)
+        {
+            List<ReturnMessage> result;
+            string[] msgAry;
+
+            try
+            {
+                result = new List<ReturnMessage>();
+                msgAry = Message.Split('\r');
+
+                foreach (string Msg in msgAry)
+                {
+                    if (Msg.Trim().Equals(""))
+                    {
+                        continue;
+                    }
+                    ReturnMessage each = new ReturnMessage();
+
+                    each.NodeAdr = Msg[1].ToString();
+                    string[] content = Msg.Replace("\r", "").Replace("\n", "").Substring(2).Split(':');
+                    for (int i = 0; i < content.Length; i++)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                switch (content[i])
+                                {
+                                    case "ACK":
+                                        each.Type = ReturnMessage.ReturnType.Excuted;
+                                        break;
+                                    case "NAK":
+                                        each.Type = ReturnMessage.ReturnType.Error;
+                                        break;
+                                    case "FIN":
+                                        each.Type = ReturnMessage.ReturnType.Finished;
+                                        break;
+                                    case "EVT":
+                                        each.Type = ReturnMessage.ReturnType.Event;
+                                        break;
+                                }
+                                break;
+                            case 1:
+
+                                each.Command = content[i];
+                                if (each.Command.Equals("PAUSE") || each.Command.Equals("STOP_"))
+                                {
+                                    each.IsInterrupt = true;
+                                }
+                                break;
+                            case 2:
+                                each.Value = content[i];
+                                break;
+                        }
+                    }
+                    result.Add(each);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return result;
+        }
+
+        private List<ReturnMessage> TDKCodeAnalysis(string Message)
+        {
+            List<ReturnMessage> result;
+            string[] msgAry;
+
+            try
+            {
+                result = new List<ReturnMessage>();
+                msgAry = Message.Split('\r');
+
+                foreach (string Msg in msgAry)
+                {
+                    if (Msg.Trim().Equals(""))
+                    {
+                        continue;
+                    }
+                    ReturnMessage each = new ReturnMessage();
+
+                    each.NodeAdr = Msg[1].ToString();
+                    string[] content = Msg.Replace("\r", "").Replace("\n", "").Substring(2).Split(':');
+                    for (int i = 0; i < content.Length; i++)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                switch (content[i])
+                                {
+                                    case "ACK":
+                                        each.Type = ReturnMessage.ReturnType.Excuted;
+                                        break;
+                                    case "NAK":
+                                        each.Type = ReturnMessage.ReturnType.Error;
+                                        break;
+                                    case "INF":
+                                        each.Type = ReturnMessage.ReturnType.Information;
+                                        break;
+                                    case "EVT":
+                                        each.Type = ReturnMessage.ReturnType.Event;
+                                        break;
+                                    case "ABS":
+                                        each.Type = ReturnMessage.ReturnType.Abnormal;
+                                        break;
+                                    case "RIF":
+                                        each.Type = ReturnMessage.ReturnType.Reinformation;
+                                        break;
+                                }
+                                break;
+                            case 1:
+
+                                each.Command = content[i];
+                                if (each.Command.Equals("PAUSE") || each.Command.Equals("STOP_"))
+                                {
+                                    each.IsInterrupt = true;
+                                }
+                                break;
+                            case 2:
+                                each.Value = content[i];
+                                break;
+                        }
+                    }
+                    result.Add(each);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return result;
+        }
+
+    }
+}

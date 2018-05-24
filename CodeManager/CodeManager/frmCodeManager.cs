@@ -72,7 +72,7 @@ namespace CodeManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
             }
             finally
             {
@@ -117,7 +117,7 @@ namespace CodeManager
 
                 if (dvTemp.ToTable().Rows.Count > 0)
                 {
-                    MessageBox.Show("Already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                    MessageBox.Show("Already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
                 }
                 else
                 {
@@ -136,7 +136,7 @@ namespace CodeManager
                     dtCode.Clear();
                     dtCode.ReadXml(System.AppDomain.CurrentDomain.BaseDirectory + "Code.xml");
 
-                    MessageBox.Show("Save Done.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                    MessageBox.Show("Save Done.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
 
                     lsbQueryCondition_Click(lsbEditorCategoryID, e);
                     lsbQueryCondition_Click(lsbQueryCondition, e);
@@ -145,7 +145,7 @@ namespace CodeManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
             }
             finally
             {
@@ -224,7 +224,7 @@ namespace CodeManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
             }
             finally
             {
@@ -263,7 +263,7 @@ namespace CodeManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
             }
         }
 
@@ -306,7 +306,7 @@ namespace CodeManager
                     dtCode.Clear();
                     dtCode.ReadXml(System.AppDomain.CurrentDomain.BaseDirectory + "Code.xml");
 
-                    MessageBox.Show("Save Done.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                    MessageBox.Show("Save Done.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
 
                     lsbQueryCondition_Click(lsbEditorCategoryID, e);
                     lsbQueryCondition_Click(lsbQueryCondition, e);
@@ -315,7 +315,7 @@ namespace CodeManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
             }
         }
     }

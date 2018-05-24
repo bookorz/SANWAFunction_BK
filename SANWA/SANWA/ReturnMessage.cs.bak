@@ -15,7 +15,7 @@ namespace SANWA.Utility
             Error,
             Event,
             Information,
-            ReInformation,
+            Reinformation,
             Abnormal
         }
 
@@ -24,7 +24,5 @@ namespace SANWA.Utility
         public bool IsInterrupt = false;
         public string NodeAdr = "";
         public string Value = "";
-    	public string FinCommand = "";
-        public string CommandType = "";
     }
 }

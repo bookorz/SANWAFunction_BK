@@ -804,11 +804,11 @@
   <Table>
     <Category_ID>System</Category_ID>
     <Category_Description>系統訊息</Category_Description>
-    <Code_Name>Kawasaki</Code_Name>
+    <Code_Name>KAWASAKI</Code_Name>
     <Code_Type>EquipmentSupplier</Code_Type>
-    <Code_ID>Kawasaki</Code_ID>
-    <Code_Cause>Kawasaki</Code_Cause>
-    <Code_Cause_English>Kawasaki</Code_Cause_English>
+    <Code_ID>KAWASAKI</Code_ID>
+    <Code_Cause>KAWASAKI</Code_Cause>
+    <Code_Cause_English>KAWASAKI</Code_Cause_English>
   </Table>
   <Table>
     <Category_ID>System</Category_ID>
@@ -5390,5 +5390,518 @@
     <Code_ID>TDK</Code_ID>
     <Code_Cause>TDK</Code_Cause>
     <Code_Cause_English>TDK</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>TDK.LoadPort</Category_ID>
+    <Category_Description>LoadPort 命令</Category_Description>
+    <Code_Name>ALHCT</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>ALHCT</Code_ID>
+    <Code_Cause>取得Alarm筆數</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>TDK.LoadPort</Category_ID>
+    <Category_Description>LoadPort 命令</Category_Description>
+    <Code_Name>ALHIS</Code_Name>
+    <Code_Type>GET</Code_Type>
+    <Code_ID>ALHIS</Code_ID>
+    <Code_Cause>取回Alarm資料</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>System</Category_ID>
+    <Category_Description>系統訊息</Category_Description>
+    <Code_Name>TDK 命令格式</Code_Name>
+    <Code_Type>TDK.Command.Format</Code_Type>
+    <Code_ID>{0}:{1};</Code_ID>
+    <Code_Cause>TDK 命令格式</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports combined status.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>CSTA,</Code_ID>
+    <Code_Cause>Reports combined status.</Code_Cause>
+    <Code_Cause_English>Reports combined status.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Gets wafer.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>GETS,</Code_ID>
+    <Code_Cause>Gets wafer.</Code_Cause>
+    <Code_Cause_English>Gets wafer.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Puts wafer.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>PUTS,</Code_ID>
+    <Code_Cause>Puts wafer.</Code_Cause>
+    <Code_Cause_English>Puts wafer.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Executes compound action.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>GETS,PUTS,</Code_ID>
+    <Code_Cause>Executes compound action.</Code_Cause>
+    <Code_Cause_English>Executes compound action.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Aligns wafer.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>ALGN,</Code_ID>
+    <Code_Cause>Aligns wafer.</Code_Cause>
+    <Code_Cause_English>Aligns wafer.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Re-aligns wafer.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RALN,</Code_ID>
+    <Code_Cause>Re-aligns wafer.</Code_Cause>
+    <Code_Cause_English>Re-aligns wafer.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports offset value of aligner.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RAOF,</Code_ID>
+    <Code_Cause>Reports offset value of aligner.</Code_Cause>
+    <Code_Cause_English>Reports offset value of aligner.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Moves hand to wait position.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>HOMH,</Code_ID>
+    <Code_Cause>Moves hand to wait position.</Code_Cause>
+    <Code_Cause_English>Moves hand to wait position.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Moves all axes to home position.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>HOMA,</Code_ID>
+    <Code_Cause>Moves all axes to home position.</Code_Cause>
+    <Code_Cause_English>Moves all axes to home position.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Performs mapping.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>MAPS,</Code_ID>
+    <Code_Cause>Performs mapping.</Code_Cause>
+    <Code_Cause_English>Performs mapping.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports wafer presence.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>SENS,</Code_ID>
+    <Code_Cause>Reports wafer presence.</Code_Cause>
+    <Code_Cause_English>Reports wafer presence.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports robot condition.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>STAT,</Code_ID>
+    <Code_Cause>Reports robot condition.</Code_Cause>
+    <Code_Cause_English>Reports robot condition.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Turns servo ON.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>SERV,</Code_ID>
+    <Code_Cause>Turns servo ON.</Code_Cause>
+    <Code_Cause_English>Turns servo ON.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Turns servo OFF.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>STOP,</Code_ID>
+    <Code_Cause>Turns servo OFF.</Code_Cause>
+    <Code_Cause_English>Turns servo OFF.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Sets robot motion speed.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>SSPD,</Code_ID>
+    <Code_Cause>Sets robot motion speed.</Code_Cause>
+    <Code_Cause_English>Sets robot motion speed.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports set robot speed.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RSPD,</Code_ID>
+    <Code_Cause>Reports set robot speed.</Code_Cause>
+    <Code_Cause_English>Reports set robot speed.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Teaches program.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>TCHP,</Code_ID>
+    <Code_Cause>Teaches program.</Code_Cause>
+    <Code_Cause_English>Teaches program.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Sets robot mode.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>SMOD,</Code_ID>
+    <Code_Cause>Sets robot mode.</Code_Cause>
+    <Code_Cause_English>Sets robot mode.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports current robot mode settings.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RMOD,</Code_ID>
+    <Code_Cause>Reports current robot mode settings.</Code_Cause>
+    <Code_Cause_English>Reports current robot mode settings.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Moves to specified point.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>MOVP,</Code_ID>
+    <Code_Cause>Moves to specified point.</Code_Cause>
+    <Code_Cause_English>Moves to specified point.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Grips wafer.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>HOLD,</Code_ID>
+    <Code_Cause>Grips wafer.</Code_Cause>
+    <Code_Cause_English>Grips wafer.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Releases wafer.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RELS,</Code_ID>
+    <Code_Cause>Releases wafer.</Code_Cause>
+    <Code_Cause_English>Releases wafer.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports current position.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RPOS,</Code_ID>
+    <Code_Cause>Reports current position.</Code_Cause>
+    <Code_Cause_English>Reports current position.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports current coordinate position.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RXYZ,</Code_ID>
+    <Code_Cause>Reports current coordinate position.</Code_Cause>
+    <Code_Cause_English>Reports current coordinate position.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports the nearest station.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RNST,</Code_ID>
+    <Code_Cause>Reports the nearest station.</Code_Cause>
+    <Code_Cause_English>Reports the nearest station.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Moves to absolute position.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>MOVA,</Code_ID>
+    <Code_Cause>Moves to absolute position.</Code_Cause>
+    <Code_Cause_English>Moves to absolute position.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Moves to relative position.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>MOVR,</Code_ID>
+    <Code_Cause>Moves to relative position.</Code_Cause>
+    <Code_Cause_English>Moves to relative position.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports taught position.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RTCH,</Code_ID>
+    <Code_Cause>Reports taught position.</Code_Cause>
+    <Code_Cause_English>Reports taught position.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Sets taught position.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>STCH,</Code_ID>
+    <Code_Cause>Sets taught position.</Code_Cause>
+    <Code_Cause_English>Sets taught position.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Cancels taught position.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>CTCH,</Code_ID>
+    <Code_Cause>Cancels taught position.</Code_Cause>
+    <Code_Cause_English>Cancels taught position.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports taught position in XYZ coordinate values. </Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RTXY,</Code_ID>
+    <Code_Cause>Reports taught position in XYZ coordinate values. </Code_Cause>
+    <Code_Cause_English>Reports taught position in XYZ coordinate values. </Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Sets taught position in XYZ coordinate values. </Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>STXY,</Code_ID>
+    <Code_Cause>Sets taught position in XYZ coordinate values. </Code_Cause>
+    <Code_Cause_English>Sets taught position in XYZ coordinate values. </Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Sets parameters.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>SPRM,</Code_ID>
+    <Code_Cause>Sets parameters.</Code_Cause>
+    <Code_Cause_English>Sets parameters.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports parameters.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RPRM,</Code_ID>
+    <Code_Cause>Reports parameters.</Code_Cause>
+    <Code_Cause_English>Reports parameters.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Sets station parameters.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>SPRS,</Code_ID>
+    <Code_Cause>Sets station parameters.</Code_Cause>
+    <Code_Cause_English>Sets station parameters.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports station parameters.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RPRS,</Code_ID>
+    <Code_Cause>Reports station parameters.</Code_Cause>
+    <Code_Cause_English>Reports station parameters.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports error history.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>QERR,</Code_ID>
+    <Code_Cause>Reports error history.</Code_Cause>
+    <Code_Cause_English>Reports error history.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports the latest mapping result.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>QMAP,</Code_ID>
+    <Code_Cause>Reports the latest mapping result.</Code_Cause>
+    <Code_Cause_English>Reports the latest mapping result.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Sets time and date.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>STIM,</Code_ID>
+    <Code_Cause>Sets time and date.</Code_Cause>
+    <Code_Cause_English>Sets time and date.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports time and date.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RTIM,</Code_ID>
+    <Code_Cause>Reports time and date.</Code_Cause>
+    <Code_Cause_English>Reports time and date.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports robot ID.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>VERM,</Code_ID>
+    <Code_Cause>Reports robot ID.</Code_Cause>
+    <Code_Cause_English>Reports robot ID.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports controller ID.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>VERH,</Code_ID>
+    <Code_Cause>Reports controller ID.</Code_Cause>
+    <Code_Cause_English>Reports controller ID.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Robot</Category_ID>
+    <Category_Description>Robot 命令</Category_Description>
+    <Code_Name>Reports version of software.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>VERS,</Code_ID>
+    <Code_Cause>Reports version of software.</Code_Cause>
+    <Code_Cause_English>Reports version of software.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>System</Category_ID>
+    <Category_Description>系統訊息</Category_Description>
+    <Code_Name>KAWASAKI</Code_Name>
+    <Code_Type>KAWASAKI.Command.Format</Code_Type>
+    <Code_ID>&lt;{0}&gt;{1}</Code_ID>
+    <Code_Cause>KAWASAKI</Code_Cause>
+    <Code_Cause_English />
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Aligner</Category_ID>
+    <Category_Description>Aligner 命令</Category_Description>
+    <Code_Name>Reports combined status.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>CSTA,</Code_ID>
+    <Code_Cause>Reports combined status.</Code_Cause>
+    <Code_Cause_English>Reports combined status.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Aligner</Category_ID>
+    <Category_Description>Aligner 命令</Category_Description>
+    <Code_Name>Aligns wafer.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>ALGN,</Code_ID>
+    <Code_Cause>Aligns wafer.</Code_Cause>
+    <Code_Cause_English>Aligns wafer.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Aligner</Category_ID>
+    <Category_Description>Aligner 命令</Category_Description>
+    <Code_Name>Reports offset value of aligner.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RAOF,</Code_ID>
+    <Code_Cause>Reports offset value of aligner.</Code_Cause>
+    <Code_Cause_English>Reports offset value of aligner.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Aligner</Category_ID>
+    <Category_Description>Aligner 命令</Category_Description>
+    <Code_Name>Turns servo ON.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>SERV,</Code_ID>
+    <Code_Cause>Turns servo ON.</Code_Cause>
+    <Code_Cause_English>Turns servo ON.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Aligner</Category_ID>
+    <Category_Description>Aligner 命令</Category_Description>
+    <Code_Name>Turns servo OFF.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>STOP,</Code_ID>
+    <Code_Cause>Turns servo OFF.</Code_Cause>
+    <Code_Cause_English>Turns servo OFF.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Aligner</Category_ID>
+    <Category_Description>Aligner 命令</Category_Description>
+    <Code_Name>Reports set robot speed.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RSPD,</Code_ID>
+    <Code_Cause>Reports set robot speed.</Code_Cause>
+    <Code_Cause_English>Reports set robot speed.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Aligner</Category_ID>
+    <Category_Description>Aligner 命令</Category_Description>
+    <Code_Name>Grips wafer.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>HOLD,</Code_ID>
+    <Code_Cause>Grips wafer.</Code_Cause>
+    <Code_Cause_English>Grips wafer.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Aligner</Category_ID>
+    <Category_Description>Aligner 命令</Category_Description>
+    <Code_Name>Releases wafer.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>RELS,</Code_ID>
+    <Code_Cause>Releases wafer.</Code_Cause>
+    <Code_Cause_English>Releases wafer.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Aligner</Category_ID>
+    <Category_Description>Aligner 命令</Category_Description>
+    <Code_Name>Moves to absolute position.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>MOVA,</Code_ID>
+    <Code_Cause>Moves to absolute position.</Code_Cause>
+    <Code_Cause_English>Moves to absolute position.</Code_Cause_English>
+  </Table>
+  <Table>
+    <Category_ID>KAWASAKI.Aligner</Category_ID>
+    <Category_Description>Aligner 命令</Category_Description>
+    <Code_Name>Moves to relative position.</Code_Name>
+    <Code_Type>CMD</Code_Type>
+    <Code_ID>MOVR,</Code_ID>
+    <Code_Cause>Moves to relative position.</Code_Cause>
+    <Code_Cause_English>Moves to relative position.</Code_Cause_English>
   </Table>
 </DocumentElement>

@@ -12,7 +12,7 @@ namespace CodeManager.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.6.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -46,7 +46,9 @@ namespace CodeManager.Properties {
         [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
 <ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
   <string>SANWA.Robot,Robot 命令</string>
+  <string>KAWASAKI.Robot,Robot 命令</string>
   <string>SANWA.Aligner,Aligner 命令</string>
+  <string>KAWASAKI.Aligner,Aligner 命令</string>
   <string>COGNEX.OCR,OCR 命令</string>
   <string>HST.OCR,OCR 命令</string>
   <string>TDK.LoadPort,LoadPort 命令</string>

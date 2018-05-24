@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="nmodbuspc">
+      <HintPath>..\..\nmodbuspc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows" />
@@ -49,8 +55,10 @@
     <Compile Include="ContainerUI.cs" />
     <Compile Include="ControllingUI.cs" />
     <Compile Include="Decoder.cs" />
+    <Compile Include="Encoder_DIO.cs" />
     <Compile Include="Encoder_LoadPort.cs" />
     <Compile Include="Encoder_OCR.cs" />
+    <Compile Include="FTP.cs" />
     <Compile Include="IEncoder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Encoder_Robot.cs" />

@@ -10,6 +10,13 @@ namespace SANWA.Utility
 {
     public class ContainerSet
     {
+        //public static List<string> vsMessage;
+
+        //public ContainerSet()
+        //{
+        //    vsMessage = new List<string>();
+        //}
+
         public void TableFormatting(ref DataTable dt, string TableName, string[] Columns)
         {
             try

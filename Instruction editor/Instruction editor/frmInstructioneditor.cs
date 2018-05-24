@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SANWA;
+using Modbus.Device;
+using System.Threading;
+using System.Net.Sockets;
 
 namespace Instruction_editor
 {
@@ -29,6 +32,10 @@ namespace Instruction_editor
 
         private string strCommandFormat = string.Empty;
         private string strEqpAssembly = string.Empty;
+
+        private TcpClient tcpClient;// = new TcpClient("192.168.255.1", 502);
+        private Thread SckTd;
+        private SANWA.Utility.EncoderDIO.ICPcon iCPcon;
 
         private void frmInstructionEditor_Load(object sender, EventArgs e)
         {
@@ -80,7 +87,7 @@ namespace Instruction_editor
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
             }
             finally
             {
@@ -133,6 +140,7 @@ namespace Instruction_editor
 
                 txbParameterID.Text = string.Empty;
                 txbParameterDescription.Text = string.Empty;
+                txbEditorParameterData.Text = string.Empty;
                 nudMAXValue.Value = 0;
                 nudMINValue.Value = 0;
                 nudValueLength.Value = 0;
@@ -141,7 +149,7 @@ namespace Instruction_editor
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
             }
         }
 
@@ -153,32 +161,35 @@ namespace Instruction_editor
                 lsbCreateCommand.SelectedIndex < 0 
                 )
             {
-                MessageBox.Show(@"Missing condition ""Equipment Type"" ""Supplier"" ""Command Type"" ""Command"".", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show(@"Missing condition ""Equipment Type"" ""Supplier"" ""Command Type"" ""Command"".", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
                 return;
             }
 
             if (txbParameterID.Text.Trim().Equals(string.Empty))
             {
-                //MessageBox.Show("Missing Parameter ID.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                //MessageBox.Show("Missing Parameter ID.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
                 //return;
                 txbParameterID.Text = "Null";
             }
 
-            if (!(txbParameterID.Text.Trim().Equals("Null")) && (nudMAXValue.Value == nudMINValue.Value))
+            if (!rdbEditorParameterData.Checked)
             {
-                MessageBox.Show("Max value = Min value.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
-                return;
+                if (!(txbParameterID.Text.Trim().Equals("Null")) && (nudMAXValue.Value == nudMINValue.Value))
+                {
+                    MessageBox.Show("Max value = Min value.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
+                    return;
+                }
             }
 
             if (!(txbParameterID.Text.Trim().Equals("Null")) && ((nudDefaultValue.Value > nudMAXValue.Value) || (nudDefaultValue.Value < nudMINValue.Value)))
             {
-                MessageBox.Show("Default value > Max value or Default value < Min value.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show("Default value > Max value or Default value < Min value.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
                 return;
             }
 
             if (strCommandFormat.Equals(string.Empty))
             {
-                MessageBox.Show("Command format error.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show("Command format error.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
                 return;
             }
 
@@ -203,7 +214,7 @@ namespace Instruction_editor
 
                 if (drsTemp.Length > 0)
                 {
-                    MessageBox.Show("Repeat Parameter.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                    MessageBox.Show("Repeat Parameter.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
                     return;
                 }
 
@@ -221,7 +232,7 @@ namespace Instruction_editor
 
                     if (rdbEditorParameterData.Checked || txbParameterID.Text.Equals("Null"))
                     {
-                        drsTemp[0]["Data_Value"] = txbParameterDescription.Text.Trim();
+                        drsTemp[0]["Data_Value"] = txbEditorParameterData.Text.Trim();
                         drsTemp[0]["Min_Value"] = string.Empty;
                         drsTemp[0]["Max_Value"] = string.Empty;
                         drsTemp[0]["Default_Value"] = string.Empty;
@@ -247,8 +258,11 @@ namespace Instruction_editor
                                                                      ).Length;
 
                     dvTemp = new DataView(dtParameterList);
-                    dvTemp.RowFilter = "Command_Type = '" + lsbCreateCommandType.Text + "'";
+                    dvTemp.RowFilter = "Equipment_Type = '" + lsbCreateEqpType.Text + "' AND " +
+                                        "Equipment_Supplier = '" + lsbCreateEqpSupplier.Text + "' AND " +
+                                        "Command_Type = '" + lsbCreateCommandType.Text + "'";
                     dtTemp = dvTemp.ToTable(true, new string[] { "Equipment_Type", "Equipment_Supplier", "Command_Type", "Command_ID", "Command_Order" });
+
 
                     if (dtTemp.Rows.Count == 0 || Convert.ToInt32(dtTemp.Compute("max(Command_Order)", string.Empty)) == 0)
                     {
@@ -277,7 +291,7 @@ namespace Instruction_editor
                             break;
 
                         case "KAWASAKI":
-                            //drTemp["Command_Format"] = string.Format(strCommandFormat, "{0}", "{1}", lsbCreateCommandType.Text, lsbCreateCommand.Text.PadRight(5, '_'));
+                            drTemp["Command_Format"] = string.Format(strCommandFormat, lsbCreateCommand.Text + "{0}", "{1}");
                             break;
 
                         case "TDK":
@@ -295,7 +309,7 @@ namespace Instruction_editor
 
                     if (rdbEditorParameterData.Checked || txbParameterID.Text.Equals("Null"))
                     {
-                        drTemp["Data_Value"] = txbParameterDescription.Text.Trim();
+                        drTemp["Data_Value"] = txbEditorParameterData.Text.Trim();
                         drTemp["Min_Value"] = string.Empty;
                         drTemp["Max_Value"] = string.Empty;
                         drTemp["Default_Value"] = string.Empty;
@@ -330,19 +344,20 @@ namespace Instruction_editor
 
                 txbParameterID.Text = string.Empty;
                 txbParameterDescription.Text = string.Empty;
+                txbEditorParameterData.Text = string.Empty;
                 nudMAXValue.Value = 0;
                 nudMINValue.Value = 0;
                 nudValueLength.Value = 0;
                 nudDefaultValue.Value = 0;
                 chbIsFill.Checked = false;
 
-                MessageBox.Show("Save Done.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show("Save Done.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
 
                 lsbCreateEqpType_Click(this, e);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
             }
         }
 
@@ -383,7 +398,7 @@ namespace Instruction_editor
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
             }
         }
 
@@ -415,7 +430,7 @@ namespace Instruction_editor
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
             }
         }
 
@@ -505,16 +520,73 @@ namespace Instruction_editor
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show(ex.ToString(), "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SANWA.Utility.Encoder encoder = new SANWA.Utility.Encoder("TDK");
+            //SANWA.Utility.FTP fTP = new SANWA.Utility.FTP("192.168.0.5", "21", string.Empty, "admin", string.Empty);
+            //string path = fTP.Get("Image.bmp", "Image.bmp", "D:\\temp\\");
 
-            encoder.LoadPort.Indicator(SANWA.Utility.EncoderLoadPort.CommandType.Finish, SANWA.Utility.EncoderLoadPort.IndicatorType.Status01, SANWA.Utility.EncoderLoadPort.IndicatorStatus.Flashes);
+            SANWA.Utility.Decoder decoder = new SANWA.Utility.Decoder("KAWASAKICONTROLLER");
+            decoder.GetMessage("<MesID,Error,Error#,DeviceCode,ErrorMessage>CS[CRLF] ");
 
+            //try
+            //{
+
+            //    iCPcon = new SANWA.Utility.EncoderDIO.ICPcon((ushort)8, ModbusIpMaster.CreateIp(tcpClient));
+
+            //    if (SckTd == null)
+            //    {
+            //        SckTd = new Thread(ConnectTest);
+            //        SckTd.IsBackground = true;
+            //        SckTd.Start();
+            //    }
+
+            //    bool[] status = iCPcon.ReadInputs(1, 1);
+
+            //    //bool[] status1 = iCPcon.ReadCoils(1, 1);
+
+            //    iCPcon.WriteSingleCoil(1, 7, true);
+
+            //    bool[] status1 = iCPcon.ReadCoils(1, 1);
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
+        }
+
+        private void ConnectTest()
+        {
+            try
+            {
+                tcpClient.Client.Poll(0, SelectMode.SelectRead);
+                byte[] testRecByte = new byte[1];
+
+                while (tcpClient.Connected)
+                {
+                    if (tcpClient.Available == 0)
+
+                    {
+                        bool[] status = iCPcon.ReadInputs(1, 1);
+
+                        ////使用Peek，測試client是否還有連線
+                        //if (tcpClient.Client.Receive(testRecByte, SocketFlags.Peek) == 0)
+                        //    break;
+
+                        //Thread.Sleep(20);
+                        continue;
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

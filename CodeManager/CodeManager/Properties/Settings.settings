@@ -18,7 +18,9 @@
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;string&gt;SANWA.Robot,Robot 命令&lt;/string&gt;
+  &lt;string&gt;KAWASAKI.Robot,Robot 命令&lt;/string&gt;
   &lt;string&gt;SANWA.Aligner,Aligner 命令&lt;/string&gt;
+  &lt;string&gt;KAWASAKI.Aligner,Aligner 命令&lt;/string&gt;
   &lt;string&gt;COGNEX.OCR,OCR 命令&lt;/string&gt;
   &lt;string&gt;HST.OCR,OCR 命令&lt;/string&gt;
   &lt;string&gt;TDK.LoadPort,LoadPort 命令&lt;/string&gt;

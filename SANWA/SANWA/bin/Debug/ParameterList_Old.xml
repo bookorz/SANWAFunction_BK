@@ -5880,7 +5880,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>CombinedDeviceStatus</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -5900,7 +5900,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>GetWafer</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -5920,7 +5920,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>GetWafer</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -5940,7 +5940,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>GetWafer</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -5960,7 +5960,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value>1</Default_Value>
     <Values_length>1</Values_length>
     <Is_Fill>N</Is_Fill>
-    <Action_Function>GetWafer</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -5980,7 +5980,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>PutWafer</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6000,7 +6000,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>PutWafer</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6020,7 +6020,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>PutWafer</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6040,7 +6040,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value>1</Default_Value>
     <Values_length>2</Values_length>
     <Is_Fill>N</Is_Fill>
-    <Action_Function>PutWafer</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6060,7 +6060,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>Home</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6080,7 +6080,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>HOMEToOrgin</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6100,7 +6100,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>Mapping</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6120,7 +6120,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>Mapping</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6140,7 +6140,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>WaferStatus</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6160,7 +6160,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>WaferStatus</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6180,7 +6180,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>DeviceStatus</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6200,7 +6200,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>ExcitationOn</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6220,7 +6220,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>ExcitationOff</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6240,7 +6240,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>DeviceStatusSpeed</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6260,7 +6260,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value>1</Default_Value>
     <Values_length>3</Values_length>
     <Is_Fill>N</Is_Fill>
-    <Action_Function>DeviceStatusSpeed</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6280,7 +6280,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>DeviceStatusSpeedGet</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6300,7 +6300,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>Teach</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6320,7 +6320,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>Teach</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6340,7 +6340,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>Teach</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6360,7 +6360,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value>1</Default_Value>
     <Values_length>2</Values_length>
     <Is_Fill>N</Is_Fill>
-    <Action_Function>Teach</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6380,7 +6380,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>Mode</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6400,7 +6400,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>ModeGet</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6420,7 +6420,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>MovePosition</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6440,7 +6440,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>MovePosition</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6460,7 +6460,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>MovePosition</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6480,7 +6480,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value>1</Default_Value>
     <Values_length>2</Values_length>
     <Is_Fill>N</Is_Fill>
-    <Action_Function>MovePosition</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6500,7 +6500,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>MovePosition</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6520,7 +6520,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>WaferHold</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6540,7 +6540,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>WaferHold</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6560,7 +6560,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>WaferRelease</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6580,7 +6580,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>WaferRelease</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6600,7 +6600,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>CurrentPosition</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6620,7 +6620,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>CurrentCoordinatePosition</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6640,7 +6640,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>CurrentCoordinatePosition</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6660,7 +6660,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>NearestStation</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6680,7 +6680,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>NearestStation</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6700,7 +6700,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>MoveDirect</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6720,7 +6720,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>MoveDirect</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6740,7 +6740,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value>0</Default_Value>
     <Values_length>4</Values_length>
     <Is_Fill>N</Is_Fill>
-    <Action_Function>MoveDirect</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6760,7 +6760,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>MoveRelativePosition</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6780,7 +6780,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>MoveRelativePosition</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6800,7 +6800,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value>0</Default_Value>
     <Values_length>4</Values_length>
     <Is_Fill>N</Is_Fill>
-    <Action_Function>MoveRelativePosition</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6820,7 +6820,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>TeachGet</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6840,7 +6840,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>TeachGet</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6852,15 +6852,15 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Command_Order>25</Command_Order>
     <Parameters_Amount>01</Parameters_Amount>
     <Parameter_Order>01</Parameter_Order>
-    <Parameter_ID>RobotCode</Parameter_ID>
-    <Parameter_Description>RobotCode</Parameter_Description>
-    <Data_Value>R1,R2</Data_Value>
+    <Parameter_ID>Null</Parameter_ID>
+    <Parameter_Description />
+    <Data_Value />
     <Min_Value />
     <Max_Value />
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>TeachS</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6880,7 +6880,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>TeachCancel</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6900,7 +6900,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>TeachCancel</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6920,7 +6920,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>TeachXYZGet</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6940,7 +6940,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>TeachXYZGet</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6960,7 +6960,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>TeachXYZ</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -6980,7 +6980,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>TeachXYZ</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7000,7 +7000,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>TeachXYZ</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7020,7 +7020,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value>0</Default_Value>
     <Values_length>4</Values_length>
     <Is_Fill>N</Is_Fill>
-    <Action_Function>TeachXYZ</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7040,7 +7040,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value>0</Default_Value>
     <Values_length>4</Values_length>
     <Is_Fill>N</Is_Fill>
-    <Action_Function>TeachXYZ</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7060,7 +7060,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value>0</Default_Value>
     <Values_length>4</Values_length>
     <Is_Fill>N</Is_Fill>
-    <Action_Function>TeachXYZ</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7080,7 +7080,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value>0</Default_Value>
     <Values_length>4</Values_length>
     <Is_Fill>N</Is_Fill>
-    <Action_Function>TeachXYZ</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7100,7 +7100,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>Parameter</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7120,7 +7120,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>Parameter</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7140,7 +7140,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>ParameterGet</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7160,7 +7160,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>ParameterStation</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7180,7 +7180,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>ParameterStation</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7200,7 +7200,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>ParameterStation</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7220,7 +7220,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>ParameterStation</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7240,7 +7240,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>ParameterStationGet</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7260,7 +7260,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>ParameterStationGet</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7280,7 +7280,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>ParameterStationGet</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7300,7 +7300,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>ErrorList</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7320,7 +7320,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value>1</Default_Value>
     <Values_length>2</Values_length>
     <Is_Fill>N</Is_Fill>
-    <Action_Function>ErrorList</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7340,7 +7340,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>MappingGet</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7360,7 +7360,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>MappingGet</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7380,7 +7380,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>DateTime</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7400,7 +7400,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>DateTimeGet</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7420,7 +7420,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>RobotVersionGet</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7440,7 +7440,7 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>RobotHardwareVersion</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
     <Equipment_Type>Robot</Equipment_Type>
@@ -7460,341 +7460,21 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Default_Value />
     <Values_length />
     <Is_Fill />
-    <Action_Function>RobotSoftwareVersion</Action_Function>
+    <Action_Function />
   </Table>
   <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
+    <Equipment_Type>Robot</Equipment_Type>
     <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
     <Command_Type>CMD</Command_Type>
-    <Command_ID>CSTA,</Command_ID>
-    <Command_Format>&lt;CSTA,{0}&gt;{1}</Command_Format>
-    <Command_Name>Reports combined status.</Command_Name>
-    <Command_Order>01</Command_Order>
-    <Parameters_Amount>01</Parameters_Amount>
-    <Parameter_Order>01</Parameter_Order>
-    <Parameter_ID>DeviceCode</Parameter_ID>
-    <Parameter_Description>DeviceCode</Parameter_Description>
-    <Data_Value>R1,R2</Data_Value>
-    <Min_Value />
-    <Max_Value />
-    <Default_Value />
-    <Values_length />
-    <Is_Fill />
-    <Action_Function>CombinedDeviceStatus</Action_Function>
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>SERV,</Command_ID>
-    <Command_Format>&lt;SERV,{0}&gt;{1}</Command_Format>
-    <Command_Name>Turns servo ON.</Command_Name>
-    <Command_Order>09</Command_Order>
-    <Parameters_Amount>01</Parameters_Amount>
-    <Parameter_Order>01</Parameter_Order>
-    <Parameter_ID>DeviceCode</Parameter_ID>
-    <Parameter_Description>DeviceCode</Parameter_Description>
-    <Data_Value>R1,R2</Data_Value>
-    <Min_Value />
-    <Max_Value />
-    <Default_Value />
-    <Values_length />
-    <Is_Fill />
-    <Action_Function>ExcitationOn</Action_Function>
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>STOP,</Command_ID>
-    <Command_Format>&lt;STOP,{0}&gt;{1}</Command_Format>
-    <Command_Name>Turns servo OFF.</Command_Name>
-    <Command_Order>10</Command_Order>
-    <Parameters_Amount>01</Parameters_Amount>
-    <Parameter_Order>01</Parameter_Order>
-    <Parameter_ID>DeviceCode</Parameter_ID>
-    <Parameter_Description>DeviceCode</Parameter_Description>
-    <Data_Value>R1,R2</Data_Value>
-    <Min_Value />
-    <Max_Value />
-    <Default_Value />
-    <Values_length />
-    <Is_Fill />
-    <Action_Function>ExcitationOff</Action_Function>
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>RSPD,</Command_ID>
-    <Command_Format>&lt;RSPD,{0}&gt;{1}</Command_Format>
-    <Command_Name>Reports set robot speed.</Command_Name>
-    <Command_Order>12</Command_Order>
-    <Parameters_Amount>01</Parameters_Amount>
-    <Parameter_Order>01</Parameter_Order>
-    <Parameter_ID>DeviceCode</Parameter_ID>
-    <Parameter_Description>DeviceCode</Parameter_Description>
-    <Data_Value>R1,R2</Data_Value>
-    <Min_Value />
-    <Max_Value />
-    <Default_Value />
-    <Values_length />
-    <Is_Fill />
-    <Action_Function>DeviceStatusSpeedGet</Action_Function>
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>HOLD,</Command_ID>
-    <Command_Format>&lt;HOLD,{0}&gt;{1}</Command_Format>
-    <Command_Name>Grips wafer.</Command_Name>
-    <Command_Order>17</Command_Order>
+    <Command_ID>RALN,</Command_ID>
+    <Command_Format>&lt;RALN,{0}&gt;{1}</Command_Format>
+    <Command_Name>Re-aligns wafer.</Command_Name>
+    <Command_Order>40</Command_Order>
     <Parameters_Amount>01</Parameters_Amount>
     <Parameter_Order>01</Parameter_Order>
     <Parameter_ID>RobotCode</Parameter_ID>
     <Parameter_Description>RobotCode</Parameter_Description>
     <Data_Value>R1,R2</Data_Value>
-    <Min_Value />
-    <Max_Value />
-    <Default_Value />
-    <Values_length />
-    <Is_Fill />
-    <Action_Function>WaferHold</Action_Function>
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>HOLD,</Command_ID>
-    <Command_Format>&lt;HOLD,{0}&gt;{1}</Command_Format>
-    <Command_Name>Grips wafer.</Command_Name>
-    <Command_Order>17</Command_Order>
-    <Parameters_Amount>02</Parameters_Amount>
-    <Parameter_Order>02</Parameter_Order>
-    <Parameter_ID>HandCode</Parameter_ID>
-    <Parameter_Description>HandCode</Parameter_Description>
-    <Data_Value>H1,H2,HA</Data_Value>
-    <Min_Value />
-    <Max_Value />
-    <Default_Value />
-    <Values_length />
-    <Is_Fill />
-    <Action_Function>WaferHold</Action_Function>
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>RELS,</Command_ID>
-    <Command_Format>&lt;RELS,{0}&gt;{1}</Command_Format>
-    <Command_Name>Releases wafer.</Command_Name>
-    <Command_Order>18</Command_Order>
-    <Parameters_Amount>01</Parameters_Amount>
-    <Parameter_Order>01</Parameter_Order>
-    <Parameter_ID>RobotCode</Parameter_ID>
-    <Parameter_Description>RobotCode</Parameter_Description>
-    <Data_Value>R1,R2</Data_Value>
-    <Min_Value />
-    <Max_Value />
-    <Default_Value />
-    <Values_length />
-    <Is_Fill />
-    <Action_Function>WaferRelease</Action_Function>
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>RELS,</Command_ID>
-    <Command_Format>&lt;RELS,{0}&gt;{1}</Command_Format>
-    <Command_Name>Releases wafer.</Command_Name>
-    <Command_Order>18</Command_Order>
-    <Parameters_Amount>02</Parameters_Amount>
-    <Parameter_Order>02</Parameter_Order>
-    <Parameter_ID>HandCode</Parameter_ID>
-    <Parameter_Description>HandCode</Parameter_Description>
-    <Data_Value>H1,H2,HA</Data_Value>
-    <Min_Value />
-    <Max_Value />
-    <Default_Value />
-    <Values_length />
-    <Is_Fill />
-    <Action_Function>WaferRelease</Action_Function>
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>MOVA,</Command_ID>
-    <Command_Format>&lt;MOVA,{0}&gt;{1}</Command_Format>
-    <Command_Name>Moves to absolute position.</Command_Name>
-    <Command_Order>22</Command_Order>
-    <Parameters_Amount>01</Parameters_Amount>
-    <Parameter_Order>01</Parameter_Order>
-    <Parameter_ID>DeviceCode</Parameter_ID>
-    <Parameter_Description>DeviceCode</Parameter_Description>
-    <Data_Value>R1,R2</Data_Value>
-    <Min_Value />
-    <Max_Value />
-    <Default_Value />
-    <Values_length />
-    <Is_Fill />
-    <Action_Function>MoveDirect</Action_Function>
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>MOVA,</Command_ID>
-    <Command_Format>&lt;MOVA,{0}&gt;{1}</Command_Format>
-    <Command_Name>Moves to absolute position.</Command_Name>
-    <Command_Order>22</Command_Order>
-    <Parameters_Amount>02</Parameters_Amount>
-    <Parameter_Order>02</Parameter_Order>
-    <Parameter_ID>JointCode</Parameter_ID>
-    <Parameter_Description>JointCode</Parameter_Description>
-    <Data_Value>J1,J2,J3,J4,J6,J7,LX0,LY0,LX1,LX2,LY1,LY2,LR1,LR2</Data_Value>
-    <Min_Value />
-    <Max_Value />
-    <Default_Value />
-    <Values_length />
-    <Is_Fill />
-    <Action_Function>MoveDirect</Action_Function>
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>MOVA,</Command_ID>
-    <Command_Format>&lt;MOVA,{0}&gt;{1}</Command_Format>
-    <Command_Name>Moves to absolute position.</Command_Name>
-    <Command_Order>22</Command_Order>
-    <Parameters_Amount>03</Parameters_Amount>
-    <Parameter_Order>03</Parameter_Order>
-    <Parameter_ID>MoveData</Parameter_ID>
-    <Parameter_Description>MoveData</Parameter_Description>
-    <Data_Value />
-    <Min_Value>-9999</Min_Value>
-    <Max_Value>9999</Max_Value>
-    <Default_Value>0</Default_Value>
-    <Values_length>4</Values_length>
-    <Is_Fill>N</Is_Fill>
-    <Action_Function>MoveDirect</Action_Function>
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>MOVR,</Command_ID>
-    <Command_Format>&lt;MOVR,{0}&gt;{1}</Command_Format>
-    <Command_Name>Moves to relative position.</Command_Name>
-    <Command_Order>23</Command_Order>
-    <Parameters_Amount>01</Parameters_Amount>
-    <Parameter_Order>01</Parameter_Order>
-    <Parameter_ID>DeviceCode</Parameter_ID>
-    <Parameter_Description>DeviceCode</Parameter_Description>
-    <Data_Value>R1,R2</Data_Value>
-    <Min_Value />
-    <Max_Value />
-    <Default_Value />
-    <Values_length />
-    <Is_Fill />
-    <Action_Function>MoveRelativePosition</Action_Function>
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>MOVR,</Command_ID>
-    <Command_Format>&lt;MOVR,{0}&gt;{1}</Command_Format>
-    <Command_Name>Moves to relative position.</Command_Name>
-    <Command_Order>23</Command_Order>
-    <Parameters_Amount>02</Parameters_Amount>
-    <Parameter_Order>02</Parameter_Order>
-    <Parameter_ID>JointCode</Parameter_ID>
-    <Parameter_Description>JointCode</Parameter_Description>
-    <Data_Value>J1,J2,J3,J4,J6,J7,LX0,LY0,LX1,LX2,LY1,LY2,LR1,LR2</Data_Value>
-    <Min_Value />
-    <Max_Value />
-    <Default_Value />
-    <Values_length />
-    <Is_Fill />
-    <Action_Function>MoveRelativePosition</Action_Function>
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>MOVR,</Command_ID>
-    <Command_Format>&lt;MOVR,{0}&gt;{1}</Command_Format>
-    <Command_Name>Moves to relative position.</Command_Name>
-    <Command_Order>23</Command_Order>
-    <Parameters_Amount>03</Parameters_Amount>
-    <Parameter_Order>03</Parameter_Order>
-    <Parameter_ID>MoveData</Parameter_ID>
-    <Parameter_Description>MoveData</Parameter_Description>
-    <Data_Value />
-    <Min_Value>-9999</Min_Value>
-    <Max_Value>9999</Max_Value>
-    <Default_Value>0</Default_Value>
-    <Values_length>4</Values_length>
-    <Is_Fill>N</Is_Fill>
-    <Action_Function>MoveRelativePosition</Action_Function>
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>ALGN,</Command_ID>
-    <Command_Format>&lt;ALGN,{0}&gt;{1}</Command_Format>
-    <Command_Name>Aligns wafer.</Command_Name>
-    <Command_Order>24</Command_Order>
-    <Parameters_Amount>01</Parameters_Amount>
-    <Parameter_Order>01</Parameter_Order>
-    <Parameter_ID>AlignerCode</Parameter_ID>
-    <Parameter_Description>AlignerCode</Parameter_Description>
-    <Data_Value>A1</Data_Value>
-    <Min_Value />
-    <Max_Value />
-    <Default_Value />
-    <Values_length />
-    <Is_Fill />
-    <Action_Function />
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>ALGN,</Command_ID>
-    <Command_Format>&lt;ALGN,{0}&gt;{1}</Command_Format>
-    <Command_Name>Aligns wafer.</Command_Name>
-    <Command_Order>24</Command_Order>
-    <Parameters_Amount>02</Parameters_Amount>
-    <Parameter_Order>02</Parameter_Order>
-    <Parameter_ID>AlignmentAngle</Parameter_ID>
-    <Parameter_Description>AlignmentAngle</Parameter_Description>
-    <Data_Value />
-    <Min_Value>-180</Min_Value>
-    <Max_Value>180</Max_Value>
-    <Default_Value>0</Default_Value>
-    <Values_length>3</Values_length>
-    <Is_Fill>N</Is_Fill>
-    <Action_Function />
-  </Table>
-  <Table>
-    <Equipment_Type>Aligner</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>RAOF,</Command_ID>
-    <Command_Format>&lt;RAOF,{0}&gt;{1}</Command_Format>
-    <Command_Name>Reports offset value of aligner.</Command_Name>
-    <Command_Order>25</Command_Order>
-    <Parameters_Amount>01</Parameters_Amount>
-    <Parameter_Order>01</Parameter_Order>
-    <Parameter_ID>AlignerCode</Parameter_ID>
-    <Parameter_Description>AlignerCode</Parameter_Description>
-    <Data_Value>A1</Data_Value>
     <Min_Value />
     <Max_Value />
     <Default_Value />
@@ -7806,12 +7486,32 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Equipment_Type>Robot</Equipment_Type>
     <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
     <Command_Type>CMD</Command_Type>
-    <Command_ID>STCH,</Command_ID>
-    <Command_Format>&lt;STCH,{0}&gt;{1}</Command_Format>
-    <Command_Name>Sets taught position.</Command_Name>
-    <Command_Order>39</Command_Order>
+    <Command_ID>RALN,</Command_ID>
+    <Command_Format>&lt;RALN,{0}&gt;{1}</Command_Format>
+    <Command_Name>Re-aligns wafer.</Command_Name>
+    <Command_Order>40</Command_Order>
     <Parameters_Amount>02</Parameters_Amount>
     <Parameter_Order>02</Parameter_Order>
+    <Parameter_ID>HandCode</Parameter_ID>
+    <Parameter_Description>HandCode</Parameter_Description>
+    <Data_Value>H1,H2,HA</Data_Value>
+    <Min_Value />
+    <Max_Value />
+    <Default_Value />
+    <Values_length />
+    <Is_Fill />
+    <Action_Function />
+  </Table>
+  <Table>
+    <Equipment_Type>Robot</Equipment_Type>
+    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
+    <Command_Type>CMD</Command_Type>
+    <Command_ID>RALN,</Command_ID>
+    <Command_Format>&lt;RALN,{0}&gt;{1}</Command_Format>
+    <Command_Name>Re-aligns wafer.</Command_Name>
+    <Command_Order>40</Command_Order>
+    <Parameters_Amount>03</Parameters_Amount>
+    <Parameter_Order>03</Parameter_Order>
     <Parameter_ID>StationCode</Parameter_ID>
     <Parameter_Description>StationCode</Parameter_Description>
     <Data_Value>P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,A1</Data_Value>
@@ -7826,39 +7526,19 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Equipment_Type>Robot</Equipment_Type>
     <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
     <Command_Type>CMD</Command_Type>
-    <Command_ID>STCH,</Command_ID>
-    <Command_Format>&lt;STCH,{0}&gt;{1}</Command_Format>
-    <Command_Name>Sets taught position.</Command_Name>
-    <Command_Order>39</Command_Order>
-    <Parameters_Amount>03</Parameters_Amount>
-    <Parameter_Order>03</Parameter_Order>
-    <Parameter_ID>J2Data</Parameter_ID>
-    <Parameter_Description>J2Data</Parameter_Description>
-    <Data_Value />
-    <Min_Value>-9999</Min_Value>
-    <Max_Value>9999</Max_Value>
-    <Default_Value>0</Default_Value>
-    <Values_length>4</Values_length>
-    <Is_Fill>N</Is_Fill>
-    <Action_Function />
-  </Table>
-  <Table>
-    <Equipment_Type>Robot</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>STCH,</Command_ID>
-    <Command_Format>&lt;STCH,{0}&gt;{1}</Command_Format>
-    <Command_Name>Sets taught position.</Command_Name>
-    <Command_Order>39</Command_Order>
+    <Command_ID>RALN,</Command_ID>
+    <Command_Format>&lt;RALN,{0}&gt;{1}</Command_Format>
+    <Command_Name>Re-aligns wafer.</Command_Name>
+    <Command_Order>40</Command_Order>
     <Parameters_Amount>04</Parameters_Amount>
     <Parameter_Order>04</Parameter_Order>
-    <Parameter_ID>J3Data</Parameter_ID>
-    <Parameter_Description>J3Data</Parameter_Description>
+    <Parameter_ID>Slot#</Parameter_ID>
+    <Parameter_Description>Slot#</Parameter_Description>
     <Data_Value />
-    <Min_Value>-9999</Min_Value>
-    <Max_Value>9999</Max_Value>
-    <Default_Value>0</Default_Value>
-    <Values_length>4</Values_length>
+    <Min_Value>1</Min_Value>
+    <Max_Value>50</Max_Value>
+    <Default_Value>1</Default_Value>
+    <Values_length>2</Values_length>
     <Is_Fill>N</Is_Fill>
     <Action_Function />
   </Table>
@@ -7866,59 +7546,19 @@ arm  :Arm 選擇  ( 1~2 )1  :R 軸2  :L 軸
     <Equipment_Type>Robot</Equipment_Type>
     <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
     <Command_Type>CMD</Command_Type>
-    <Command_ID>STCH,</Command_ID>
-    <Command_Format>&lt;STCH,{0}&gt;{1}</Command_Format>
-    <Command_Name>Sets taught position.</Command_Name>
-    <Command_Order>39</Command_Order>
+    <Command_ID>RALN,</Command_ID>
+    <Command_Format>&lt;RALN,{0}&gt;{1}</Command_Format>
+    <Command_Name>Re-aligns wafer.</Command_Name>
+    <Command_Order>40</Command_Order>
     <Parameters_Amount>05</Parameters_Amount>
     <Parameter_Order>05</Parameter_Order>
-    <Parameter_ID>J4Data</Parameter_ID>
-    <Parameter_Description>J4Data</Parameter_Description>
+    <Parameter_ID>AlignmentAngle</Parameter_ID>
+    <Parameter_Description>AlignmentAngle</Parameter_Description>
     <Data_Value />
-    <Min_Value>-9999</Min_Value>
-    <Max_Value>9999</Max_Value>
+    <Min_Value>-180</Min_Value>
+    <Max_Value>180</Max_Value>
     <Default_Value>0</Default_Value>
-    <Values_length>4</Values_length>
-    <Is_Fill>N</Is_Fill>
-    <Action_Function />
-  </Table>
-  <Table>
-    <Equipment_Type>Robot</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>STCH,</Command_ID>
-    <Command_Format>&lt;STCH,{0}&gt;{1}</Command_Format>
-    <Command_Name>Sets taught position.</Command_Name>
-    <Command_Order>39</Command_Order>
-    <Parameters_Amount>06</Parameters_Amount>
-    <Parameter_Order>06</Parameter_Order>
-    <Parameter_ID>J6Data</Parameter_ID>
-    <Parameter_Description>J6Data</Parameter_Description>
-    <Data_Value />
-    <Min_Value>-9999</Min_Value>
-    <Max_Value>9999</Max_Value>
-    <Default_Value>0</Default_Value>
-    <Values_length>4</Values_length>
-    <Is_Fill>N</Is_Fill>
-    <Action_Function />
-  </Table>
-  <Table>
-    <Equipment_Type>Robot</Equipment_Type>
-    <Equipment_Supplier>KAWASAKI</Equipment_Supplier>
-    <Command_Type>CMD</Command_Type>
-    <Command_ID>STCH,</Command_ID>
-    <Command_Format>&lt;STCH,{0}&gt;{1}</Command_Format>
-    <Command_Name>Sets taught position.</Command_Name>
-    <Command_Order>39</Command_Order>
-    <Parameters_Amount>07</Parameters_Amount>
-    <Parameter_Order>07</Parameter_Order>
-    <Parameter_ID>J7Data</Parameter_ID>
-    <Parameter_Description>J7Data</Parameter_Description>
-    <Data_Value />
-    <Min_Value>-9999</Min_Value>
-    <Max_Value>9999</Max_Value>
-    <Default_Value>0</Default_Value>
-    <Values_length>4</Values_length>
+    <Values_length>3</Values_length>
     <Is_Fill>N</Is_Fill>
     <Action_Function />
   </Table>

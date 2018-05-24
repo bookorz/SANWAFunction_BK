@@ -23,3 +23,25 @@ C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\obj\Deb
 C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.CopyComplete
 C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.exe
 C:\Users\jevons_chan\source\repos\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.pdb
+D:\SourceCode\SANWA Function\SANWA\SANWA\bin\Debug\CodeManager.exe.config
+D:\SourceCode\SANWA Function\SANWA\SANWA\bin\Debug\CodeManager.exe
+D:\SourceCode\SANWA Function\SANWA\SANWA\bin\Debug\CodeManager.pdb
+D:\SourceCode\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.frmCodeManager.resources
+D:\SourceCode\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.Properties.Resources.resources
+D:\SourceCode\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.GenerateResource.cache
+D:\SourceCode\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.CoreCompileInputs.cache
+D:\SourceCode\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.CopyComplete
+D:\SourceCode\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.exe
+D:\SourceCode\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.pdb
+D:\SourceCode\SANWA Function\CodeManager\CodeManager\obj\Debug\CodeManager.csprojAssemblyReference.cache
+D:\SourceCode\SANWA-Function-For-Test\SANWA\SANWA\bin\Debug\CodeManager.exe.config
+D:\SourceCode\SANWA-Function-For-Test\SANWA\SANWA\bin\Debug\CodeManager.exe
+D:\SourceCode\SANWA-Function-For-Test\SANWA\SANWA\bin\Debug\CodeManager.pdb
+D:\SourceCode\SANWA-Function-For-Test\CodeManager\CodeManager\obj\Debug\CodeManager.csprojAssemblyReference.cache
+D:\SourceCode\SANWA-Function-For-Test\CodeManager\CodeManager\obj\Debug\CodeManager.frmCodeManager.resources
+D:\SourceCode\SANWA-Function-For-Test\CodeManager\CodeManager\obj\Debug\CodeManager.Properties.Resources.resources
+D:\SourceCode\SANWA-Function-For-Test\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.GenerateResource.cache
+D:\SourceCode\SANWA-Function-For-Test\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.CoreCompileInputs.cache
+D:\SourceCode\SANWA-Function-For-Test\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.CopyComplete
+D:\SourceCode\SANWA-Function-For-Test\CodeManager\CodeManager\obj\Debug\CodeManager.exe
+D:\SourceCode\SANWA-Function-For-Test\CodeManager\CodeManager\obj\Debug\CodeManager.pdb
