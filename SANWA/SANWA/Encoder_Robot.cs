@@ -125,7 +125,7 @@ namespace SANWA.Utility
         {
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SAWAN")
+            if (Supplier == "SANWA")
             {
                 Parameter01 = no;
             }
@@ -176,9 +176,9 @@ namespace SANWA.Utility
         {
             string Parameter01 = string.Empty;
             string Command = string.Empty;
-            string CMD = Supplier == "SAWAN" ? "SET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "SET" : "CMD";
 
-            if (Supplier == "SAWAN")
+            if (Supplier == "SANWA")
             {
                 Command = "Excitation";
                 Parameter01 = sv;
@@ -292,7 +292,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string Home(string Address, string Sequence)
         {
-            string Parameter01 = Supplier == "SAWAN" ? null : "R" + Address.ToString();
+            string Parameter01 = Supplier == "SANWA" ? null : "R" + Address.ToString();
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "Home", Parameter01);
         }
@@ -305,7 +305,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string HomeOrgin(string Address, string Sequence)
         {
-            string Parameter01 = Supplier == "SAWAN" ? null : "R" + Address.ToString();
+            string Parameter01 = Supplier == "SANWA" ? null : "R" + Address.ToString();
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "HOMEToOrgin", Parameter01);
         }
@@ -342,10 +342,10 @@ namespace SANWA.Utility
         public string MapList(string Address, string Sequence, string no)
         {
             string Parameter01 = string.Empty;
-            string CMD = Supplier == "SAWAN" ? "GET" : "CMD";
-            string Command = Supplier == "SAWAN" ? "Mapping" : "MappingGet";
+            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
+            string Command = Supplier == "SANWA" ? "Mapping" : "MappingGet";
 
-            if (Supplier == "SAWAN")
+            if (Supplier == "SANWA")
             {
                 Parameter01 = no;
             }
@@ -370,7 +370,7 @@ namespace SANWA.Utility
         {
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SAWAN")
+            if (Supplier == "SANWA")
             {
                 Parameter01 = string.Format("{0},{1},{2}", pno, col, slot);
             }
@@ -392,9 +392,9 @@ namespace SANWA.Utility
         public string Mode(string Address, string Sequence, string vl)
         {
             string Parameter01 = string.Empty;
-            string CMD = Supplier == "SAWAN" ? "SET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "SET" : "CMD";
 
-            if (Supplier == "SAWAN")
+            if (Supplier == "SANWA")
             {
                 Parameter01 = vl;
             }
@@ -430,7 +430,7 @@ namespace SANWA.Utility
         {
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SAWAN")
+            if (Supplier == "SANWA")
             {
                 Parameter01 = string.Format("{0},{1},{2}", axis, type, pos);
             }
@@ -532,12 +532,12 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string Parameter(string Address, string Sequence, string Type, string No)
         {
-            string CMD = Supplier == "SAWAN" ? "GET" : "CMD";
-            string Command = Supplier == "SAWAN" ? "Parameter" : "ParameterGet";
+            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
+            string Command = Supplier == "SANWA" ? "Parameter" : "ParameterGet";
 
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SAWAN")
+            if (Supplier == "SANWA")
             {
                 Parameter01 = string.Format("{0},{1},{2}", Type, No);
             }
@@ -659,7 +659,7 @@ namespace SANWA.Utility
         {
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SAWAN")
+            if (Supplier == "SANWA")
             {
                 Parameter01 = string.Format("{0},{1},{2},{3}", Point, Slot, Arm, "0");
             }
@@ -760,11 +760,11 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string setParameter(string Address, string Sequence, string Type, string No, string Data)
         {
-            string CMD = Supplier == "SAWAN" ? "SET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "SET" : "CMD";
 
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SAWAN")
+            if (Supplier == "SANWA")
             {
                 Parameter01 = string.Format("{0},{1},{2}", Type, No, Data);
             }
@@ -813,9 +813,9 @@ namespace SANWA.Utility
         public string setSpeed(string Address, string Sequence, string vl)
         {
             string Parameter01 = string.Empty;
-            string CMD = Supplier == "SAWAN" ? "SET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "SET" : "CMD";
 
-            if (Supplier == "SAWAN")
+            if (Supplier == "SANWA")
             {
                 Parameter01 = vl;
             }
@@ -852,9 +852,9 @@ namespace SANWA.Utility
         public string setTeachPoint(string Address, string Sequence, string pno, string arm, string slot)
         {
             string Parameter01 = string.Empty;
-            string CMD = Supplier == "SAWAN" ? "SET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "SET" : "CMD";
 
-            if (Supplier == "SAWAN")
+            if (Supplier == "SANWA")
             {
                 Parameter01 = pno;
             }
@@ -943,10 +943,10 @@ namespace SANWA.Utility
         public string Speed(string Address, string Sequence)
         {
             string Parameter01 = string.Empty;
-            string CMD = Supplier == "SAWAN" ? "GET" : "CMD";
-            string Command = Supplier == "SAWAN" ? "DeviceStatusSpeed" : "DeviceStatusSpeedGet";
+            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
+            string Command = Supplier == "SANWA" ? "DeviceStatusSpeed" : "DeviceStatusSpeedGet";
 
-            if (Supplier == "SAWAN")
+            if (Supplier == "SANWA")
             {
                 Parameter01 = null;
             }
@@ -966,8 +966,8 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string Status(string Address, string Sequence)
         {
-            string CMD = Supplier == "SAWAN" ? "GET" : "CMD";
-            string Parameter01 = Supplier == "SAWAN" ? null : "R" + Address.ToString();
+            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
+            string Parameter01 = Supplier == "SANWA" ? null : "R" + Address.ToString();
 
             return CommandAssembly(Supplier, Address, Sequence, CMD, "DeviceStatus", Parameter01);
         }
@@ -1015,8 +1015,8 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string TeachPoint(string Address, string Sequence, string pno)
         {
-            string CMD = Supplier == "SAWAN" ? "GET" : "CMD";
-            string Command = Supplier == "SAWAN" ? "Teach" : "TeachGet";
+            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
+            string Command = Supplier == "SANWA" ? "Teach" : "TeachGet";
 
             return CommandAssembly(Supplier, Address, Sequence, CMD, Command, pno);
         }
@@ -1054,7 +1054,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string WaferHold(string Address, string Sequence, string arm)
         {
-            string Parameter01 = Supplier == "SAWAN" ? arm : ("R" + Address.ToString() + "," + arm) ;
+            string Parameter01 = Supplier == "SANWA" ? arm : ("R" + Address.ToString() + "," + arm) ;
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "WaferHold", Parameter01.Split(','));
         }
@@ -1068,7 +1068,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string WaferReleaseHold(string Address, string Sequence, string arm)
         {
-            string Parameter01 = Supplier == "SAWAN" ? arm : ("R" + Address.ToString() + "," + arm);
+            string Parameter01 = Supplier == "SANWA" ? arm : ("R" + Address.ToString() + "," + arm);
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "WaferRelease", Parameter01.Split(','));
         }
@@ -1083,10 +1083,10 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string WaferStatus(string Address, string Sequence, string arm, string pno)
         {
-            string CMD = Supplier == "SAWAN" ? "GET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SAWAN")
+            if (Supplier == "SANWA")
             {
                 Parameter01 = arm;
             }
