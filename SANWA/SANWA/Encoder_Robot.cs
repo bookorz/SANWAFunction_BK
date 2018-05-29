@@ -214,7 +214,7 @@ namespace SANWA.Utility
         {
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SAWAN")
+            if (Supplier == "SANWA")
             {
                 Parameter01 = string.Format("{0},{1},{2},{3},{4}", Point, Slot, Arm, Alignment, "0");
             }
