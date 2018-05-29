@@ -61,3 +61,14 @@ D:\SourceCode\SANWA-Function-For-Test\Instruction editor\Instruction editor\obj\
 D:\SourceCode\SANWA-Function-For-Test\Instruction editor\Instruction editor\obj\Debug\Instruction editor.csproj.CopyComplete
 D:\SourceCode\SANWA-Function-For-Test\Instruction editor\Instruction editor\obj\Debug\Instruction editor.exe
 D:\SourceCode\SANWA-Function-For-Test\Instruction editor\Instruction editor\obj\Debug\Instruction editor.pdb
+D:\SyncSourceCode\SANWAFunction\SANWA\SANWA\bin\Debug\Instruction editor.exe.config
+D:\SyncSourceCode\SANWAFunction\SANWA\SANWA\bin\Debug\Instruction editor.exe
+D:\SyncSourceCode\SANWAFunction\SANWA\SANWA\bin\Debug\Instruction editor.pdb
+D:\SyncSourceCode\SANWAFunction\Instruction editor\Instruction editor\obj\Debug\Instruction editor.csprojAssemblyReference.cache
+D:\SyncSourceCode\SANWAFunction\Instruction editor\Instruction editor\obj\Debug\Instruction_editor.frmInstructionEditor.resources
+D:\SyncSourceCode\SANWAFunction\Instruction editor\Instruction editor\obj\Debug\Instruction_editor.Properties.Resources.resources
+D:\SyncSourceCode\SANWAFunction\Instruction editor\Instruction editor\obj\Debug\Instruction editor.csproj.GenerateResource.cache
+D:\SyncSourceCode\SANWAFunction\Instruction editor\Instruction editor\obj\Debug\Instruction editor.csproj.CoreCompileInputs.cache
+D:\SyncSourceCode\SANWAFunction\Instruction editor\Instruction editor\obj\Debug\Instruction editor.csproj.CopyComplete
+D:\SyncSourceCode\SANWAFunction\Instruction editor\Instruction editor\obj\Debug\Instruction editor.exe
+D:\SyncSourceCode\SANWAFunction\Instruction editor\Instruction editor\obj\Debug\Instruction editor.pdb

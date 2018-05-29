@@ -45,3 +45,14 @@ D:\SourceCode\SANWA-Function-For-Test\CodeManager\CodeManager\obj\Debug\CodeMana
 D:\SourceCode\SANWA-Function-For-Test\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.CopyComplete
 D:\SourceCode\SANWA-Function-For-Test\CodeManager\CodeManager\obj\Debug\CodeManager.exe
 D:\SourceCode\SANWA-Function-For-Test\CodeManager\CodeManager\obj\Debug\CodeManager.pdb
+D:\SyncSourceCode\SANWAFunction\SANWA\SANWA\bin\Debug\CodeManager.exe.config
+D:\SyncSourceCode\SANWAFunction\SANWA\SANWA\bin\Debug\CodeManager.exe
+D:\SyncSourceCode\SANWAFunction\SANWA\SANWA\bin\Debug\CodeManager.pdb
+D:\SyncSourceCode\SANWAFunction\CodeManager\CodeManager\obj\Debug\CodeManager.csprojAssemblyReference.cache
+D:\SyncSourceCode\SANWAFunction\CodeManager\CodeManager\obj\Debug\CodeManager.frmCodeManager.resources
+D:\SyncSourceCode\SANWAFunction\CodeManager\CodeManager\obj\Debug\CodeManager.Properties.Resources.resources
+D:\SyncSourceCode\SANWAFunction\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.GenerateResource.cache
+D:\SyncSourceCode\SANWAFunction\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.CoreCompileInputs.cache
+D:\SyncSourceCode\SANWAFunction\CodeManager\CodeManager\obj\Debug\CodeManager.csproj.CopyComplete
+D:\SyncSourceCode\SANWAFunction\CodeManager\CodeManager\obj\Debug\CodeManager.exe
+D:\SyncSourceCode\SANWAFunction\CodeManager\CodeManager\obj\Debug\CodeManager.pdb

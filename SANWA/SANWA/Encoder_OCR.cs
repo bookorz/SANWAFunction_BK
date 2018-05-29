@@ -56,8 +56,6 @@ namespace SANWA.Utility
             string strCommand = string.Empty;
             string strCommandFormat = string.Empty;
             string strCommandFormatParameter = string.Empty;
-            DataTable dtTemp;
-            DataView dvTemp;
             ContainerSet container;
             StringBuilder sbTemp;
 
