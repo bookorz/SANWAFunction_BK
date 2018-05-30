@@ -144,6 +144,10 @@ namespace SANWA.Utility
                                 break;
                             case 2:
                                 each.Value = content[i];
+                                if(each.Type == ReturnMessage.ReturnType.Finished && !each.Value.Equals("00000000"))
+                                {
+                                    each.Type = ReturnMessage.ReturnType.Error;
+                                }
                                 break;
                         }
                     }
