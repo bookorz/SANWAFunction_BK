@@ -267,6 +267,7 @@ namespace SANWA.Utility
                                     each.Type = ReturnMessage.ReturnType.ReInformation;
                                     break;
                             }
+                            each.CommandType = content[i];
                             break;
                         case 1:
 
