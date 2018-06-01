@@ -144,7 +144,7 @@ namespace SANWA.Utility
                 query = null;
                 query = (from a in dtCode.AsEnumerable()
                              where a.Field<string>("Category_ID") == strAlarmType
-                                && a.Field<string>("Code_ID") == strErrorCode
+                                && a.Field<string>("Code_ID") == strErrorCode.ToUpper()
                          select a).ToList();
 
                 dtTemp = query.CopyToDataTable();
