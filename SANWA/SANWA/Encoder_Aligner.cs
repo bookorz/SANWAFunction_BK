@@ -97,7 +97,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string ErrorMessage(string Address, string Sequence, string no)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "ErrorList", no);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "ErrorList", no);
         }
 
         /// <summary>
