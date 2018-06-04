@@ -193,6 +193,18 @@ namespace SANWA.Utility
             return CommandAssembly(Supplier, Address, Sequence, "SET", "Mode", vl);
         }
 
+
+        /// <summary>
+        /// 取得動作模式選擇設定
+        /// </summary>
+        /// <param name="Address"> Equipment Address </param>
+        /// <param name="Sequence"> Euuipment Sequence </param>
+        /// <returns></returns>
+        public string GetMode(string Address, string Sequence)
+        {
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "Mode", null);
+        }
+
         /// <summary>
         /// 移動指定軸到指定點位
         /// </summary>
