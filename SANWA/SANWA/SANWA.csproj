@@ -33,6 +33,10 @@
     <Reference Include="log4net">
       <HintPath>..\..\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="mysql.data, Version=5.2.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Adam\WindowsFormsApp1\lib\mysql.data.dll</HintPath>
+    </Reference>
     <Reference Include="nmodbuspc">
       <HintPath>..\..\nmodbuspc.dll</HintPath>
     </Reference>
@@ -50,6 +54,7 @@
   <ItemGroup>
     <Compile Include="AlarmMapping.cs" />
     <Compile Include="AlarmMessage.cs" />
+    <Compile Include="DBUtil.cs" />
     <Compile Include="Encoder.cs" />
     <Compile Include="Encoder_Aligner.cs" />
     <Compile Include="ContainerUI.cs" />
