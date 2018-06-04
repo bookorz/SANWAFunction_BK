@@ -261,7 +261,7 @@ namespace SANWA.Utility
                                     each.Type = ReturnMessage.ReturnType.Event;
                                     break;
                                 case "ABS":
-                                    each.Type = ReturnMessage.ReturnType.Abnormal;
+                                    each.Type = ReturnMessage.ReturnType.Error;
                                     break;
                                 case "RIF":
                                     each.Type = ReturnMessage.ReturnType.ReInformation;
