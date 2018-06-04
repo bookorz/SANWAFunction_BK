@@ -630,9 +630,9 @@ namespace SANWA.Utility
                 sbTemp = new StringBuilder();
 
                 var query = (from a in dtRobotCommand.AsEnumerable()
-                             where a.Field<string>("Equipment_Type") == "LoadPort"
-                                && a.Field<string>("Equipment_Supplier") == Supplier
-                                && a.Field<string>("Command_Type") == CommandType
+                             where a.Field<string>("node_type") == "LOADPORT"
+                                && a.Field<string>("vendor") == Supplier
+                                && a.Field<string>("code_type") == CommandType
                                 && a.Field<string>("Action_Function") == Command
                              select a).ToList();
 
@@ -652,10 +652,10 @@ namespace SANWA.Utility
                         switch (cmdMode)
                         {
                             case CommandMode.TDK_A:
-                                strCommandFormat = TDK_A(dtTemp.Rows[0]["Command_Format"].ToString());
+                                strCommandFormat = TDK_A(dtTemp.Rows[0]["code_format"].ToString());
                                 break;
                             case CommandMode.TDK_B:
-                                strCommandFormat = TDK_B(dtTemp.Rows[0]["Command_Format"].ToString());
+                                strCommandFormat = TDK_B(dtTemp.Rows[0]["code_format"].ToString());
                                 break;;
                         }
 

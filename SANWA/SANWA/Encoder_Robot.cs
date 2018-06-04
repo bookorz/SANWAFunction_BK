@@ -124,6 +124,7 @@ namespace SANWA.Utility
         public string ErrorMessage(string Address, string Sequence, string no)
         {
             string Parameter01 = string.Empty;
+            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
 
             if (Supplier == "SANWA")
             {
@@ -134,7 +135,7 @@ namespace SANWA.Utility
                 Parameter01 = string.Format("{0},{1}", "R" + Address.ToString(), no);
             }
 
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "ErrorList", Parameter01.Split(','));
+            return CommandAssembly(Supplier, Address, Sequence, CMD, "ErrorList", Parameter01.Split(','));
         }
 
         /// <summary>
@@ -407,14 +408,16 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// 取得動作模式選擇設定 - Kawasaki
+        /// 取得動作模式選擇設定
         /// </summary>
         /// <param name="Address"> Equipment Address </param>
         /// <param name="Sequence"> Euuipment Sequence </param>
         /// <returns></returns>
         public string GetMode(string Address, string Sequence)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "ModeGet", null);
+            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
+            string CMDType = Supplier == "SANWA" ? "Mode" : "ModeGet";
+            return CommandAssembly(Supplier, Address, Sequence, CMD, CMDType, null);
         }
 
         /// <summary>
@@ -1181,9 +1184,9 @@ namespace SANWA.Utility
                 sbTemp = new StringBuilder();
 
                 var query = (from a in dtRobotCommand.AsEnumerable()
-                             where a.Field<string>("Equipment_Type") == "Robot"
-                                && a.Field<string>("Equipment_Supplier") == Supplier
-                                && a.Field<string>("Command_Type") == CommandType
+                             where a.Field<string>("node_type") == "ROBOT"
+                                && a.Field<string>("vendor") == Supplier
+                                && a.Field<string>("code_type") == CommandType
                                 && a.Field<string>("Action_Function") == Command
                              select a).ToList();
 
@@ -1249,7 +1252,7 @@ namespace SANWA.Utility
                             }
                         }
 
-                        strCommandFormat = container.StringFormat(dtTemp.Rows[0]["Command_Format"].ToString(), new string[] { Address, Sequence });
+                        strCommandFormat = container.StringFormat(dtTemp.Rows[0]["code_format"].ToString(), new string[] { Address, Sequence });
 
                         if (strsParameter != null && strsParameter.Length != 0)
                         {
@@ -1280,7 +1283,7 @@ namespace SANWA.Utility
                         {
                             Int32 itTemp = 0;
 
-                            if (!dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Null") || !dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Data"))
+                            if (!dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Null") && !dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Data"))
                             {
                                 // * Value mode
                                 if (dvTemp.Table.Rows[i]["Data_Value"].ToString().Equals(string.Empty))
@@ -1328,14 +1331,18 @@ namespace SANWA.Utility
                         }
 
                         sbTemp = new StringBuilder();
-                        for (int i = 0; i < strsParameter.Length; i++)
+                        if (strsParameter != null)
                         {
-                            sbTemp.Append(strsParameter[i].ToString());
-                            sbTemp.Append(",");
+                            for (int i = 0; i < strsParameter.Length; i++)
+                            {
+                                sbTemp.Append(strsParameter[i].ToString());
+                                sbTemp.Append(",");
 
+                            }
                         }
 
-                        strCommandFormat = container.StringFormat(dtTemp.Rows[0]["Command_Format"].ToString(), new string[] { sbTemp.ToString().TrimEnd(','), strCommandFormatParameter });
+
+                        strCommandFormat = container.StringFormat(dtTemp.Rows[0]["code_format"].ToString(), new string[] { sbTemp.ToString().TrimEnd(','), strCommandFormatParameter });
 
                         break;
 

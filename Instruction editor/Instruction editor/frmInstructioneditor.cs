@@ -529,8 +529,8 @@ namespace Instruction_editor
             //SANWA.Utility.FTP fTP = new SANWA.Utility.FTP("192.168.0.5", "21", string.Empty, "admin", string.Empty);
             //string path = fTP.Get("Image.bmp", "Image.bmp", "D:\\temp\\");
 
-            SANWA.Utility.Decoder decoder = new SANWA.Utility.Decoder("KAWASAKICONTROLLER");
-            decoder.GetMessage("<MesID,Error,Error#,DeviceCode,ErrorMessage>CS[CRLF] ");
+            //SANWA.Utility.Decoder decoder = new SANWA.Utility.Decoder("KAWASAKICONTROLLER");
+            //decoder.GetMessage("<MesID,Error,Error#,DeviceCode,ErrorMessage>CS[CRLF] ");
 
             //try
             //{
@@ -557,6 +557,10 @@ namespace Instruction_editor
             //{
             //    MessageBox.Show(ex.ToString());
             //}
+
+            SANWA.Utility.Encoder encoder = new SANWA.Utility.Encoder("KAWASAKI");
+            encoder.Robot.GetMode("1", "0");
+
         }
 
         private void ConnectTest()

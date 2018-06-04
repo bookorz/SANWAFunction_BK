@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using Adam.Util;
 
 namespace SANWA.Utility
 {
@@ -14,6 +16,8 @@ namespace SANWA.Utility
         private string Supplier;
         private DataTable dtCommand;
 
+        private DBUtil dBUtil = new DBUtil();
+
         /// <summary>
         /// Encoder
         /// </summary>
@@ -21,6 +25,8 @@ namespace SANWA.Utility
         public Encoder(string supplier)
         {
             ContainerSet containerSet;
+            string strSql = string.Empty;
+            Dictionary<string, object> keyValues = new Dictionary<string, object>();
 
             try
             {
@@ -30,19 +36,25 @@ namespace SANWA.Utility
 
                 dtCommand = new DataTable();
 
-                if (File.Exists(System.AppDomain.CurrentDomain.BaseDirectory + "ParameterList.xml"))
+                strSql = "SELECT * " +
+                            "FROM device_code_params " +
+                            "WHERE vendor = @vendor";
+
+                keyValues.Add("@vendor", Supplier);
+
+                dtCommand = dBUtil.GetDataTable(strSql, keyValues);
+
+                if (dtCommand.Rows.Count > 0)
                 {
-                    containerSet.TableFormatting(ref dtCommand, System.AppDomain.CurrentDomain.BaseDirectory + "ParameterList.xml");
+                    Aligner = new EncoderAligner(Supplier, dtCommand);
+                    Robot = new EncoderRobot(Supplier, dtCommand);
+                    OCR = new EncoderOCR(Supplier, dtCommand);
+                    LoadPort = new EncoderLoadPort(Supplier, dtCommand, EncoderLoadPort.CommandMode.TDK_A);
                 }
                 else
                 {
                     throw new Exception("SANWA.Utility.Encoder\r\nException: Parameter List not exists.");
                 }
-
-                Aligner = new EncoderAligner(Supplier, dtCommand);
-                Robot = new EncoderRobot(Supplier, dtCommand);
-                OCR = new EncoderOCR(Supplier, dtCommand);
-                LoadPort = new EncoderLoadPort(Supplier, dtCommand, EncoderLoadPort.CommandMode.TDK_A);
             }
             catch (Exception ex)
             {
