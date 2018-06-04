@@ -124,6 +124,7 @@ namespace SANWA.Utility
         public string ErrorMessage(string Address, string Sequence, string no)
         {
             string Parameter01 = string.Empty;
+            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
 
             if (Supplier == "SANWA")
             {
@@ -134,7 +135,7 @@ namespace SANWA.Utility
                 Parameter01 = string.Format("{0},{1}", "R" + Address.ToString(), no);
             }
 
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "ErrorList", Parameter01.Split(','));
+            return CommandAssembly(Supplier, Address, Sequence, CMD, "ErrorList", Parameter01.Split(','));
         }
 
         /// <summary>
