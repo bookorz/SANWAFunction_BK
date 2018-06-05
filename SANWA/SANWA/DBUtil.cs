@@ -123,11 +123,16 @@ namespace Adam.Util
                 //sql = "SELECT * FROM list_item";
                 open_Conn();
                 MySqlCommand command = new MySqlCommand(sql, Connection_);
+
                 // set parameters
-                foreach (KeyValuePair<string, object> param in parameters)
+                if (parameters != null)
                 {
-                    command.Parameters.AddWithValue(param.Key, param.Value);
+                    foreach (KeyValuePair<string, object> param in parameters)
+                    {
+                        command.Parameters.AddWithValue(param.Key, param.Value);
+                    }
                 }
+
                 //get query result
                 MySqlDataReader rs = command.ExecuteReader();
                 dt.Load(rs);

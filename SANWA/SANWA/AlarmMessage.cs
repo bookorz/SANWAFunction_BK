@@ -13,5 +13,12 @@ namespace SANWA.Utility
         public string Code_Name = string.Empty;
         public string Code_Cause = string.Empty;
         public string Code_Cause_English = string.Empty;
+        public string LED_Red = string.Empty;
+        public string LED_Yellow = string.Empty;
+        public string LED_Green = string.Empty;
+        public string LED_Bule = string.Empty;
+        public string Buzzer01 = string.Empty;
+        public string Buzzer02 = string.Empty;
+        public bool IsStop = false;
     }
 }

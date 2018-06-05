@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.IO;
 using System.Threading.Tasks;
+using Adam.Util;
 
 namespace SANWA.Utility
 {
@@ -14,10 +15,13 @@ namespace SANWA.Utility
     public class AlarmMapping
     {
         private DataTable dtCode;
+        private DataTable dtAlarmEvent;
 
         public AlarmMapping()
         {
             ContainerSet containerSet;
+            string strSql = string.Empty;
+            DBUtil dBUtil = new DBUtil();
 
             try
             {
@@ -25,14 +29,19 @@ namespace SANWA.Utility
 
                 dtCode = new DataTable();
 
-                if (File.Exists(System.AppDomain.CurrentDomain.BaseDirectory + "Code.xml"))
-                {
-                    containerSet.TableFormatting(ref dtCode, System.AppDomain.CurrentDomain.BaseDirectory + "Code.xml");
-                }
-                else
+                strSql = "SELECT * FROM view_alarm_code order by alarm_code_id asc";
+
+                dtCode = dBUtil.GetDataTable(strSql, null);
+
+                if (dtCode.Rows.Count < 0)
                 {
                     throw new Exception("SANWA.Utility.AlarmMapping\r\nException: Code List not exists.");
                 }
+
+                strSql = "SELECT * FROM alarm_event_config WHERE active = 'Y'";
+
+                dtAlarmEvent = dBUtil.GetDataTable(strSql, null);
+
             }
             catch (Exception ex)
             {
@@ -65,22 +74,24 @@ namespace SANWA.Utility
             int itFirst = 0;
             int itCode28 = 0;
             string strErrorCode = string.Empty;
+            string strSql = string.Empty;
+            DBUtil dBUtil = new DBUtil();
 
             try
             {
                 alarm = new AlarmMessage();
 
                 var query = (from a in dtCode.AsEnumerable()
-                             where a.Field<string>("Category_ID") == "EquipmentAlarmCode"
-                                && a.Field<string>("Code_Type") == string.Format("{0}.{1}", supplier.ToUpper(), eqp_type.ToUpper())
+                             where a.Field<string>("node_type") == eqp_type.ToUpper()
+                                && a.Field<string>("vendor") == supplier.ToUpper()
                              select a).ToList();
 
-                dtTemp = query.CopyToDataTable();
-
-                if (dtTemp.Rows.Count > 0)
+                if (query.Count > 0)
                 {
-                    strAlarmType = dtTemp.Rows[0]["Code_ID"].ToString();
-                    alarm.CodeID = string.Format("{0}{1}", strAlarmType, error_message);
+                    dtTemp = query.CopyToDataTable();
+                    strAlarmType = dtTemp.Rows[0]["alarm_code_id"].ToString();
+                    strAlarmCode = dtTemp.Rows[0]["Code_ID"].ToString();
+                    alarm.CodeID = string.Format("{0}{1}{2}", strAlarmType, strAlarmCode, error_message);
                 }
                 else
                 {
@@ -98,18 +109,17 @@ namespace SANWA.Utility
 
                         if (itCode28 == 1)
                         {
-                            query = null;
-                            query = (from a in dtCode.AsEnumerable()
-                                     where a.Field<string>("Category_ID") == "AxisCode"
-                                        && a.Field<string>("Code_ID") == error_message.Substring(5, 1)
-                                     select a).ToList();
+                            strSql = "SELECT * " +
+                                        "FROM list_item " +
+                                        "WHERE list_type = 'SANWA_CODE' " +
+                                        "ORDER BY sort_sequence ASC";
 
-                            dtTemp = query.CopyToDataTable();
+                            dtTemp = dBUtil.GetDataTable(strSql, null);
 
                             if (dtTemp.Rows.Count > 0)
                             {
-                                strAlarmAxis = dtTemp.Rows[0]["Code_Cause"].ToString();
-                                strAlarmAxisEnglish = dtTemp.Rows[0]["Code_Cause_English"].ToString();
+                                strAlarmAxis = dtTemp.Rows[0]["list_name"].ToString();
+                                strAlarmAxisEnglish = dtTemp.Rows[0]["list_name_en"].ToString();
                             }
                             else
                             {
@@ -143,24 +153,61 @@ namespace SANWA.Utility
 
                 query = null;
                 query = (from a in dtCode.AsEnumerable()
-                             where a.Field<string>("Category_ID") == strAlarmType
-                                && a.Field<string>("Code_ID") == strErrorCode.ToUpper()
+                         where a.Field<string>("node_type") == eqp_type.ToUpper()
+                            && a.Field<string>("vendor") == supplier.ToUpper()
+                            && a.Field<string>("alarm_code_id") == strAlarmType
+                            && a.Field<string>("Code_ID") == strAlarmCode
                          select a).ToList();
 
                 dtTemp = query.CopyToDataTable();
 
-                if (dtTemp.Rows.Count > 0)
+                if (query.Count > 0)
                 {
+                    dtTemp = query.CopyToDataTable();
                     alarm.Code_Type = dtTemp.Rows[0]["Code_Type"].ToString();
                     alarm.Code_Name = dtTemp.Rows[0]["Code_Name"].ToString();
-                    alarm.Code_Cause = strAlarmAxis == string.Empty ? dtTemp.Rows[0]["Code_Cause"].ToString() : strAlarmAxis + " " + dtTemp.Rows[0]["Code_Cause"].ToString();
-                    alarm.Code_Cause_English = strAlarmAxisEnglish == string.Empty ? dtTemp.Rows[0]["Code_Cause_English"].ToString() : strAlarmAxisEnglish + " " + dtTemp.Rows[0]["Code_Cause_English"].ToString();
+                    alarm.Code_Cause = strAlarmAxis == string.Empty ? dtTemp.Rows[0]["Code_Desc"].ToString() : strAlarmAxis + " " + dtTemp.Rows[0]["Code_Desc"].ToString();
+                    alarm.Code_Cause_English = strAlarmAxisEnglish == string.Empty ? dtTemp.Rows[0]["Code_Desc_EN"].ToString() : strAlarmAxisEnglish + " " + dtTemp.Rows[0]["Code_Desc_EN"].ToString();
                 }
                 else
                 {
                     throw new Exception("SANWA.Utility.AlarmMapping\r\nException: Alarm Code not exists.");
                 }
 
+                query = (from a in dtAlarmEvent.AsEnumerable()
+                        where a.Field<string>("Device_Name") == supplier.ToUpper()
+                           && a.Field<string>("alarm_no") == strAlarmCode
+                         select a).ToList();
+
+                if (query.Count > 0)
+                {
+                    dtTemp = query.CopyToDataTable();
+                }
+                else
+                {
+                    dtTemp = new DataTable();
+                }
+
+                if (dtTemp.Rows.Count > 0)
+                {
+                    alarm.LED_Red = dtTemp.Rows[0]["led_red"].ToString();
+                    alarm.LED_Yellow = dtTemp.Rows[0]["led_yellow"].ToString();
+                    alarm.LED_Green = dtTemp.Rows[0]["led_green"].ToString();
+                    alarm.LED_Bule = dtTemp.Rows[0]["led_bule"].ToString();
+                    alarm.Buzzer01 = dtTemp.Rows[0]["buzzer_01"].ToString();
+                    alarm.Buzzer02 = dtTemp.Rows[0]["buzzer_02"].ToString();
+                    alarm.IsStop = dtTemp.Rows[0]["Is_stop"].ToString() == "Y" ? true : false;
+                }
+                else
+                {
+                    alarm.LED_Red = "N";
+                    alarm.LED_Yellow = "N";
+                    alarm.LED_Green = "N";
+                    alarm.LED_Bule = "N";
+                    alarm.Buzzer01 = "N";
+                    alarm.Buzzer02 = "N";
+                    alarm.IsStop = false;
+                }
             }
             catch (Exception ex)
             {

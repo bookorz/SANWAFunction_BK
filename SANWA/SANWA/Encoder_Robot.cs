@@ -1165,7 +1165,6 @@ namespace SANWA.Utility
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "RobotSoftwareVersion", null);
         }
 
-
         private string CommandAssembly(string Supplier, string Address, string Sequence, string CommandType, string Command, params string[] Parameter)
         {
             string strCommand = string.Empty;
