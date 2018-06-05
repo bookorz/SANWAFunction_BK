@@ -84,6 +84,7 @@ namespace SANWA.Utility
                 var query = (from a in dtCode.AsEnumerable()
                              where a.Field<string>("node_type") == eqp_type.ToUpper()
                                 && a.Field<string>("vendor") == supplier.ToUpper()
+                                && a.Field<string>("Code_ID") == error_message.ToUpper()
                              select a).ToList();
 
                 if (query.Count > 0)
@@ -91,7 +92,7 @@ namespace SANWA.Utility
                     dtTemp = query.CopyToDataTable();
                     strAlarmType = dtTemp.Rows[0]["alarm_code_id"].ToString();
                     strAlarmCode = dtTemp.Rows[0]["Code_ID"].ToString();
-                    alarm.CodeID = string.Format("{0}{1}{2}", strAlarmType, strAlarmCode, error_message);
+                    alarm.CodeID = string.Format("{0}{1}", strAlarmType, strAlarmCode);
                 }
                 else
                 {
