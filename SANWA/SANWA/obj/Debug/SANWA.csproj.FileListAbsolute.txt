@@ -43,5 +43,5 @@ D:\SyncSourceCode\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.csproj.CopyComplete
 D:\SyncSourceCode\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.dll
 D:\SyncSourceCode\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.pdb
 D:\SyncSourceCode\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.csprojAssemblyReference.cache
-C:\Users\ethan_huang\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.csprojAssemblyReference.cache
 C:\Users\ethan_huang\source\repos\SANWAFunction\SANWA\SANWA\bin\Debug\mysql.data.dll
+C:\Users\ethan_huang\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.csprojAssemblyReference.cache
