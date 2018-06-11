@@ -689,9 +689,9 @@ namespace SANWA.Utility
                 
                 chrLH = Convert.ToInt32(strLen.Substring(0, 1), 16);
                 chrLL = Convert.ToInt32(strLen.Substring(1, 1), 16);
-        strLen = Convert.ToChar(chrLH).ToString() + Convert.ToChar(chrLL).ToString();
-        sCheckSum = ProcCheckSum(strLen, Command);
-        strCommsnd = string.Format("{0}{1}{2}{3}{4}{5}{6}{7}", Convert.ToChar(1), strLen, Convert.ToChar(48), string.Empty, Convert.ToChar(48), Command, sCheckSum, Convert.ToChar(3));
+                strLen = Convert.ToChar(chrLH).ToString() + Convert.ToChar(chrLL).ToString();
+                sCheckSum = ProcCheckSum(strLen, Command);
+                strCommsnd = string.Format("{0}{1}{2}{3}{4}{5}{6}{7}", Convert.ToChar(1), strLen, Convert.ToChar(48), string.Empty, Convert.ToChar(48), Command, sCheckSum, Convert.ToChar(3));
             }
             catch (Exception ex)
             {
