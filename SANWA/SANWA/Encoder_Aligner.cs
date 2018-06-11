@@ -649,23 +649,19 @@ namespace SANWA.Utility
                         }
 
                         sbTemp = new StringBuilder();
-
+                        sbTemp = new StringBuilder();
                         if (strsParameter != null)
                         {
                             for (int i = 0; i < strsParameter.Length; i++)
                             {
                                 sbTemp.Append(strsParameter[i].ToString());
                                 sbTemp.Append(",");
-                            }
 
-                            strCommandFormat = container.StringFormat(dtTemp.Rows[0]["code_format"].ToString().Insert(1, Sequence), new string[] { ",", sbTemp.ToString().TrimEnd(',') });
-                            strCommandFormat = strCommandFormat + KawasakiCheckSum(Sequence + "," + dtTemp.Rows[0]["code_id"].ToString() + "," + sbTemp.ToString().TrimEnd(','));
+                            }
                         }
-                        else
-                        {
-                            strCommandFormat = container.StringFormat(dtTemp.Rows[0]["code_format"].ToString().Insert(1, Sequence), new string[] { "", "" });
-                            strCommandFormat = strCommandFormat + KawasakiCheckSum(Sequence + "," + dtTemp.Rows[0]["code_id"].ToString());
-                        }
+
+                        strCommandFormat = container.StringFormat(dtTemp.Rows[0]["code_format"].ToString(), new string[] { sbTemp.ToString().TrimEnd(','), strCommandFormatParameter });
+
 
                         break;
 
@@ -680,48 +676,38 @@ namespace SANWA.Utility
                 throw new Exception(ex.ToString());
             }
 
-            switch (Supplier)
-            {
-                case "SANWA":
-                    strCommand = strCommand + "\r";
-                    break;
-
-                case "KAWASAKI":
-                    strCommand = strCommand + "\r\n";
-                    break;
-            }
-
-            return strCommand;
+            return strCommand + "\r";
         }
 
         private string KawasakiCheckSum(string Parameter)
         {
             string strCheckSum = string.Empty;
-            int value = 0;
-            int sum = 0;
-            int remainder = 0;
-            char[] charValues;
+            string strLen = string.Empty;
+            int chrLH = 0;
+            int chrLL = 0;
 
             try
             {
-                charValues = Parameter.ToCharArray();
+                byte[] asc = new byte[Encoding.ASCII.GetByteCount(Parameter)];
+                byte ascCount = 0;
 
-                foreach (char _eachChar in charValues)
+                for (int i = 0; i < asc.Length; i++)
                 {
-                    value = Convert.ToInt32(_eachChar);
-                    sum = sum + Convert.ToInt32(_eachChar);
+                    ascCount += asc[i];
                 }
 
-                remainder = sum % 256;
+                strLen = Convert.ToString(ascCount % 265).PadLeft(2, '0');
+                chrLH = Convert.ToInt32(strLen.Substring(0, 1), 16);
+                chrLL = Convert.ToInt32(strLen.Substring(1, 1), 16);
 
-                strCheckSum = String.Format("{0:X}", remainder);
+                strCheckSum = Convert.ToChar(chrLH).ToString() + Convert.ToChar(chrLL).ToString();
+
+                return strCheckSum;
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.ToString());
             }
-
-            return strCheckSum;
         }
     }
 }
