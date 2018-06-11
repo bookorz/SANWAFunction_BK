@@ -738,6 +738,10 @@ namespace SANWA.Utility
                 }
 
                 csHex = tt.ToString("X");
+                if (csHex.Length == 1)
+                {
+                    csHex = "0" + csHex;
+                }
 
                 return csHex;
             }
