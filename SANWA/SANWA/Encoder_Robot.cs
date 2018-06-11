@@ -1178,7 +1178,6 @@ namespace SANWA.Utility
 
             try
             {
-
                 container = new ContainerSet();
                 sbTemp = new StringBuilder();
 

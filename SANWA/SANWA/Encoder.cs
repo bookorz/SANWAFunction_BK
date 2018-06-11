@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using Adam.Util;
+using System.Linq;
 
 namespace SANWA.Utility
 {
@@ -64,6 +65,41 @@ namespace SANWA.Utility
             {
                 containerSet = null;
             }
+        }
+
+        /// <summary>
+        /// 取回命令種類
+        /// </summary>
+        /// <param name="command_id"> 命令ID </param>
+        /// <returns></returns>
+        public string GetCommandType(string command_id)
+        {
+            string strTemp = string.Empty;
+            string strSql = string.Empty;
+            DataTable dtTemp = new DataTable();
+
+            try
+            {
+                var query = (from a in dtCommand.AsEnumerable()
+                             where a.Field<string>("vendor") == Supplier
+                                && a.Field<string>("code_id") == command_id
+                             select a).ToList();
+
+                if (query.Count == 0)
+                {
+                    throw new RowNotInTableException();
+                }
+
+                dtTemp = query.CopyToDataTable();
+
+                strTemp = dtTemp.Rows[0]["code_type"].ToString();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return strTemp;
         }
     }
 }
