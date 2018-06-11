@@ -186,6 +186,9 @@ namespace SANWA.Utility
                     {
                         switch (i)
                         {
+                            case 0:
+                                each.Seq = content[0];
+                                break;
                             case 1:
 
                                 switch (content[i])

@@ -23,6 +23,7 @@ namespace SANWA.Utility
         public string Command;
         public bool IsInterrupt = false;
         public string NodeAdr = "";
+        public string Seq = "";
         public string Value = "";
     	public string FinCommand = "";
         public string CommandType = "";
