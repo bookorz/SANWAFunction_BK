@@ -124,7 +124,7 @@ namespace SANWA.Utility
         public string ErrorMessage(string Address, string Sequence, string no)
         {
             string Parameter01 = string.Empty;
-            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "GET" : "GET";
 
             if (Supplier == "SANWA")
             {
@@ -343,7 +343,7 @@ namespace SANWA.Utility
         public string MapList(string Address, string Sequence, string no)
         {
             string Parameter01 = string.Empty;
-            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "GET" : "GET";
             string Command = Supplier == "SANWA" ? "Mapping" : "MappingGet";
 
             if (Supplier == "SANWA")
@@ -393,7 +393,7 @@ namespace SANWA.Utility
         public string Mode(string Address, string Sequence, string vl)
         {
             string Parameter01 = string.Empty;
-            string CMD = Supplier == "SANWA" ? "SET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "SET" : "GET";
 
             if (Supplier == "SANWA")
             {
@@ -415,7 +415,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string GetMode(string Address, string Sequence)
         {
-            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "GET" : "GET";
             string CMDType = Supplier == "SANWA" ? "Mode" : "ModeGet";
             return CommandAssembly(Supplier, Address, Sequence, CMD, CMDType, null);
         }
@@ -535,7 +535,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string Parameter(string Address, string Sequence, string Type, string No)
         {
-            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "GET" : "GET";
             string Command = Supplier == "SANWA" ? "Parameter" : "ParameterGet";
 
             string Parameter01 = string.Empty;
@@ -563,7 +563,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string setParameterStation(string Address, string Sequence, string Point, string No, string Data)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "ParameterStation", "R" + Address.ToString(), Point, No, Data);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "ParameterStation", "R" + Address.ToString(), Point, No, Data);
         }
 
         /// <summary>
@@ -576,7 +576,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string ParameterStation(string Address, string Sequence, string Point, string No)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "ParameterStationGet", "R" + Address.ToString(), Point, No);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "ParameterStationGet", "R" + Address.ToString(), Point, No);
         }
 
         /// <summary>
@@ -622,7 +622,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string CurrentPosition(string Address, string Sequence)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "CurrentPosition", "R" + Address.ToString());
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "CurrentPosition", "R" + Address.ToString());
         }
 
         /// <summary>
@@ -634,7 +634,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string CurrentCoordinatePosition(string Address, string Sequence, string Arm)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "CurrentCoordinatePosition", "R" + Address.ToString(), Arm);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "CurrentCoordinatePosition", "R" + Address.ToString(), Arm);
         }
 
         /// <summary>
@@ -646,7 +646,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string NearestStation(string Address, string Sequence, string Arm)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "NearestStation", "R" + Address.ToString(), Arm);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "NearestStation", "R" + Address.ToString(), Arm);
         }
 
         /// <summary>
@@ -763,7 +763,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string setParameter(string Address, string Sequence, string Type, string No, string Data)
         {
-            string CMD = Supplier == "SANWA" ? "SET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "SET" : "GET";
 
             string Parameter01 = string.Empty;
 
@@ -883,7 +883,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string setTeachPoint(string Address, string Sequence, string pno, string J2Data, string J3Data, string J4Data, string J6Data, string J7Data)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "TeachS", "R" + Address.ToString(), pno, "NULL", J2Data, J3Data, J4Data, "NULL", J6Data, J7Data);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "TeachS", "R" + Address.ToString(), pno, "NULL", J2Data, J3Data, J4Data, "NULL", J6Data, J7Data);
         }
 
         /// <summary>
@@ -897,7 +897,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string setTeachPointXYZ(string Address, string Sequence, string pno, string XData, string YData, string ZData, string OData)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "TeachXYZ", "NULL", XData, YData, ZData, OData);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "TeachXYZ", "NULL", XData, YData, ZData, OData);
         }
 
         /// <summary>
@@ -969,7 +969,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string Status(string Address, string Sequence)
         {
-            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "GET" : "GET";
             string Parameter01 = Supplier == "SANWA" ? null : "R" + Address.ToString();
 
             return CommandAssembly(Supplier, Address, Sequence, CMD, "DeviceStatus", Parameter01);
@@ -983,7 +983,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string CombinedStatus(string Address, string Sequence)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "CombinedDeviceStatus", "R" + Address.ToString());
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "CombinedDeviceStatus", "R" + Address.ToString());
         }
 
         /// <summary>
@@ -1018,7 +1018,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string TeachPoint(string Address, string Sequence, string pno)
         {
-            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "GET" : "GET";
             string Command = Supplier == "SANWA" ? "Teach" : "TeachGet";
 
             return CommandAssembly(Supplier, Address, Sequence, CMD, Command, pno);
@@ -1033,7 +1033,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string CancelTeachPoint(string Address, string Sequence, string pno)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "TeachCancel", pno);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "TeachCancel", pno);
         }
 
         /// <summary>
@@ -1045,7 +1045,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string TeachPointXYZ(string Address, string Sequence, string pno)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "TeachXYZGet", pno);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "TeachXYZGet", pno);
         }
 
         /// <summary>
@@ -1142,27 +1142,27 @@ namespace SANWA.Utility
 
         public string setDateTime(string Address, string Sequence, string DataTime)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "DateTime", DataTime);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "DateTime", DataTime);
         }
 
         public string DateTime(string Address, string Sequence)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "DateTimeGet", null);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "DateTimeGet", null);
         }
 
         public string RobotIDAndVersion(string Address, string Sequence)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "RobotVersionGet", null);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "RobotVersionGet", null);
         }
 
         public string RobotHardwareVersion(string Address, string Sequence)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "RobotHardwareVersion", null);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "RobotHardwareVersion", null);
         }
 
         public string RobotSoftwareVersion(string Address, string Sequence)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "RobotSoftwareVersion", null);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "RobotSoftwareVersion", null);
         }
 
         private string CommandAssembly(string Supplier, string Address, string Sequence, string CommandType, string Command, params string[] Parameter)

@@ -424,7 +424,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string CombinedStatus(string Address, string Sequence)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "CombinedDeviceStatus", "A" + Address.ToString());
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "CombinedDeviceStatus", "A" + Address.ToString());
         }
 
         /// <summary>
