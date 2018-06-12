@@ -404,7 +404,7 @@ namespace SANWA.Utility
                 Parameter01 = vl;
             }
 
-            return CommandAssembly(Supplier, Address, Sequence, CMD, "Mode", Parameter01);
+            return CommandAssembly(Supplier, Address, Sequence, CMD, "Mode", Parameter01.Split(','));
         }
 
         /// <summary>

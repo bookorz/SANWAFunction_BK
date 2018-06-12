@@ -206,8 +206,10 @@ namespace SANWA.Utility
                                         break;
                                     case "Success":
                                         each.Type = ReturnMessage.ReturnType.Finished;
-                                        if(content.Length>2)
+                                        if (content.Length > 2)
+                                        {
                                             each.Value = content[2];
+                                        }
                                         break;
                                     case "Error":
                                         each.Type = ReturnMessage.ReturnType.Error;
