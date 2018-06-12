@@ -48,7 +48,7 @@ namespace SANWA.Utility
             }
             else if (Supplier == "KAWASAKI")
             {
-                Parameter01 = string.Format("{0}.{1}", Address.ToString(), angle);
+                Parameter01 = string.Format("{0},{1}", Address.ToString(), angle);
             }
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "Angle", Parameter01.Split(','));
@@ -133,11 +133,11 @@ namespace SANWA.Utility
             {
                 Parameter01 = Address.ToString();
 
-                if (sv.Equals("0"))
+                if (sv.Equals("1"))
                 {
                     Command = "ExcitationOn";
                 }
-                else if (sv.Equals("1"))
+                else if (sv.Equals("0"))
                 {
                     Command = "ExcitationOff";
                 }
@@ -388,7 +388,7 @@ namespace SANWA.Utility
         public string Speed(string Address, string Sequence)
         {
             string Parameter01 = string.Empty;
-            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "GET" : "GET";
 
             if (Supplier == "SANWA")
             {

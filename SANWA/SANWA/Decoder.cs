@@ -201,16 +201,20 @@ namespace SANWA.Utility
                                         break;
                                     case "Nak":
                                         each.Type = ReturnMessage.ReturnType.Error;
-                                        each.Value = content[2];
+                                        if (content.Length > 2)
+                                            each.Value = content[2];
                                         break;
                                     case "Success":
                                         each.Type = ReturnMessage.ReturnType.Finished;
-                                        each.Value = content[2];
+                                        if(content.Length>2)
+                                            each.Value = content[2];
                                         break;
                                     case "Error":
                                         each.Type = ReturnMessage.ReturnType.Error;
-                                        each.NodeAdr = content[3].ToString();
-                                        each.Value = content[2] + ":" + content[4];
+                                        if (content.Length > 3)
+                                            each.NodeAdr = content[3].ToString();
+                                        if (content.Length > 4)
+                                            each.Value = content[2] + ":" + content[4];
                                         break;
                                     default:
                                         each.CommandType = content[1];
