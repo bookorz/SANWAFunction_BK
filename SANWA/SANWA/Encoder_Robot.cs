@@ -188,11 +188,11 @@ namespace SANWA.Utility
             {
                 Parameter01 = Address.ToString();
 
-                if (sv.Equals("0"))
+                if (sv.Equals("1"))
                 {
                     Command = "ExcitationOn";
                 }
-                else if (sv.Equals("1"))
+                else if (sv.Equals("0"))
                 {
                     Command = "ExcitationOff";
                 }
@@ -404,7 +404,7 @@ namespace SANWA.Utility
                 Parameter01 = string.Format("{0},{1}", Address.ToString(), vl);
             }
 
-            return CommandAssembly(Supplier, Address, Sequence, CMD, "Mode", Parameter01);
+            return CommandAssembly(Supplier, Address, Sequence, CMD, "Mode", Parameter01.Split(','));
         }
 
         /// <summary>
