@@ -48,7 +48,7 @@ namespace SANWA.Utility
             }
             else if (Supplier == "KAWASAKI")
             {
-                Parameter01 = string.Format("{0}.{1}", "A" + Address.ToString(), angle);
+                Parameter01 = string.Format("{0}.{1}", Address.ToString(), angle);
             }
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "Angle", Parameter01.Split(','));
@@ -131,7 +131,7 @@ namespace SANWA.Utility
             }
             else if (Supplier == "KAWASAKI")
             {
-                Parameter01 = "R" + Address.ToString();
+                Parameter01 = Address.ToString();
 
                 if (sv.Equals("0"))
                 {
@@ -165,7 +165,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string HomeOrgin(string Address, string Sequence)
         {
-            string Parameter01 = Supplier == "SANWA" ? null : "A" + Address.ToString();
+            string Parameter01 = Supplier == "SANWA" ? null : Address.ToString();
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "HOMEToOrgin", Parameter01);
         }
@@ -224,7 +224,7 @@ namespace SANWA.Utility
             }
             else if (Supplier == "KAWASAKI")
             {
-                Parameter01 = string.Format("{0},{1},{2}", "A" + Address.ToString(), axis, pos);
+                Parameter01 = string.Format("{0},{1},{2}", Address.ToString(), axis, pos);
             }
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "MoveDirect", Parameter01.Split(','));
@@ -241,7 +241,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string MoveRelativePosition(string Address, string Sequence, string axis, string MoveData, string MoveMode)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "MoveDirect", "A" + Address.ToString(), axis, MoveData, MoveMode);
+            return CommandAssembly(Supplier, Address, Sequence, "CMD", "MoveDirect", Address.ToString(), axis, MoveData, MoveMode);
         }
 
         /// <summary>
@@ -361,7 +361,7 @@ namespace SANWA.Utility
             }
             else if (Supplier == "KAWASAKI")
             {
-                Parameter01 = "A" + Address.ToString();
+                Parameter01 = Address.ToString();
             }
 
             return CommandAssembly(Supplier, Address, Sequence, CMD, "DeviceStatusIO", Parameter01.Split(','));
@@ -396,7 +396,7 @@ namespace SANWA.Utility
             }
             else if (Supplier == "KAWASAKI")
             {
-                Parameter01 = "A" + Address.ToString();
+                Parameter01 = Address.ToString();
             }
 
             return CommandAssembly(Supplier, Address, Sequence, CMD, "DeviceStatusSpeed", Parameter01);
@@ -411,7 +411,7 @@ namespace SANWA.Utility
         public string Status(string Address, string Sequence)
         {
             string CMD = Supplier == "SANWA" ? "GET" : "CMD";
-            string Parameter01 = Supplier == "SANWA" ? null : "A" + Address.ToString();
+            string Parameter01 = Supplier == "SANWA" ? null : Address.ToString();
 
             return CommandAssembly(Supplier, Address, Sequence, CMD, "DeviceStatus", Parameter01);
         }
@@ -424,7 +424,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string CombinedStatus(string Address, string Sequence)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "GET", "CombinedDeviceStatus", "A" + Address.ToString());
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "CombinedDeviceStatus", Address.ToString());
         }
 
         /// <summary>
@@ -458,7 +458,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string WaferHold(string Address, string Sequence)
         {
-            string Parameter01 = Supplier == "SANWA" ? "1" : "A" + Address.ToString();
+            string Parameter01 = Supplier == "SANWA" ? "1" : Address.ToString();
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "WaferHold", Parameter01.Split(','));
         }
@@ -471,7 +471,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string WaferReleaseHold(string Address, string Sequence, string arm)
         {
-            string Parameter01 = Supplier == "SANWA" ? "1" : "A" + Address.ToString();
+            string Parameter01 = Supplier == "SANWA" ? "1" : Address.ToString();
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "WaferRelease", Parameter01.Split(','));
         }
