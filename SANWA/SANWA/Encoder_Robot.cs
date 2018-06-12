@@ -221,7 +221,7 @@ namespace SANWA.Utility
             }
             else if (Supplier == "KAWASAKI")
             {
-                Parameter01 = string.Format("{0},{1},{2},{3}", "R" + Address.ToString(), Arm, Point, Slot);
+                Parameter01 = string.Format("{0},{1},{2},{3}", "R" + Address.ToString(), "H" + Arm, Point, Slot);
             }
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Parameter01.Split(','));
@@ -827,7 +827,7 @@ namespace SANWA.Utility
                 Parameter01 = string.Format("{0},{1}", "R" + Address.ToString(), vl);
             }
 
-            return CommandAssembly(Supplier, Address, Sequence, CMD, "DeviceStatusSpeed", Parameter01);
+            return CommandAssembly(Supplier, Address, Sequence, CMD, "DeviceStatusSpeed", Parameter01.Split(','));
         }
 
         /// <summary>
@@ -1399,6 +1399,11 @@ namespace SANWA.Utility
             catch (Exception ex)
             {
                 throw new Exception(ex.ToString());
+            }
+
+            if (strCheckSum.Length == 1)
+            {
+                strCheckSum = "0" + strCheckSum;
             }
 
             return strCheckSum;

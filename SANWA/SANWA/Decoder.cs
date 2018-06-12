@@ -23,18 +23,18 @@ namespace SANWA.Utility
             {
                 switch (Supplier)
                 {
-                    case "SANWACONTROLLER":
+                    case "SANWA":
                         result = SANWACodeAnalysis(Message);
                         break;
 
-                    case "TDKCONTROLLER":
+                    case "TDK":
                         result = TDKCodeAnalysis(Message);
                         break;
 
-                    case "KAWASAKICONTROLLER":
+                    case "KAWASAKI":
                         result = KAWASAKICodeAnalysis(Message);
                         break;
-                    case "HSTCONTROLLER":
+                    case "HST":
                         result = HSTCodeAnalysis(Message);
                         break;
 
@@ -71,7 +71,7 @@ namespace SANWA.Utility
                     each.Command = "";
                     switch (Msg)
                     {
-                        case "1": 
+                        case "1":
                         case "0":
                             each.Type = ReturnMessage.ReturnType.Excuted;
                             each.Value = Msg;
@@ -131,8 +131,11 @@ namespace SANWA.Utility
                                     case "EVT":
                                         each.Type = ReturnMessage.ReturnType.Event;
                                         break;
+                                    default:
+                                        each.CommandType = content[i];
+                                        break;
                                 }
-                                each.CommandType = content[i];
+
                                 break;
                             case 1:
 
@@ -144,7 +147,7 @@ namespace SANWA.Utility
                                 break;
                             case 2:
                                 each.Value = content[i];
-                                if(each.Type == ReturnMessage.ReturnType.Finished && !each.Value.Equals("00000000"))
+                                if (each.Type == ReturnMessage.ReturnType.Finished && !each.Value.Equals("00000000"))
                                 {
                                     each.Type = ReturnMessage.ReturnType.Error;
                                 }
@@ -193,18 +196,24 @@ namespace SANWA.Utility
 
                                 switch (content[i])
                                 {
+                                    case "Ack":
+                                        each.Type = ReturnMessage.ReturnType.Excuted;
+                                        break;
                                     case "Nak":
-                                        each.Type = ReturnMessage.ReturnType.Abnormal;
+                                        each.Type = ReturnMessage.ReturnType.Error;
                                         each.Value = content[2];
                                         break;
                                     case "Success":
-                                        each.Type = ReturnMessage.ReturnType.Excuted;
+                                        each.Type = ReturnMessage.ReturnType.Finished;
                                         each.Value = content[2];
                                         break;
                                     case "Error":
                                         each.Type = ReturnMessage.ReturnType.Error;
                                         each.NodeAdr = content[3].ToString();
                                         each.Value = content[2] + ":" + content[4];
+                                        break;
+                                    default:
+                                        each.CommandType = content[1];
                                         break;
                                 }
                                 break;
