@@ -143,6 +143,12 @@ namespace SANWA.Utility
 
                         break;
 
+                    case "KAWASAKI":
+
+                        strErrorCode = error_message;
+
+                        break;
+
                     default:
 
                         strErrorCode = error_message;

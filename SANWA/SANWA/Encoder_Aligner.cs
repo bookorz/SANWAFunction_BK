@@ -122,7 +122,7 @@ namespace SANWA.Utility
         {
             string Parameter01 = string.Empty;
             string Command = string.Empty;
-            string CMD = Supplier == "SANWA" ? "SET" : "CMD";
+            string CMD = Supplier == "SANWA" ? "SET" : "SET";
 
             if (Supplier == "SANWA")
             {
