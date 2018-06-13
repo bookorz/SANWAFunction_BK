@@ -48,7 +48,7 @@ namespace SANWA.Utility
             }
             else if (Supplier == "KAWASAKI")
             {
-                Parameter01 = string.Format("{0},{1}", Address.ToString(), angle);
+                Parameter01 = string.Format("{0}.{1}", Address.ToString(), angle);
             }
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "Angle", Parameter01.Split(','));
@@ -190,9 +190,20 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string Mode(string Address, string Sequence, string vl)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "SET", "Mode", vl);
-        }
+            string Parameter01 = string.Empty;
+            string CMD = Supplier == "SANWA" ? "SET" : "SET";
 
+            if (Supplier == "SANWA")
+            {
+                Parameter01 = vl;
+            }
+            else if (Supplier == "KAWASAKI")
+            {
+                Parameter01 = string.Format("{0},{1}", Address.ToString(), vl);
+            }
+
+            return CommandAssembly(Supplier, Address, Sequence, CMD, "Mode", Parameter01.Split(','));
+        }
 
         /// <summary>
         /// 取得動作模式選擇設定
@@ -202,7 +213,9 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string GetMode(string Address, string Sequence)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "GET", "Mode", null);
+            string CMD = Supplier == "SANWA" ? "GET" : "GET";
+            string CMDType = Supplier == "SANWA" ? "Mode" : "ModeGet";
+            return CommandAssembly(Supplier, Address, Sequence, CMD, CMDType, null);
         }
 
         /// <summary>
@@ -388,7 +401,7 @@ namespace SANWA.Utility
         public string Speed(string Address, string Sequence)
         {
             string Parameter01 = string.Empty;
-            string CMD = Supplier == "SANWA" ? "GET" : "GET";
+            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
 
             if (Supplier == "SANWA")
             {
@@ -469,11 +482,22 @@ namespace SANWA.Utility
         /// <param name="Address"> Equipment Address </param>
         /// <param name="Sequence"> Euuipment Sequence </param>
         /// <returns></returns>
-        public string WaferReleaseHold(string Address, string Sequence, string arm)
+        public string WaferReleaseHold(string Address, string Sequence)
         {
             string Parameter01 = Supplier == "SANWA" ? "1" : Address.ToString();
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "WaferRelease", Parameter01.Split(','));
+        }
+
+        /// <summary>
+        /// Aligner Offset
+        /// </summary>
+        /// <param name="Address"> Equipment Address </param>
+        /// <param name="Sequence"> Euuipment Sequence </param>
+        /// <returns></returns>
+        public string AlignerOffset(string Address, string Sequence)
+        {
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "AlignerOffset", Address.ToString());
         }
 
         private string CommandAssembly(string Supplier, string Address, string Sequence, string CommandType, string Command, params string[] Parameter)
