@@ -190,9 +190,20 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string Mode(string Address, string Sequence, string vl)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "SET", "Mode", vl);
-        }
+            string Parameter01 = string.Empty;
+            string CMD = Supplier == "SANWA" ? "SET" : "SET";
 
+            if (Supplier == "SANWA")
+            {
+                Parameter01 = vl;
+            }
+            else if (Supplier == "KAWASAKI")
+            {
+                Parameter01 = vl;
+            }
+
+            return CommandAssembly(Supplier, Address, Sequence, CMD, "Mode", Parameter01.Split(','));
+        }
 
         /// <summary>
         /// 取得動作模式選擇設定
@@ -202,7 +213,9 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string GetMode(string Address, string Sequence)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "GET", "Mode", null);
+            string CMD = Supplier == "SANWA" ? "GET" : "GET";
+            string CMDType = Supplier == "SANWA" ? "Mode" : "ModeGet";
+            return CommandAssembly(Supplier, Address, Sequence, CMD, CMDType, null);
         }
 
         /// <summary>
@@ -339,7 +352,19 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string setSpeed(string Address, string Sequence, string vl)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "SET", "DeviceStatusSpeed", vl);
+            string Parameter01 = string.Empty;
+            string CMD = Supplier == "SANWA" ? "SET" : "SET";
+
+            if (Supplier == "SANWA")
+            {
+                Parameter01 = vl;
+            }
+            else if (Supplier == "KAWASAKI")
+            {
+                Parameter01 = string.Format("{0},{1}", Address.ToString(), vl);
+            }
+
+            return CommandAssembly(Supplier, Address, Sequence, CMD, "DeviceStatusSpeed", Parameter01.Split(','));
         }
 
         /// <summary>
@@ -601,10 +626,10 @@ namespace SANWA.Utility
                         {
                             Int32 itTemp = 0;
 
-                            if (dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Null") && !dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Data"))
+                            if (!dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Null") && !dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Data"))
                             {
                                 // * Value mode
-                                if (dvTemp.Table.Rows[i]["Data_Value"].ToString().Equals(string.Empty))
+                                if (dvTemp.Table.Rows[i]["Data_Value"].ToString().TrimEnd().Equals(string.Empty))
                                 {
                                     if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > int.Parse(Parameter[i].ToString()))
                                     {
