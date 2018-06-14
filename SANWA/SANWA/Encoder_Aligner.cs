@@ -501,6 +501,17 @@ namespace SANWA.Utility
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "WaferRelease", Parameter01.Split(','));
         }
 
+        /// <summary>
+        /// Aligner Offset
+        /// </summary>
+        /// <param name="Address"> Equipment Address </param>
+        /// <param name="Sequence"> Euuipment Sequence </param>
+        /// <returns></returns>
+        public string AlignerOffset(string Address, string Sequence)
+        {
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "AlignerOffset", Address.ToString());
+        }
+
         private string CommandAssembly(string Supplier, string Address, string Sequence, string CommandType, string Command, params string[] Parameter)
         {
             string strCommand = string.Empty;
