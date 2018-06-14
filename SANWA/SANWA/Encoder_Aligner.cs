@@ -417,7 +417,8 @@ namespace SANWA.Utility
 
             if (Supplier == "SANWA")
             {
-                Parameter01 = null;
+                //Parameter01 = null;
+                Parameter01 = "";//20180614 fix null exception
             }
             else if (Supplier == "KAWASAKI")
             {
