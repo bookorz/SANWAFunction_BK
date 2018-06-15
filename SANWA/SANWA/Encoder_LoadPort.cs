@@ -92,15 +92,12 @@ namespace SANWA.Utility
             }
         }
 
-
-    
-
-    /// <summary>
-    /// Reset
-    /// </summary>
-    /// <param name="commandType"> Command Type </param>
-    /// <returns></returns>
-    public string Reset(CommandType commandType)
+        /// <summary>
+        /// Reset
+        /// </summary>
+        /// <param name="commandType"> Command Type </param>
+        /// <returns></returns>
+        public string Reset(CommandType commandType)
         {
             return CommandAssembly(Supplier, commandType.ToString().Equals("Finish") ? "FIN" : "SET", "Reset");
         }
@@ -656,7 +653,7 @@ namespace SANWA.Utility
                                 break;
                             case CommandMode.TDK_B:
                                 strCommandFormat = TDK_B(dtTemp.Rows[0]["code_format"].ToString());
-                                break;;
+                                break;
                         }
 
                         break;
@@ -675,7 +672,7 @@ namespace SANWA.Utility
             return strCommand;
         }
 
-        private string TDK_A(string Command)
+        public string TDK_A(string Command)
         {
             string strCommsnd = string.Empty;
             string strLen = string.Empty;
@@ -701,7 +698,7 @@ namespace SANWA.Utility
             return strCommsnd;
         }
 
-        private string TDK_B(string Command)
+        public string TDK_B(string Command)
         {
             string strCommsnd = string.Empty;
             string strLen = string.Empty;

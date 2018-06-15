@@ -48,7 +48,7 @@ namespace SANWA.Utility
             }
             else if (Supplier == "KAWASAKI")
             {
-                Parameter01 = string.Format("{0},{1}", Address.ToString(), angle);
+                Parameter01 = string.Format("{0}.{1}", Address.ToString(), angle);
             }
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "Angle", Parameter01.Split(','));
@@ -495,7 +495,7 @@ namespace SANWA.Utility
         /// <param name="Address"> Equipment Address </param>
         /// <param name="Sequence"> Euuipment Sequence </param>
         /// <returns></returns>
-        public string WaferReleaseHold(string Address, string Sequence, string arm)
+        public string WaferReleaseHold(string Address, string Sequence)
         {
             string Parameter01 = Supplier == "SANWA" ? "1" : Address.ToString();
 
