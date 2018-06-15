@@ -10,12 +10,11 @@ namespace SANWA.Utility
 {
     public class ContainerSet
     {
-        //public static List<string> vsMessage;
-
-        //public ContainerSet()
-        //{
-        //    vsMessage = new List<string>();
-        //}
+        public enum DataTableMoveRow
+        {
+            Up,
+            Down
+        }
 
         public void TableFormatting(ref DataTable dt, string TableName, string[] Columns)
         {
@@ -109,6 +108,42 @@ namespace SANWA.Utility
             }
 
             return strCommand;
+        }
+
+        public int MoveRow(ref DataTable dtTemp, DataRow row, DataTableMoveRow direction)
+        {
+            DataRow oldRow = row;
+            DataRow newRow = dtTemp.NewRow();
+
+            newRow.ItemArray = oldRow.ItemArray;
+
+            int oldRowIndex = dtTemp.Rows.IndexOf(row);
+
+            if (direction == DataTableMoveRow.Down)
+            {
+                int newRowIndex = oldRowIndex + 1;
+
+                if (oldRowIndex < (dtTemp.Rows.Count))
+                {
+                    dtTemp.Rows.Remove(oldRow);
+                    dtTemp.Rows.InsertAt(newRow, newRowIndex);
+                    return dtTemp.Rows.IndexOf(newRow);
+                }
+            }
+
+            if (direction == DataTableMoveRow.Up)
+            {
+                int newRowIndex = oldRowIndex - 1;
+
+                if (oldRowIndex > 0)
+                {
+                    dtTemp.Rows.Remove(oldRow);
+                    dtTemp.Rows.InsertAt(newRow, newRowIndex);
+                    return dtTemp.Rows.IndexOf(newRow);
+                }
+            }
+
+            return 0;
         }
     }
 }

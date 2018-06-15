@@ -1374,7 +1374,7 @@ namespace SANWA.Utility
             return strCommand;
         }
 
-        private string KawasakiCheckSum(string Parameter)
+        public string KawasakiCheckSum(string Parameter)
         {
             string strCheckSum = string.Empty;
             int value = 0;
