@@ -37,6 +37,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Adam\WindowsFormsApp1\lib\mysql.data.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Adam\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="nmodbuspc">
       <HintPath>..\..\nmodbuspc.dll</HintPath>
     </Reference>
@@ -54,6 +58,8 @@
   <ItemGroup>
     <Compile Include="AlarmMapping.cs" />
     <Compile Include="AlarmMessage.cs" />
+    <Compile Include="Config\ConfigTool.cs" />
+    <Compile Include="Config\SystemConfig.cs" />
     <Compile Include="DBUtil.cs" />
     <Compile Include="Encoder.cs" />
     <Compile Include="Encoder_Aligner.cs" />
