@@ -587,13 +587,11 @@ namespace SANWA.Utility
                                     {
                                         itTemp = int.Parse(Parameter[i].ToString());
 
+                                        strsParameter[i] = itTemp.ToString("D" + dvTemp.Table.Rows[i]["Values_length"].ToString());
+
                                         if (Command.Equals("Angle"))
                                         {
-                                            strsParameter[i] = itTemp.ToString().PadRight(6, '0');
-                                        }
-                                        else
-                                        {
-                                            strsParameter[i] = itTemp.ToString("D" + dvTemp.Table.Rows[i]["Values_length"].ToString());
+                                            strsParameter[i] = strsParameter[i] + "000";
                                         }
                                     }
                                 }
@@ -632,7 +630,7 @@ namespace SANWA.Utility
                             }
                         }
 
-                        strsParameter = Parameter;
+                        strsParameter = Parameter; 
 
                         for (int i = 0; i < dvTemp.Table.Rows.Count; i++)
                         {
@@ -640,7 +638,7 @@ namespace SANWA.Utility
 
                             if (!dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Null") && !dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Data"))
                             {
-                                // * Value mode
+                                // * Value mode烏龜
                                 if (dvTemp.Table.Rows[i]["Data_Value"].ToString().TrimEnd().Equals(string.Empty))
                                 {
                                     if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > int.Parse(Parameter[i].ToString()))
