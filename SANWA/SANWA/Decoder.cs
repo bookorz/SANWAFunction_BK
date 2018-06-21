@@ -37,10 +37,50 @@ namespace SANWA.Utility
                     case "HST":
                         result = HSTCodeAnalysis(Message);
                         break;
+                    case "COGNEX":
+                        result = COGNEXCodeAnalysis(Message);
+                        break;
 
                     default:
                         throw new NotImplementedException();
 
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return result;
+        }
+
+        private List<ReturnMessage> COGNEXCodeAnalysis(string Message)
+        {
+            List<ReturnMessage> result;
+            string[] msgAry;
+
+            try
+            {
+                result = new List<ReturnMessage>();
+                msgAry = Message.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+                foreach (string Msg in msgAry)
+                {
+                    if (Msg.Trim().Equals(""))
+                    {
+                        continue;
+                    }
+                    ReturnMessage each = new ReturnMessage();
+                    each.NodeAdr = "1";
+                    each.Command = "";
+                    switch (Msg)
+                    {
+                        
+                        default:
+                            each.Type = ReturnMessage.ReturnType.Finished;
+                            each.Value = Msg;
+                            break;
+                    }
+                    result.Add(each);
                 }
             }
             catch (Exception ex)

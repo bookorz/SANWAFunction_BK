@@ -87,7 +87,7 @@ namespace SANWA.Utility
 
                         if (Command.Equals("Read"))
                         {
-                            strCommandFormat = container.StringFormat("READ({0})", Parameter);
+                            strCommandFormat = container.StringFormat("READ({0})", Parameter) + Environment.NewLine;
                         }
                         else
                         {
