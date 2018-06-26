@@ -14,6 +14,7 @@ namespace SANWA.Utility.Config
         public string OCR1ImgToJpgPath { get; set; }
         public string OCR2ImgSourcePath { get; set; }
         public string OCR2ImgToJpgPath { get; set; }
+        public string SystemMode { get; set; }
 
         public static SystemConfig Get()
         {

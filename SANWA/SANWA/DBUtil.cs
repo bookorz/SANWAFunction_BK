@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper;
 
 
 namespace Adam.Util
@@ -147,5 +148,23 @@ namespace Adam.Util
             return dt;
         }
 
+        public IEnumerable<SANWA.Utility.CDBContainer> GetDataList(string sql, Dictionary<string, object> parameters)
+        {
+            IEnumerable<SANWA.Utility.CDBContainer> dBContainers;
+            try
+            {
+                open_Conn();
+
+                dBContainers = Connection_.Query<SANWA.Utility.DBController>(sql);
+
+                close_Conn();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return dBContainers;
+        }
     }
 }
