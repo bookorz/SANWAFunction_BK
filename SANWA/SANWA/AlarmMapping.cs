@@ -81,24 +81,6 @@ namespace SANWA.Utility
             {
                 alarm = new AlarmMessage();
 
-                var query = (from a in dtCode.AsEnumerable()
-                             where a.Field<string>("node_type") == eqp_type.ToUpper()
-                                && a.Field<string>("vendor") == supplier.ToUpper()
-                                && a.Field<string>("Code_ID") == error_message.ToUpper()
-                             select a).ToList();
-
-                if (query.Count > 0)
-                {
-                    dtTemp = query.CopyToDataTable();
-                    strAlarmType = dtTemp.Rows[0]["alarm_code_id"].ToString();
-                    strAlarmCode = dtTemp.Rows[0]["Code_ID"].ToString();
-                    alarm.CodeID = string.Format("{0}{1}", strAlarmType, strAlarmCode);
-                }
-                else
-                {
-                    throw new Exception(string.Format("SANWA.Utility.AlarmMapping\r\nException: {0} {1} Alarm type not exists.", supplier.ToUpper(), eqp_type.ToUpper()));
-                }
-
                 // * Special rule
                 switch (supplier.ToUpper())
                 {
@@ -155,6 +137,24 @@ namespace SANWA.Utility
 
                         break;
 
+                }
+
+                var query = (from a in dtCode.AsEnumerable()
+                             where a.Field<string>("node_type") == eqp_type.ToUpper()
+                                && a.Field<string>("vendor") == supplier.ToUpper()
+                                && a.Field<string>("Code_ID") == strErrorCode.ToUpper()
+                             select a).ToList();
+
+                if (query.Count > 0)
+                {
+                    dtTemp = query.CopyToDataTable();
+                    strAlarmType = dtTemp.Rows[0]["alarm_code_id"].ToString();
+                    strAlarmCode = dtTemp.Rows[0]["Code_ID"].ToString();
+                    alarm.CodeID = string.Format("{0}{1}", strAlarmType, strAlarmCode);
+                }
+                else
+                {
+                    throw new Exception(string.Format("SANWA.Utility.AlarmMapping\r\nException: {0} {1} Alarm type not exists.", supplier.ToUpper(), eqp_type.ToUpper()));
                 }
 
 
