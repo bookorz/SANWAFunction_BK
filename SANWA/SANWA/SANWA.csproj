@@ -67,7 +67,9 @@
     <Compile Include="Config\CDBContainer.cs" />
     <Compile Include="Config\ConfigTool.cs" />
     <Compile Include="Config\DBController.cs" />
+    <Compile Include="Config\DBEquipmentModel.cs" />
     <Compile Include="Config\SystemConfig.cs" />
+    <Compile Include="config_equipment_model.cs" />
     <Compile Include="config_controllers.cs" />
     <Compile Include="DBUtil.cs" />
     <Compile Include="Encoder.cs" />

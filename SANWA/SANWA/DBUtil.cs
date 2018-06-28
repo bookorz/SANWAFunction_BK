@@ -13,6 +13,12 @@ namespace Adam.Util
 {
     public class DBUtil
     {
+        public enum QueryContainer
+        {
+            DBController,
+            DBEquipmentModel
+        }
+
         MySqlConnection Connection_;
 
         private void open_Conn()
@@ -148,14 +154,24 @@ namespace Adam.Util
             return dt;
         }
 
-        public IEnumerable<SANWA.Utility.CDBContainer> GetDataList(string sql, Dictionary<string, object> parameters)
+        public IEnumerable<SANWA.Utility.CDBContainer> GetDataList(QueryContainer Container, string sql, Dictionary<string, object> parameters)
         {
-            IEnumerable<SANWA.Utility.CDBContainer> dBContainers;
+            IEnumerable<SANWA.Utility.CDBContainer> dBContainers = null;
+
             try
             {
                 open_Conn();
 
-                dBContainers = Connection_.Query<SANWA.Utility.DBController>(sql);
+                switch (Container)
+                {
+                    case QueryContainer.DBController:
+                        dBContainers = Connection_.Query<SANWA.Utility.DBController>(sql, parameters);
+                        break;
+
+                    case QueryContainer.DBEquipmentModel:
+                        dBContainers = Connection_.Query<SANWA.Utility.DBEquipmentModel>(sql, parameters);
+                        break;
+                }
 
                 close_Conn();
             }
