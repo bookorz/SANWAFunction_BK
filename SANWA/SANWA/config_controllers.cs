@@ -8,7 +8,7 @@ namespace SANWA.Utility
 {
     public class config_controllers
     {
-        public DBController Aligner01 = new DBController();
+        public DBController Aligner01;
         public DBController Aligner02;
         public DBController Robot01;
         public DBController Robot02;
@@ -27,7 +27,7 @@ namespace SANWA.Utility
         {
             Adam.Util.DBUtil dBUtil;
             string strSql = string.Empty;
-            List<CDBContainer> Temp;
+            List<CDBContainer> Temp = new List<CDBContainer>();
 
             try
             {
@@ -35,7 +35,12 @@ namespace SANWA.Utility
 
                 strSql = "select * from config_controller order by node_id asc ";
 
-                Temp = dBUtil.GetDataList(strSql, null).ToList();
+                Temp = dBUtil.GetDataList(Adam.Util.DBUtil.QueryContainer.DBController, strSql, null).ToList();
+
+                if (Temp.Count == 0)
+                {
+                    throw new Exception("This statement is the read config exception message.");
+                }
 
                 foreach (var item in Temp)
                 {

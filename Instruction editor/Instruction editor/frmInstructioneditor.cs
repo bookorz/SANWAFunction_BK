@@ -563,7 +563,11 @@ namespace Instruction_editor
 
             SANWA.Utility.AlarmMapping alarmMapping = new SANWA.Utility.AlarmMapping();
 
-            SANWA.Utility.AlarmMessage alarmMessage = alarmMapping.Get("SANWE", "ROBOT", "91851000");
+            SANWA.Utility.AlarmMessage alarmMessage = alarmMapping.Get("SANWA", "ROBOT", "95812200");
+
+            //SANWA.Utility.config_controllers config_Controllers = new SANWA.Utility.config_controllers();
+
+            //txbParameterDescription.Text = config_Controllers.Robot01.Node_id;
         }
 
         private void ConnectTest()
