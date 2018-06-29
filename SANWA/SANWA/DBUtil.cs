@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Dapper;
 
 
-namespace Adam.Util
+namespace SANWA.Utility
 {
     public class DBUtil
     {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.IO;
 using System.Threading.Tasks;
-using Adam.Util;
+
 
 namespace SANWA.Utility
 {

@@ -12,19 +12,19 @@ namespace SANWA.Utility
 
         public config_equipment_model()
         {
-            Adam.Util.DBUtil dBUtil;
+            DBUtil dBUtil;
             string strSql = string.Empty;
             List<CDBContainer> Temp = new List<CDBContainer>();
             Dictionary<string, object> keyValues = new Dictionary<string, object>();
 
             try
             {
-                dBUtil = new Adam.Util.DBUtil();
+                dBUtil = new DBUtil();
 
                 strSql = "select * from config_equipment_model where equipment_model_id = @equipment_model_id";
                 keyValues.Add("@equipment_model_id", SANWA.Utility.Config.SystemConfig.Get().SystemMode);
 
-                Temp = dBUtil.GetDataList(Adam.Util.DBUtil.QueryContainer.DBEquipmentModel, strSql, keyValues).ToList();
+                Temp = dBUtil.GetDataList(DBUtil.QueryContainer.DBEquipmentModel, strSql, keyValues).ToList();
 
                 if (Temp.Count == 0)
                 {

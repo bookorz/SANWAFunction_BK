@@ -25,17 +25,17 @@ namespace SANWA.Utility
 
         public config_controllers()
         {
-            Adam.Util.DBUtil dBUtil;
+            DBUtil dBUtil;
             string strSql = string.Empty;
             List<CDBContainer> Temp = new List<CDBContainer>();
 
             try
             {
-                dBUtil = new Adam.Util.DBUtil();
+                dBUtil = new DBUtil();
 
                 strSql = "select * from config_controller order by node_id asc ";
 
-                Temp = dBUtil.GetDataList(Adam.Util.DBUtil.QueryContainer.DBController, strSql, null).ToList();
+                Temp = dBUtil.GetDataList(DBUtil.QueryContainer.DBController, strSql, null).ToList();
 
                 if (Temp.Count == 0)
                 {

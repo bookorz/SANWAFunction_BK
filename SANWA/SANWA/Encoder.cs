@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using Adam.Util;
 using System.Linq;
 
 namespace SANWA.Utility
