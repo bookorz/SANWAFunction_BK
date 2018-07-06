@@ -52,3 +52,4 @@ D:\SyncSourceCode\SANWAFunction\SANWA\SANWA\bin\Debug\Dapper.xml
 D:\SyncSourceCode\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.csprojAssemblyReference.cache
 C:\Users\ethan_huang\source\repos\SANWAFunction\SANWA\SANWA\bin\Debug\Dapper.dll
 C:\Users\ethan_huang\source\repos\SANWAFunction\SANWA\SANWA\bin\Debug\Dapper.xml
+C:\Users\ethan_huang\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.csprojAssemblyReference.cache

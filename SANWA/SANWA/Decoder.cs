@@ -72,6 +72,7 @@ namespace SANWA.Utility
                     ReturnMessage each = new ReturnMessage();
                     each.NodeAdr = "1";
                     each.Command = "";
+                    each.OrgMsg = Msg;
                     switch (Msg)
                     {
                         
@@ -109,6 +110,7 @@ namespace SANWA.Utility
                     ReturnMessage each = new ReturnMessage();
                     each.NodeAdr = "1";
                     each.Command = "";
+                    each.OrgMsg = Msg;
                     switch (Msg)
                     {
                         case "1":
@@ -149,7 +151,7 @@ namespace SANWA.Utility
                         continue;
                     }
                     ReturnMessage each = new ReturnMessage();
-
+                    each.OrgMsg = Msg;
                     each.NodeAdr = Msg[1].ToString();
                     string[] content = Msg.Replace("\r", "").Replace("\n", "").Substring(2).Split(':');
                     for (int i = 0; i < content.Length; i++)
@@ -222,7 +224,7 @@ namespace SANWA.Utility
                         continue;
                     }
                     ReturnMessage each = new ReturnMessage();
-
+                    each.OrgMsg = Msg;
                     each.Command = Msg.Substring(Msg.IndexOf('<') + 1, Msg.IndexOf('>') - Msg.IndexOf('<') - 1);
                     string[] content = each.Command.Split(',');
                     for (int i = 0; i < content.Length; i++)
@@ -293,7 +295,7 @@ namespace SANWA.Utility
                 byte[] t = new byte[Encoding.ASCII.GetByteCount(Msg.ToString())]; ;
                 int c = Encoding.ASCII.GetBytes(Msg.ToString(), 0, Encoding.ASCII.GetByteCount(Msg.ToString()), t, 0);
 
-
+                each.OrgMsg = Msg;
                 each.NodeAdr = Encoding.Default.GetString(t, 3, 2);
                 string contentStr = Encoding.Default.GetString(t, 5, t.Length - 5 - 3).Replace(";", "").Trim();
 

@@ -7,18 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
-
+using log4net;
 
 namespace SANWA.Utility
 {
     public class DBUtil
     {
+
         public enum QueryContainer
         {
             DBController,
             DBEquipmentModel
         }
-
+        static ILog logger = LogManager.GetLogger(typeof(DBUtil));
         MySqlConnection Connection_;
 
         private void open_Conn()
@@ -106,13 +107,16 @@ namespace SANWA.Utility
         public int ExecuteNonQuery(string sql, Dictionary<string, object> parameters)
         {
             //sql = string.Format("UPDATE list_item SET modify_timestamp = NOW()");
+            string sqlInfo = sql+" : ";
             open_Conn();
             MySqlCommand command = new MySqlCommand(sql, Connection_);
             // set parameters
             foreach (KeyValuePair<string, object> param in parameters)
             {
                 command.Parameters.AddWithValue(param.Key, param.Value);
+                sqlInfo += param.Key+" - "+ param.Value;
             }
+            //logger.Debug("ExecuteNonQuery  "+ sqlInfo);
             int affectLines = command.ExecuteNonQuery();
             close_Conn();
             return affectLines;

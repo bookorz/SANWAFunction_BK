@@ -8,18 +8,18 @@ namespace SANWA.Utility
 {
     public class ReturnMessage
     {
-        public enum ReturnType
+        public class ReturnType
         {
-            Excuted,
-            Finished,
-            Error,
-            Event,
-            Information,
-            ReInformation,
-            Abnormal
+            public const string Excuted = "Excuted";
+            public const string Finished = "Finished";
+            public const string Error = "Error";
+            public const string Event = "Event";
+            public const string Information = "Information";
+            public const string ReInformation = "ReInformation";
+            public const string Abnormal = "Abnormal";
         }
-
-        public ReturnType Type;
+        public string OrgMsg = "";
+        public string Type;
         public string Command;
         public bool IsInterrupt = false;
         public string NodeAdr = "";
