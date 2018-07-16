@@ -151,6 +151,7 @@ namespace SANWA.Utility
                     strAlarmType = dtTemp.Rows[0]["alarm_code_id"].ToString();
                     strAlarmCode = dtTemp.Rows[0]["Code_ID"].ToString();
                     alarm.CodeID = string.Format("{0}{1}", strAlarmType, strAlarmCode);
+                    alarm.IsStop = dtTemp.Rows[0]["Is_stop"].ToString() == "Y" ? true : false;
                 }
                 else
                 {
