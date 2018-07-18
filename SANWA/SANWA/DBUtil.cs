@@ -76,7 +76,7 @@ namespace SANWA.Utility
             }
             catch(Exception e)
             {
-                Console.Write(sql);
+                logger.Error(e.StackTrace);
             }
             return reader;
         }
