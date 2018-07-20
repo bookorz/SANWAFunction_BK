@@ -8,30 +8,36 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using log4net;
+using System.Collections.Concurrent;
+using System.Threading;
 
 namespace SANWA.Utility
 {
     public class DBUtil
     {
-
+        static ConcurrentQueue<MySqlCommand> SQLBuffer = new ConcurrentQueue<MySqlCommand>();
+        
         public enum QueryContainer
         {
             DBController,
             DBEquipmentModel
         }
         static ILog logger = LogManager.GetLogger(typeof(DBUtil));
-        MySqlConnection Connection_;
+        
 
-        private void open_Conn()
+
+        private static MySqlConnection open_Conn()
         {
-
+            MySqlConnection Connection_;
             string connectionStr = SystemConfig.Get().DBConnectionString;
             Connection_ = new MySqlConnection(connectionStr);
             Connection_.Open();
+            return Connection_;
+
             //MessageBox.Show("Connect OK!");
         }
 
-        private void close_Conn()
+        private static void close_Conn(MySqlConnection Connection_)
         {
             if (Connection_ != null)
             {
@@ -60,8 +66,8 @@ namespace SANWA.Utility
             try
             {
                 //sql = "SELECT * FROM list_item";
-                open_Conn();
-                MySqlCommand command = new MySqlCommand(sql, Connection_);
+                
+                MySqlCommand command = new MySqlCommand(sql, open_Conn());
                 // set parameters
                 foreach (KeyValuePair<string, object> param in parameters)
                 {
@@ -72,7 +78,7 @@ namespace SANWA.Utility
                 var dt = new DataTable();
                 dt.Load(rs);
                 reader =  dt.CreateDataReader();
-                close_Conn();
+                close_Conn(command.Connection);
             }
             catch(Exception e)
             {
@@ -92,9 +98,9 @@ namespace SANWA.Utility
         public MySqlDataAdapter GetDataAdapter(string sql)
         {
             //sql = "SELECT * FROM list_item";
-            open_Conn();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, Connection_);
-            close_Conn();
+            MySqlConnection conn = open_Conn();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conn);
+            close_Conn(conn);
             return adapter;
         }
 
@@ -106,10 +112,38 @@ namespace SANWA.Utility
         /// <returns>影響筆數</returns>
         public int ExecuteNonQuery(string sql, Dictionary<string, object> parameters)
         {
+            MySqlConnection conn = open_Conn();
+            //sql = string.Format("UPDATE list_item SET modify_timestamp = NOW()");
+            string sqlInfo = sql + " : ";
+           
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            // set parameters
+            if (parameters != null)
+            {
+                foreach (KeyValuePair<string, object> param in parameters)
+                {
+                    command.Parameters.AddWithValue(param.Key, param.Value);
+                    sqlInfo += param.Key + " - " + param.Value;
+                }
+            }
+            //logger.Debug("ExecuteNonQuery  "+ sqlInfo);
+            int affectLines = command.ExecuteNonQuery();
+            close_Conn(conn);
+            return affectLines;
+        }
+
+        /// <summary>
+        /// 執行非 Query 類 SQL
+        /// </summary>
+        /// <param name="sql">SQL</param>
+        /// <param name="parameters">參數</param>
+        /// <returns>影響筆數</returns>
+        public void ExecuteNonQueryAsync(string sql, Dictionary<string, object> parameters)
+        {
             //sql = string.Format("UPDATE list_item SET modify_timestamp = NOW()");
             string sqlInfo = sql+" : ";
-            open_Conn();
-            MySqlCommand command = new MySqlCommand(sql, Connection_);
+           
+            MySqlCommand command = new MySqlCommand(sql);
             // set parameters
             foreach (KeyValuePair<string, object> param in parameters)
             {
@@ -117,9 +151,29 @@ namespace SANWA.Utility
                 sqlInfo += param.Key+" - "+ param.Value;
             }
             //logger.Debug("ExecuteNonQuery  "+ sqlInfo);
-            int affectLines = command.ExecuteNonQuery();
-            close_Conn();
-            return affectLines;
+            SQLBuffer.Enqueue(command);
+            //int affectLines = command.ExecuteNonQuery();
+           
+            
+        }
+
+        public static void consumeSqlCmd(object obj)
+        {
+            while (true)
+            {
+                MySqlConnection conn = open_Conn();
+                while (SQLBuffer.Count() != 0)
+                {
+                    MySqlCommand SqlCmd;
+                    if(SQLBuffer.TryDequeue(out SqlCmd))
+                    {
+                        SqlCmd.Connection = conn;
+                        int affectLines = SqlCmd.ExecuteNonQuery();
+                    }
+                }
+                close_Conn(conn);
+                SpinWait.SpinUntil(() => false, 2000);
+            }
         }
 
         /// <summary>
@@ -134,8 +188,8 @@ namespace SANWA.Utility
             try
             {
                 //sql = "SELECT * FROM list_item";
-                open_Conn();
-                MySqlCommand command = new MySqlCommand(sql, Connection_);
+                MySqlConnection conn = open_Conn();
+                MySqlCommand command = new MySqlCommand(sql, conn);
 
                 // set parameters
                 if (parameters != null)
@@ -149,7 +203,7 @@ namespace SANWA.Utility
                 //get query result
                 MySqlDataReader rs = command.ExecuteReader();
                 dt.Load(rs);
-                close_Conn();
+                close_Conn(conn);
             }
             catch (Exception e)
             {
@@ -164,20 +218,20 @@ namespace SANWA.Utility
 
             try
             {
-                open_Conn();
+                MySqlConnection conn = open_Conn();
 
                 switch (Container)
                 {
                     case QueryContainer.DBController:
-                        dBContainers = Connection_.Query<SANWA.Utility.DBController>(sql, parameters);
+                        dBContainers = conn.Query<SANWA.Utility.DBController>(sql, parameters);
                         break;
 
                     case QueryContainer.DBEquipmentModel:
-                        dBContainers = Connection_.Query<SANWA.Utility.DBEquipmentModel>(sql, parameters);
+                        dBContainers = conn.Query<SANWA.Utility.DBEquipmentModel>(sql, parameters);
                         break;
                 }
 
-                close_Conn();
+                close_Conn(conn);
             }
             catch (Exception ex)
             {
