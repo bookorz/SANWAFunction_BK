@@ -93,7 +93,7 @@ namespace SANWA.Utility
                         if (itCode28 == 1)
                         {
                             strSql = "SELECT * " +
-                                        "FROM list_item " +
+                                        "FROM config_list_item " +
                                         "WHERE list_type = 'SANWA_CODE' " +
                                         "ORDER BY sort_sequence ASC";
 
