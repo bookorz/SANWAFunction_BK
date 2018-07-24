@@ -315,17 +315,19 @@ namespace SANWA.Utility
                                     each.Type = ReturnMessage.ReturnType.Error;
                                     break;
                                 case "INF":
+                                case "RIF":
                                     each.Type = ReturnMessage.ReturnType.Information;
                                     break;
                                 case "EVT":
                                     each.Type = ReturnMessage.ReturnType.Event;
                                     break;
                                 case "ABS":
+                                case "RAS":
                                     each.Type = ReturnMessage.ReturnType.Error;
                                     break;
-                                case "RIF":
-                                    each.Type = ReturnMessage.ReturnType.ReInformation;
-                                    break;
+                                //case "RIF":
+                                //    each.Type = ReturnMessage.ReturnType.ReInformation;
+                                //    break;
                             }
                             each.CommandType = content[i];
                             break;

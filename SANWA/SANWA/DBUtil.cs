@@ -16,14 +16,14 @@ namespace SANWA.Utility
     public class DBUtil
     {
         static ConcurrentQueue<MySqlCommand> SQLBuffer = new ConcurrentQueue<MySqlCommand>();
-        
+
         public enum QueryContainer
         {
             DBController,
             DBEquipmentModel
         }
         static ILog logger = LogManager.GetLogger(typeof(DBUtil));
-        
+
 
 
         private static MySqlConnection open_Conn()
@@ -31,6 +31,7 @@ namespace SANWA.Utility
             MySqlConnection Connection_;
             string connectionStr = SystemConfig.Get().DBConnectionString;
             Connection_ = new MySqlConnection(connectionStr);
+
             Connection_.Open();
             return Connection_;
 
@@ -66,7 +67,7 @@ namespace SANWA.Utility
             try
             {
                 //sql = "SELECT * FROM list_item";
-                
+
                 MySqlCommand command = new MySqlCommand(sql, open_Conn());
                 // set parameters
                 foreach (KeyValuePair<string, object> param in parameters)
@@ -77,10 +78,10 @@ namespace SANWA.Utility
                 MySqlDataReader rs = command.ExecuteReader();
                 var dt = new DataTable();
                 dt.Load(rs);
-                reader =  dt.CreateDataReader();
+                reader = dt.CreateDataReader();
                 close_Conn(command.Connection);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 logger.Error(e.StackTrace);
             }
@@ -112,10 +113,11 @@ namespace SANWA.Utility
         /// <returns>影響筆數</returns>
         public int ExecuteNonQuery(string sql, Dictionary<string, object> parameters)
         {
+
             MySqlConnection conn = open_Conn();
             //sql = string.Format("UPDATE list_item SET modify_timestamp = NOW()");
             string sqlInfo = sql + " : ";
-           
+
             MySqlCommand command = new MySqlCommand(sql, conn);
             // set parameters
             if (parameters != null)
@@ -141,23 +143,33 @@ namespace SANWA.Utility
         public void ExecuteNonQueryAsync(string sql, Dictionary<string, object> parameters)
         {
             //sql = string.Format("UPDATE list_item SET modify_timestamp = NOW()");
-            string sqlInfo = sql+" : ";
-           
-            MySqlCommand command = new MySqlCommand(sql);
-            // set parameters
-            if (parameters != null)
+            string sqlInfo = sql + " : ";
+            try
             {
-                foreach (KeyValuePair<string, object> param in parameters)
+
+
+                MySqlCommand command = new MySqlCommand(sql);
+                // set parameters
+                if (parameters != null)
                 {
-                    command.Parameters.AddWithValue(param.Key, param.Value);
-                    sqlInfo += param.Key + " - " + param.Value;
+                    foreach (KeyValuePair<string, object> param in parameters)
+                    {
+
+                        command.Parameters.AddWithValue(param.Key, param.Value);
+
+
+                        sqlInfo += param.Key + " - " + param.Value;
+                    }
                 }
+                //logger.Debug("ExecuteNonQuery  "+ sqlInfo);
+                SQLBuffer.Enqueue(command);
+                //int affectLines = command.ExecuteNonQuery();
             }
-            //logger.Debug("ExecuteNonQuery  "+ sqlInfo);
-            SQLBuffer.Enqueue(command);
-            //int affectLines = command.ExecuteNonQuery();
-           
-            
+            catch (Exception e)
+            {
+                logger.Error("ExecuteNonQueryAsync error:" + e.StackTrace);
+            }
+
         }
 
         public static void consumeSqlCmd(object obj)
@@ -168,8 +180,9 @@ namespace SANWA.Utility
                 while (SQLBuffer.Count() != 0)
                 {
                     MySqlCommand SqlCmd;
-                    if(SQLBuffer.TryDequeue(out SqlCmd))
+                    if (SQLBuffer.TryDequeue(out SqlCmd))
                     {
+
                         SqlCmd.Connection = conn;
                         int affectLines = SqlCmd.ExecuteNonQuery();
                     }
