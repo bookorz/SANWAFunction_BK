@@ -54,7 +54,7 @@ namespace SANWA.Utility
                 }
 
                 ftpFilePath = FTPAddress + RemotePath + remotefileName;
-                StoragePath = savePath + "\\" + savefileName;
+                StoragePath = savePath + "/" + savefileName;
                 ftpRequest = (FtpWebRequest)FtpWebRequest.Create(ftpFilePath);
                 ftpCredential = new NetworkCredential(UserID, UserPW);
                 ftpRequest.Credentials = ftpCredential;
