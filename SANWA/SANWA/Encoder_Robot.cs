@@ -1201,6 +1201,8 @@ namespace SANWA.Utility
                 {
                     case "SANWA":
 
+                        #region SANWA
+
                         if (Parameter != null && Parameter.Length != 0)
                         {
                             if ((dvTemp.Table.Rows[0]["Parameter_ID"].ToString().Equals("Null")) && (Parameter.Length != dtTemp.Rows.Count))
@@ -1259,7 +1261,11 @@ namespace SANWA.Utility
 
                         break;
 
+                    #endregion
+
                     case "KAWASAKI":
+
+                        #region KAWASAKI
 
                         if (Parameter != null && Parameter.Length != 0)
                         {
@@ -1349,6 +1355,11 @@ namespace SANWA.Utility
 
                         break;
 
+                    #endregion
+
+                    case "ATEL":
+                        break;
+
                     default:
                         throw new NotImplementedException();
                 }
@@ -1363,6 +1374,7 @@ namespace SANWA.Utility
             switch (Supplier)
             {
                 case "SANWA":
+                case "ATEL":
                     strCommand = strCommand + "\r";
                     break;
 
