@@ -184,7 +184,13 @@ namespace SANWA.Utility
                     {
 
                         SqlCmd.Connection = conn;
-                        int affectLines = SqlCmd.ExecuteNonQuery();
+                        try
+                        {
+                            int affectLines = SqlCmd.ExecuteNonQuery();
+                        }catch(Exception e)
+                        {
+                            logger.Error(e.StackTrace);
+                        }
                     }
                 }
                 close_Conn(conn);
