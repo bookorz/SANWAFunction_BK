@@ -38,7 +38,8 @@ namespace SANWA.Utility
 
                 strSql = "SELECT * " +
                             "FROM device_code_params " +
-                            "WHERE vendor = @vendor";
+                            "WHERE vendor = @vendor " +
+                            "ORDER BY node_type, vendor, code_order";
 
                 keyValues.Add("@vendor", Supplier);
 

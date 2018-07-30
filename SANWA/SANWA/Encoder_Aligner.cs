@@ -571,14 +571,30 @@ namespace SANWA.Utility
 
                             if (!dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Null"))
                             {
-                                if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > int.Parse(Parameter[i].ToString()))
+                                // * 16進位比對
+                                if (dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("HEX"))
                                 {
-                                    throw new Exception("Exceed the minimum.");
-                                }
+                                    if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > Convert.ToInt32(Parameter[i].ToString(), 16))
+                                    {
+                                        throw new Exception("Exceed the minimum.");
+                                    }
 
-                                if (int.Parse(dvTemp.Table.Rows[i]["Max_Value"].ToString()) < int.Parse(Parameter[i].ToString()))
+                                    if (int.Parse(dvTemp.Table.Rows[i]["Max_Value"].ToString()) < Convert.ToInt32(Parameter[i].ToString(), 16))
+                                    {
+                                        throw new Exception("Exceed the maximum.");
+                                    }
+                                }
+                                else
                                 {
-                                    throw new Exception("Exceed the maximum.");
+                                    if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > int.Parse(Parameter[i].ToString()))
+                                    {
+                                        throw new Exception("Exceed the minimum.");
+                                    }
+
+                                    if (int.Parse(dvTemp.Table.Rows[i]["Max_Value"].ToString()) < int.Parse(Parameter[i].ToString()))
+                                    {
+                                        throw new Exception("Exceed the maximum.");
+                                    }
                                 }
 
                                 if (dvTemp.Table.Rows[i]["Data_Value"].ToString().Equals(string.Empty))
@@ -638,17 +654,33 @@ namespace SANWA.Utility
 
                             if (!dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Null") && !dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Data"))
                             {
-                                // * Value mode烏龜
+                                // * Value mode
                                 if (dvTemp.Table.Rows[i]["Data_Value"].ToString().TrimEnd().Equals(string.Empty))
                                 {
-                                    if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > int.Parse(Parameter[i].ToString()))
+                                    // * 16進位比對
+                                    if (dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("HEX"))
                                     {
-                                        throw new Exception("Exceed the minimum.");
-                                    }
+                                        if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > Convert.ToInt32(Parameter[i].ToString(), 16))
+                                        {
+                                            throw new Exception("Exceed the minimum.");
+                                        }
 
-                                    if (int.Parse(dvTemp.Table.Rows[i]["Max_Value"].ToString()) < int.Parse(Parameter[i].ToString()))
+                                        if (int.Parse(dvTemp.Table.Rows[i]["Max_Value"].ToString()) < Convert.ToInt32(Parameter[i].ToString(), 16))
+                                        {
+                                            throw new Exception("Exceed the maximum.");
+                                        }
+                                    }
+                                    else
                                     {
-                                        throw new Exception("Exceed the maximum.");
+                                        if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > int.Parse(Parameter[i].ToString()))
+                                        {
+                                            throw new Exception("Exceed the minimum.");
+                                        }
+
+                                        if (int.Parse(dvTemp.Table.Rows[i]["Max_Value"].ToString()) < int.Parse(Parameter[i].ToString()))
+                                        {
+                                            throw new Exception("Exceed the maximum.");
+                                        }
                                     }
 
                                     if (dvTemp.Table.Rows[i]["Data_Value"].ToString().Equals(string.Empty))

@@ -103,7 +103,7 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// 動作停止
+        /// 動作停止 [ SANWA, ATEL ]
         /// </summary>
         /// <param name="Address"> Equipment Address </param>
         /// <param name="Sequence"> Euuipment Sequence </param>
@@ -115,31 +115,30 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// Error 履歷取得 
+        /// Error 履歷取得  [ SANWA, KAWASAKI, ATEL ]
         /// </summary>
         /// <param name="Address"> Equipment Address </param>
         /// <param name="Sequence"> Euuipment Sequence </param>
-        /// <param name="no"> 履歷號碼  2 位數  10 進位 </param>
+        /// <param name="no"> 履歷號碼  </param>
         /// <returns></returns>
         public string ErrorMessage(string Address, string Sequence, string no)
         {
             string Parameter01 = string.Empty;
-            string CMD = Supplier == "SANWA" ? "GET" : "GET";
 
-            if (Supplier == "SANWA")
-            {
-                Parameter01 = no;
-            }
-            else if (Supplier == "KAWASAKI")
+            if (Supplier == "KAWASAKI")
             {
                 Parameter01 = string.Format("{0},{1}", Address.ToString(), no);
             }
+            else
+            {
+                Parameter01 = no;
+            }
 
-            return CommandAssembly(Supplier, Address, Sequence, CMD, "ErrorList", Parameter01.Split(','));
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "ErrorList", Parameter01.Split(','));
         }
 
         /// <summary>
-        /// Error 解除
+        /// Error 解除 [ SANWA, ATEL ]
         /// </summary>
         /// <param name="Address"> Equipment Address </param>
         /// <param name="Sequence"> Euuipment Sequence </param>
@@ -286,16 +285,40 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// 各軸移動至 HOME 位置:Normal Home
+        /// 各軸移動至 HOME 位置:Normal Home [ SANWA, KAWASAKI ]
         /// </summary>
         /// <param name="Address"> Equipment Address </param>
         /// <param name="Sequence"> Euuipment Sequence </param>
         /// <returns></returns>
         public string Home(string Address, string Sequence)
         {
-            string Parameter01 = Supplier == "SANWA" ? null : Address.ToString();
+            string Parameter01 = string.Empty;
+
+            switch (Supplier)
+            {
+                case "SANWA":
+                    Parameter01 = null;
+                    break;
+
+                case "KAWASAKI":
+                    Parameter01 = Address.ToString();
+                    break;
+            }
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "Home", Parameter01);
+        }
+
+        /// <summary>
+        /// 指定 軸移動至 HOME 位置:Normal Home [ ATEL ]
+        /// </summary>
+        /// <param name="Address"> Equipment Address </param>
+        /// <param name="Sequence"> Euuipment Sequence </param>
+        /// <returns></returns>
+        public string Home(string Address, string Sequence, string axis, string speed)
+        {
+            string Parameter01 = string.Empty;
+
+            return CommandAssembly(Supplier, Address, Sequence, "CMD", "Home", axis, speed);
         }
 
         /// <summary>
@@ -514,7 +537,7 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// 單軸 Orgin Search
+        /// 單軸 Orgin Search [ SANWA, ATEL ]
         /// </summary>
         /// <param name="Address"> Equipment Address </param>
         /// <param name="Sequence"> Euuipment Sequence </param>
@@ -794,7 +817,7 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// 電磁閥狀態設定
+        /// 電磁閥狀態設定 [ SANWA, ATEL ]
         /// </summary>
         /// <param name="Address"> Equipment Address </param>
         /// <param name="Sequence"> Euuipment Sequence </param>
@@ -807,7 +830,7 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// 速度限制設定
+        /// 速度限制設定 [ SANWA, KAWASAKI, ATEL ]
         /// </summary>
         /// <param name="Address"> Equipment Address </param>
         /// <param name="Sequence"> Euuipment Sequence </param>
@@ -816,18 +839,56 @@ namespace SANWA.Utility
         public string setSpeed(string Address, string Sequence, string vl)
         {
             string Parameter01 = string.Empty;
-            string CMD = Supplier == "SANWA" ? "SET" : "SET";
 
-            if (Supplier == "SANWA")
-            {
-                Parameter01 = vl;
-            }
-            else if (Supplier == "KAWASAKI")
+            if (Supplier == "KAWASAKI")
             {
                 Parameter01 = string.Format("{0},{1}", Address.ToString(), vl);
             }
+            else
+            {
+                Parameter01 = vl;
+            }
 
-            return CommandAssembly(Supplier, Address, Sequence, CMD, "DeviceStatusSpeed", Parameter01.Split(','));
+            return CommandAssembly(Supplier, Address, Sequence, "SET", "DeviceStatusSpeed", Parameter01.Split(','));
+        }
+
+        /// <summary>
+        /// 各軸速度限制設定 [ ATEL ]
+        /// </summary>
+        /// <param name="Address"> Equipment Address </param>
+        /// <param name="Sequence"> Euuipment Sequence </param>
+        /// <param name="vl"> Speed 限制，2 位數 10 進位数 </param>
+        /// <returns></returns>
+        public string setSpeed(string Address, string Sequence, string axis, string vl)
+        {
+            return CommandAssembly(Supplier, Address, Sequence, "SET", "DeviceStatusSpeedAxis", axis, vl);
+        }
+
+        /// <summary>
+        /// 各軸 Speed 限制細項設定 [ ATEL ]
+        /// </summary>
+        /// <param name="Address"> Equipment Address </param>
+        /// <param name="Sequence"> Euuipment Sequence </param>
+        /// <param name="axis"> 讀取各個單軸設定 </param>
+        /// <param name="vl"> Speed 限制，1000~99999 </param>
+        /// <returns></returns>
+        public string setSpeedDetail(string Address, string Sequence, string axis, string vl)
+        {
+            return CommandAssembly(Supplier, Address, Sequence, "SET", "DeviceStatusSpeedDetail", axis, vl);
+        }
+
+        /// <summary>
+        /// 各個單軸馬達速度限制設定  [ ATEL ]
+        /// </summary>
+        /// <param name="Address"> Equipment Address </param>
+        /// <param name="Sequence"> Euuipment Sequence </param>
+        /// <param name="data"></param>
+        /// <param name="axis"> 讀取各個單軸設定 </param>
+        /// <param name="vl"> Speed 限制，1000~99999 </param>
+        /// <returns></returns>
+        public string setSpeedMotor(string Address, string Sequence, string data, string axis, string vl)
+        {
+            return CommandAssembly(Supplier, Address, Sequence, "SET", "DeviceStatusSpeedMotor", data, axis, vl);
         }
 
         /// <summary>
@@ -938,7 +999,7 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// Speed 限制取得
+        /// Speed 限制取得 [ SANWA, KAWASAKI ]
         /// </summary>
         /// <param name="Address"> Equipment Address </param>
         /// <param name="Sequence"> Euuipment Sequence </param>
@@ -946,33 +1007,47 @@ namespace SANWA.Utility
         public string Speed(string Address, string Sequence)
         {
             string Parameter01 = string.Empty;
-            string CMD = Supplier == "SANWA" ? "GET" : "GET";
-            string Command = Supplier == "SANWA" ? "DeviceStatusSpeed" : "DeviceStatusSpeedGet";
+            string Command = string.Empty;
 
-            if (Supplier == "SANWA")
+            switch (Supplier)
             {
-                Parameter01 = null;
-            }
-            else if (Supplier == "KAWASAKI")
-            {
-                Parameter01 = Address.ToString();
+                case "SANWA":
+                    Parameter01 = null;
+                    Command = "DeviceStatusSpeed";
+                    break;
+
+                case "KAWASAKI":
+                    Parameter01 = Address.ToString();
+                    Command =  "DeviceStatusSpeedGet";
+                    break;
             }
 
-            return CommandAssembly(Supplier, Address, Sequence, CMD, Command, Parameter01);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", Command, Parameter01);
         }
 
         /// <summary>
-        /// Robot 狀態取得
+        /// 各軸 Speed 限制細項取得 [ ATEL ]
+        /// </summary>
+        /// <param name="Address"> Equipment Address </param>
+        /// <param name="Sequence"> Euuipment Sequence </param>
+        /// <param name="data"> 讀取各個單軸設定 </param>
+        /// <returns></returns>
+        public string SpeedDetail(string Address, string Sequence, string data)
+        {
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "DeviceStatusSpeedDetail", data);
+        }
+
+        /// <summary>
+        /// Robot 狀態取得 [ SANWA, KAWASAKI, ATEL ]
         /// </summary>
         /// <param name="Address"> Equipment Address </param>
         /// <param name="Sequence"> Euuipment Sequence </param>
         /// <returns></returns>
         public string Status(string Address, string Sequence)
         {
-            string CMD = Supplier == "SANWA" ? "GET" : "GET";
-            string Parameter01 = Supplier == "SANWA" ? null : Address.ToString();
+            string Parameter01 = Supplier == "KAWASAKI" ? Address.ToString() : null;
 
-            return CommandAssembly(Supplier, Address, Sequence, CMD, "DeviceStatus", Parameter01);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "DeviceStatus", Parameter01);
         }
 
         /// <summary>
@@ -1150,19 +1225,97 @@ namespace SANWA.Utility
             return CommandAssembly(Supplier, Address, Sequence, "GET", "DateTimeGet", null);
         }
 
+        /// <summary>
+        /// 讀取 ROBOT ID 與版本 [ KAWASAKI ]
+        /// </summary>
+        /// <param name="Address"></param>
+        /// <param name="Sequence"></param>
+        /// <returns></returns>
         public string RobotIDAndVersion(string Address, string Sequence)
         {
             return CommandAssembly(Supplier, Address, Sequence, "GET", "RobotVersionGet", null);
         }
 
+        /// <summary>
+        /// 讀取硬體版本 [ KAWASAKI ]
+        /// </summary>
+        /// <param name="Address"></param>
+        /// <param name="Sequence"></param>
+        /// <returns></returns>
         public string RobotHardwareVersion(string Address, string Sequence)
         {
             return CommandAssembly(Supplier, Address, Sequence, "GET", "RobotHardwareVersion", null);
         }
 
+        /// <summary>
+        /// 讀取軟體版本 [ KAWASAKI, ATEL ]
+        /// </summary>
+        /// <param name="Address"></param>
+        /// <param name="Sequence"></param>
+        /// <returns></returns>
         public string RobotSoftwareVersion(string Address, string Sequence)
         {
             return CommandAssembly(Supplier, Address, Sequence, "GET", "RobotSoftwareVersion", null);
+        }
+
+        /// <summary>
+        /// 讀取 Macro 狀態 [ ATEL ]
+        /// </summary>
+        /// <param name="Address"></param>
+        /// <param name="Sequence"></param>
+        /// <param name="no"></param>
+        /// <returns></returns>
+        public string ReadMacroStatus(string Address, string Sequence)
+        {
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "ReadMacroStatus");
+        }
+
+        /// <summary>
+        /// 執行 Macro [ ATEL ]
+        /// </summary>
+        /// <param name="Address"></param>
+        /// <param name="Sequence"></param>
+        /// <param name="no"></param>
+        /// <returns></returns>
+        public string RunMacro(string Address, string Sequence, string no)
+        {
+            return CommandAssembly(Supplier, Address, Sequence, "CMD", "RunMacro", no);
+        }
+
+        /// <summary>
+        /// Macro 停止 [ ATEL ]
+        /// </summary>
+        /// <param name="Address"></param>
+        /// <param name="Sequence"></param>
+        /// <param name="no"></param>
+        /// <returns></returns>
+        public string StopMacro(string Address, string Sequence, string no)
+        {
+            return CommandAssembly(Supplier, Address, Sequence, "CMD", "StopMacro", no);
+        }
+
+
+        /// <summary>
+        /// Macro 結束命令 [ ATEL ]
+        /// </summary>
+        /// <param name="Address"></param>
+        /// <param name="Sequence"></param>
+        /// <returns></returns>
+        public string MacroEndConnand(string Address, string Sequence)
+        {
+            return CommandAssembly(Supplier, Address, Sequence, "CMD", "MacroEndConnand");
+        }
+
+        /// <summary>
+        /// Macro 一時停止/解除一時停止 [ ATEL ]
+        /// </summary>
+        /// <param name="Address"></param>
+        /// <param name="Sequence"></param>
+        /// <param name="Active"></param>
+        /// <returns></returns>
+        public string PauseMacro(string Address, string Sequence, string Active)
+        {
+            return CommandAssembly(Supplier, Address, Sequence, "CMD", "PauseMacro", Active);
         }
 
         private string CommandAssembly(string Supplier, string Address, string Sequence, string CommandType, string Command, params string[] Parameter)
@@ -1224,14 +1377,30 @@ namespace SANWA.Utility
 
                             if (!dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Null"))
                             {
-                                if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > int.Parse(Parameter[i].ToString()))
+                                // * 16進位比對
+                                if (dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("HEX"))
                                 {
-                                    throw new Exception("Exceed the minimum.");
-                                }
+                                    if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > Convert.ToInt32(Parameter[i].ToString(), 16))
+                                    {
+                                        throw new Exception("Exceed the minimum.");
+                                    }
 
-                                if (int.Parse(dvTemp.Table.Rows[i]["Max_Value"].ToString()) < int.Parse(Parameter[i].ToString()))
+                                    if (int.Parse(dvTemp.Table.Rows[i]["Max_Value"].ToString()) < Convert.ToInt32(Parameter[i].ToString(), 16))
+                                    {
+                                        throw new Exception("Exceed the maximum.");
+                                    }
+                                }
+                                else
                                 {
-                                    throw new Exception("Exceed the maximum.");
+                                    if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > int.Parse(Parameter[i].ToString()))
+                                    {
+                                        throw new Exception("Exceed the minimum.");
+                                    }
+
+                                    if (int.Parse(dvTemp.Table.Rows[i]["Max_Value"].ToString()) < int.Parse(Parameter[i].ToString()))
+                                    {
+                                        throw new Exception("Exceed the maximum.");
+                                    }
                                 }
 
                                 if (dvTemp.Table.Rows[i]["Data_Value"].ToString().Equals(string.Empty))
@@ -1292,14 +1461,30 @@ namespace SANWA.Utility
                                 // * Value mode
                                 if (dvTemp.Table.Rows[i]["Data_Value"].ToString().Equals(string.Empty))
                                 {
-                                    if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > int.Parse(Parameter[i].ToString()))
+                                    // * 16進位比對
+                                    if (dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("HEX"))
                                     {
-                                        throw new Exception("Exceed the minimum.");
-                                    }
+                                        if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > Convert.ToInt32(Parameter[i].ToString(), 16))
+                                        {
+                                            throw new Exception("Exceed the minimum.");
+                                        }
 
-                                    if (int.Parse(dvTemp.Table.Rows[i]["Max_Value"].ToString()) < int.Parse(Parameter[i].ToString()))
+                                        if (int.Parse(dvTemp.Table.Rows[i]["Max_Value"].ToString()) < Convert.ToInt32(Parameter[i].ToString(), 16))
+                                        {
+                                            throw new Exception("Exceed the maximum.");
+                                        }
+                                    }
+                                    else
                                     {
-                                        throw new Exception("Exceed the maximum.");
+                                        if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > int.Parse(Parameter[i].ToString()))
+                                        {
+                                            throw new Exception("Exceed the minimum.");
+                                        }
+
+                                        if (int.Parse(dvTemp.Table.Rows[i]["Max_Value"].ToString()) < int.Parse(Parameter[i].ToString()))
+                                        {
+                                            throw new Exception("Exceed the maximum.");
+                                        }
                                     }
 
                                     if (dvTemp.Table.Rows[i]["Data_Value"].ToString().Equals(string.Empty))
@@ -1321,7 +1506,13 @@ namespace SANWA.Utility
                                 // * string mode
                                 else
                                 {
-                                    if (dvTemp.Table.Rows[i]["Data_Value"].ToString().IndexOf(strsParameter[i].ToString()) < 0)
+                                    //if (dvTemp.Table.Rows[i]["Data_Value"].ToString().IndexOf(strsParameter[i].ToString()) < 0)
+                                    //{
+                                    //    throw new Exception(dvTemp.Table.Rows[i]["Data_Value"].ToString() + ": Out of setting range.");
+                                    //}
+
+                                    // * 調整文字比對方式
+                                    if (!dvTemp.Table.Rows[i]["Data_Value"].ToString().Split(',').Contains(strsParameter[i].ToString()))
                                     {
                                         throw new Exception(dvTemp.Table.Rows[i]["Data_Value"].ToString() + ": Out of setting range.");
                                     }
@@ -1358,6 +1549,119 @@ namespace SANWA.Utility
                     #endregion
 
                     case "ATEL":
+
+                        #region ATEL
+
+                        if (Parameter != null && Parameter.Length != 0)
+                        {
+                            if ((dvTemp.Table.Rows[0]["Parameter_ID"].ToString().Equals("Null") || dvTemp.Table.Rows[0]["Parameter_ID"].ToString().Equals("Data") || dvTemp.Table.Rows[0]["Parameter_ID"].ToString().Equals("DateTime")
+                                ) && (Parameter.Length != dtTemp.Rows.Count))
+                            {
+                                sbTemp.Append("Equipment Type : Robot");
+                                sbTemp.AppendFormat("Equipment Supplier : {0}", Supplier);
+                                sbTemp.AppendFormat("Command Type : {0}", CommandType);
+                                sbTemp.AppendFormat("Command : {0}", Command);
+                                sbTemp.Append("Parameter list and setting list are not the same.");
+                                throw new Exception(sbTemp.ToString());
+                            }
+                        }
+
+                        strsParameter = Parameter;
+
+                        for (int i = 0; i < dvTemp.Table.Rows.Count; i++)
+                        {
+                            Int32 itTemp = 0;
+
+                            if (!dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Null") && !dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("Data"))
+                            {
+                                // * Value mode
+                                if (dvTemp.Table.Rows[i]["Data_Value"].ToString().Equals(string.Empty))
+                                {
+                                    // * 16進位比對
+                                    if (dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("HEX"))
+                                    {
+                                        if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > Convert.ToInt32(Parameter[i].ToString(), 16))
+                                        {
+                                            throw new Exception("Exceed the minimum.");
+                                        }
+
+                                        if (int.Parse(dvTemp.Table.Rows[i]["Max_Value"].ToString()) < Convert.ToInt32(Parameter[i].ToString(), 16))
+                                        {
+                                            throw new Exception("Exceed the maximum.");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (int.Parse(dvTemp.Table.Rows[i]["Min_Value"].ToString()) > int.Parse(Parameter[i].ToString()))
+                                        {
+                                            throw new Exception("Exceed the minimum.");
+                                        }
+
+                                        if (int.Parse(dvTemp.Table.Rows[i]["Max_Value"].ToString()) < int.Parse(Parameter[i].ToString()))
+                                        {
+                                            throw new Exception("Exceed the maximum.");
+                                        }
+                                    }
+
+                                    if (dvTemp.Table.Rows[i]["Data_Value"].ToString().Equals(string.Empty))
+                                    {
+                                        if (dvTemp.Table.Rows[i]["Is_Fill"].ToString().Equals("Y"))
+                                        {
+                                            itTemp = int.Parse(Parameter[i].ToString());
+                                            strsParameter[i] = itTemp.ToString("D" + dvTemp.Table.Rows[i]["Values_length"].ToString());
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (dvTemp.Table.Rows[i]["Data_Value"].ToString().IndexOf(Parameter[i].ToString()) < 0)
+                                        {
+                                            throw new Exception(dvTemp.Table.Rows[i]["Parameter_ID"].ToString() + ": Setting value error.");
+                                        }
+                                    }
+                                }
+                                // * string mode
+                                else
+                                {
+                                    //if (dvTemp.Table.Rows[i]["Data_Value"].ToString().IndexOf(strsParameter[i].ToString()) < 0)
+                                    //{
+                                    //    throw new Exception(dvTemp.Table.Rows[i]["Data_Value"].ToString() + ": Out of setting range.");
+                                    //}
+
+                                    if (!strsParameter[i].ToString().Equals("Empty"))
+                                    {
+                                        // * 調整文字比對方式
+                                        if (!dvTemp.Table.Rows[i]["Data_Value"].ToString().Split(',').Contains(strsParameter[i].ToString()))
+                                        {
+                                            throw new Exception(dvTemp.Table.Rows[i]["Data_Value"].ToString() + ": Out of setting range.");
+                                        }
+                                    }
+                                }
+
+                                if (dvTemp.Table.Rows[i]["Parameter_ID"].ToString().Equals("DateTime"))
+                                {
+                                    strsParameter[i] = Convert.ToDateTime(strsParameter[i]).ToString("yy/MM/dd HH:mm:ss");
+                                }
+                            }
+                        }
+
+                        sbTemp = new StringBuilder();
+
+                        sbTemp.Append(Address);
+                        sbTemp.Append(",");
+
+                        if (strsParameter != null)
+                        { 
+                            for (int i = 0; i < strsParameter.Length; i++)
+                            {
+                                sbTemp.Append(strsParameter[i].ToString().Equals("Empty") ? string.Empty : strsParameter[i].ToString());
+                                sbTemp.Append(",");
+                            }
+                        }
+
+                        strCommandFormat = container.StringFormat(dtTemp.Rows[0]["code_format"].ToString(), sbTemp.ToString().TrimEnd(',').Split(','));
+
+                        #endregion
+
                         break;
 
                     default:
