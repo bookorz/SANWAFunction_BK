@@ -558,12 +558,12 @@ namespace Instruction_editor
             //    MessageBox.Show(ex.ToString());
             //}
 
-            //SANWA.Utility.Encoder encoder = new SANWA.Utility.Encoder("KAWASAKI");
-            //encoder.Robot.GetMode("1", "0");
+            SANWA.Utility.Encoder encoder = new SANWA.Utility.Encoder("ATEL");
+            MessageBox.Show(encoder.Robot.PutWafer("1", string.Empty, "1", "1201", "25"));
 
-            SANWA.Utility.AlarmMapping alarmMapping = new SANWA.Utility.AlarmMapping();
+            //SANWA.Utility.AlarmMapping alarmMapping = new SANWA.Utility.AlarmMapping();
 
-            SANWA.Utility.AlarmMessage alarmMessage = alarmMapping.Get("SANWA", "ROBOT", "95812200");
+            //SANWA.Utility.AlarmMessage alarmMessage = alarmMapping.Get("SANWA", "ROBOT", "95812200");
 
             //SANWA.Utility.config_controllers config_Controllers = new SANWA.Utility.config_controllers();
 
