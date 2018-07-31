@@ -201,7 +201,7 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// 取片
+        /// 取片 [ SANWA, KAWASAKI, ATEL ]
         /// </summary>
         /// <param name="Address"> Equipment Address </param>
         /// <param name="Sequence"> Euuipment Sequence </param>
@@ -212,18 +212,27 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string GetWafer(string Address, string Sequence, string Arm, string Point, string Alignment, string Slot)
         {
+            string strMsg = string.Empty;
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SANWA")
+            switch (Supplier)
             {
-                Parameter01 = string.Format("{0},{1},{2},{3},{4}", Point, Slot, Arm, Alignment, "0");
-            }
-            else if (Supplier == "KAWASAKI")
-            {
-                Parameter01 = string.Format("{0},{1},{2},{3}", Address.ToString(), Arm, Point, Slot);
+                case "SANWA":
+                    Parameter01 = string.Format("{0},{1},{2},{3},{4}", Point, Slot, Arm, Alignment, "0");
+                    strMsg = CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Parameter01.Split(','));
+                    break;
+
+                case "KAWASAKI":
+                    Parameter01 = string.Format("{0},{1},{2},{3}", Address.ToString(), Arm, Point, Slot);
+                    strMsg = CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Parameter01.Split(','));
+                    break;
+
+                case "ATEL":
+                    strMsg = RunMacro(Address, Sequence, GetMacroValue(Address, "IGET", Arm, Point, Slot));
+                    break;
             }
 
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Parameter01.Split(','));
+            return strMsg;
         }
 
         /// <summary>
@@ -512,13 +521,13 @@ namespace SANWA.Utility
         /// <param name="no7"> 選擇指定的 Panel /param>
         /// <param name="no8"> 選擇指定的 Panel /param>
         /// <param name="no9"> 選擇指定的 Panel /param>
-        /// <param name="no10" 選擇指定的 Panel </param>
-        /// <param name="no11" 選擇指定的 Panel </param>
-        /// <param name="no12" 選擇指定的 Panel </param>
-        /// <param name="no13" 選擇指定的 Panel </param>
-        /// <param name="no14" 選擇指定的 Panel </param>
-        /// <param name="no15" 選擇指定的 Panel </param>
-        /// <param name="no16" 選擇指定的 Panel </param>
+        /// <param name="no10"> 選擇指定的 Panel </param>
+        /// <param name="no11"> 選擇指定的 Panel </param>
+        /// <param name="no12"> 選擇指定的 Panel </param>
+        /// <param name="no13"> 選擇指定的 Panel </param>
+        /// <param name="no14"> 選擇指定的 Panel </param>
+        /// <param name="no15"> 選擇指定的 Panel </param>
+        /// <param name="no16"> 選擇指定的 Panel </param>
         /// <returns></returns>
         public string MultiPanel(string Address, string Sequence, string arm, string no1, string no2, string no3, string no4, string no5, string no6, string no7, string no8, string no9, string no10, string no11, string no12, string no13, string no14, string no15, string no16)
         {
@@ -673,7 +682,7 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// 放片
+        /// 放片 [ SANWA, KAWASAKI, ATEL ]
         /// </summary>
         /// <param name="Address"> Equipment Address </param>
         /// <param name="Sequence"> Euuipment Sequence </param>
@@ -683,18 +692,27 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string PutWafer(string Address, string Sequence, string Arm, string Point, string Slot)
         {
+            string strMsg = string.Empty;
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SANWA")
+            switch (Supplier)
             {
-                Parameter01 = string.Format("{0},{1},{2},{3}", Point, Slot, Arm, "0");
-            }
-            else if (Supplier == "KAWASAKI")
-            {
-                Parameter01 = string.Format("{0},{1},{2},{3}", Address.ToString(), Arm, Point, Slot);
+                case "SANWA":
+                    Parameter01 = string.Format("{0},{1},{2},{3}", Point, Slot, Arm, "0");
+                    strMsg = CommandAssembly(Supplier, Address, Sequence, "CMD", "PutWafer", Parameter01.Split(','));
+                    break;
+
+                case "KAWASAKI":
+                    Parameter01 = string.Format("{0},{1},{2},{3}", Address.ToString(), Arm, Point, Slot);
+                    strMsg = CommandAssembly(Supplier, Address, Sequence, "CMD", "PutWafer", Parameter01.Split(','));
+                    break;
+
+                case "ATEL":
+                    strMsg = RunMacro(Address, Sequence, GetMacroValue(Address, "IPUT", Arm, Point, Slot));
+                    break;
             }
 
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "PutWafer", Parameter01.Split(','));
+            return strMsg; 
         }
 
         /// <summary>
@@ -1725,5 +1743,44 @@ namespace SANWA.Utility
             return strCheckSum;
         }
 
+        /// <summary>
+        /// ATEL Macro Script
+        /// </summary>
+        /// <param name="Address"></param>
+        /// <param name="CommandType"></param>
+        /// <param name="Arm"></param>
+        /// <param name="Point"></param>
+        /// <param name="Slot"></param>
+        /// <returns></returns>
+        private string GetMacroValue(string Address, string CommandType, string Arm, string Point, string Slot)
+        {
+            string strMsg = string.Empty;
+
+            try
+            {
+                var query = (from a in dtRobotCommand.AsEnumerable()
+                             where a.Field<string>("node_type") == "ROBOT"
+                                && a.Field<string>("vendor") == Supplier
+                                && a.Field<string>("code_type") == CommandType
+                                && a.Field<string>("Parameter_ID") == Point
+                                && a.Field<int>("Parameter_Order") == Convert.ToInt32(Slot)
+                             select a).ToList();
+
+                if (query.Count > 0)
+                {
+                    strMsg = query[0]["code_order"].ToString();
+                }
+                else
+                {
+                    throw new RowNotInTableException();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return strMsg;
+        }
     }
 }
