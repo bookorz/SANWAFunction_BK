@@ -34,11 +34,17 @@ namespace SANWA.Utility
                     case "KAWASAKI":
                         result = KAWASAKICodeAnalysis(Message);
                         break;
+
                     case "HST":
                         result = HSTCodeAnalysis(Message);
                         break;
+
                     case "COGNEX":
                         result = COGNEXCodeAnalysis(Message);
+                        break;
+
+                    case "ATEL":
+                        result = ATELCodeAnalysis(Message);
                         break;
 
                     default:
@@ -351,6 +357,69 @@ namespace SANWA.Utility
 
                 result.Add(each);
 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return result;
+        }
+
+        private List<ReturnMessage> ATELCodeAnalysis(string Message)
+        {
+            List<ReturnMessage> result;
+            string strMsg = string.Empty;
+            string[] msgAry;
+            ReturnMessage each;
+
+            try
+            {
+                result = new List<ReturnMessage>();
+                
+                strMsg = Message.Replace("\r", "").Replace("\n", "").Trim();
+
+                if (strMsg.Equals(">") || strMsg.Equals(">*"))
+                {
+                    each = new ReturnMessage();
+                    each.OrgMsg = strMsg;
+                    each.NodeAdr = "1";
+                    each.Type = ReturnMessage.ReturnType.Excuted;
+                    result.Add(each);
+                }
+                else if (strMsg.Length > 1)
+                {
+                    msgAry = Message.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+
+                    foreach (string Msg in msgAry)
+                    {
+                        if (Msg.Trim().Equals(""))
+                        {
+                            continue;
+                        }
+
+                        each = new ReturnMessage();
+                        each.OrgMsg = Msg;
+                        each.NodeAdr = Msg[1].ToString();
+                        string[] content = Msg.Replace("\r", "").Replace("\n", "").Substring(2).Trim().Split('\r');
+                        for (int i = 0; i < content.Length; i++)
+                        {
+                            switch (i)
+                            {
+                                case 0:
+                                    each.Type = ReturnMessage.ReturnType.Finished;
+                                    each.Value = Msg;
+                                    break;
+
+                                default:
+                                    each.Type = ReturnMessage.ReturnType.Finished;
+                                    each.Value = Msg;
+                                    break;
+                            }
+                        }
+                        result.Add(each);
+                    }
+                }
             }
             catch (Exception ex)
             {
