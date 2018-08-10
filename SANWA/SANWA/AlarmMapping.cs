@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.IO;
 using System.Threading.Tasks;
-
+using log4net;
 
 namespace SANWA.Utility
 {
@@ -16,13 +16,13 @@ namespace SANWA.Utility
     {
         private DataTable dtCode;
         private DataTable dtAlarmEvent;
+        private static readonly ILog logger = LogManager.GetLogger(typeof(AlarmMapping));
 
         public AlarmMapping()
         {
             ContainerSet containerSet;
             string strSql = string.Empty;
             DBUtil dBUtil = new DBUtil();
-
             try
             {
                 containerSet = new ContainerSet();
@@ -45,6 +45,7 @@ namespace SANWA.Utility
             }
             catch (Exception ex)
             {
+                logger.Error(ex.StackTrace, ex);
                 throw new Exception(ex.ToString());
             }
             finally
