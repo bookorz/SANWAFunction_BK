@@ -55,6 +55,29 @@ namespace SANWA.Utility
         }
 
         /// <summary>
+        /// 設定晶圓(Wafer)大小
+        /// </summary>
+        /// <param name="Address"> Equipment Address </param>
+        /// <param name="Sequence"> Euuipment Sequence </param>
+        /// <param name="vl"> vl：Wafer Size 的半徑(um)，150000 代表 12 吋 Wafer，100000 代表 8 吋 Wafer </param>
+        /// <returns></returns>
+        public string SetSize(string Address, string Sequence, string vl)
+        {
+            string Parameter01 = string.Empty;
+
+            if (Supplier == "SANWA")
+            {
+                Parameter01 = vl;
+            }
+            else if (Supplier == "KAWASAKI")
+            {
+                Parameter01 = string.Format("{0}.{1}", Address.ToString(), vl);
+            }
+
+            return CommandAssembly(Supplier, Address, Sequence, "SET", "SetSize", Parameter01.Split(','));
+        }
+
+        /// <summary>
         /// 暫停解除
         /// </summary>
         /// <param name="Address"> Equipment Address </param>
