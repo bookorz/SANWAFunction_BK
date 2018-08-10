@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace SANWA.Utility
     public class config_equipment_model
     {
         public DBEquipmentModel EquipmentModel;
+        private static readonly ILog logger = LogManager.GetLogger(typeof(config_equipment_model));
 
         public config_equipment_model()
         {
@@ -28,13 +30,19 @@ namespace SANWA.Utility
 
                 if (Temp.Count == 0)
                 {
-                    throw new Exception("This statement is the read config exception message.");
+                    string msg = "[NO_DATA_FOUND] Table: config_equipment_model , Equipment_model_id: " + SANWA.Utility.Config.SystemConfig.Get().SystemMode ;
+                    logger.Error(msg);
+                    //throw new Exception("This statement is the read config exception message.");
+                    throw new Exception(msg);
                 }
-
-                EquipmentModel = ((DBEquipmentModel)Temp[0]);
+                else
+                {
+                    EquipmentModel = ((DBEquipmentModel)Temp[0]);
+                }
             }
             catch (Exception ex)
             {
+                logger.Error(ex.StackTrace,ex);
                 throw new Exception(ex.ToString());
             }
         }

@@ -83,7 +83,7 @@ namespace SANWA.Utility
             }
             catch (Exception e)
             {
-                logger.Error(e.StackTrace);
+                logger.Error(e.ToString(),e);
             }
             return reader;
         }
@@ -167,7 +167,8 @@ namespace SANWA.Utility
             }
             catch (Exception e)
             {
-                logger.Error("ExecuteNonQueryAsync error:" + e.StackTrace);
+                //logger.Error("ExecuteNonQueryAsync error:" + e.StackTrace);
+                logger.Error("ExecuteNonQueryAsync error:" + e.StackTrace, e);
             }
 
         }
@@ -189,7 +190,7 @@ namespace SANWA.Utility
                             int affectLines = SqlCmd.ExecuteNonQuery();
                         }catch(Exception e)
                         {
-                            logger.Error(e.StackTrace);
+                            logger.Error(e.StackTrace,e);
                         }
                     }
                 }
@@ -229,6 +230,7 @@ namespace SANWA.Utility
             }
             catch (Exception e)
             {
+                logger.Error(e.ToString(),e);
                 throw new Exception(e.ToString());
             }
             return dt;
@@ -257,6 +259,7 @@ namespace SANWA.Utility
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString(), ex);
                 throw new Exception(ex.ToString());
             }
 
