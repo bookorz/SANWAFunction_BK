@@ -91,11 +91,13 @@ namespace SANWA.Utility
                         strCode28 = Convert.ToString(itFirst, 2);
                         itCode28 = int.Parse(strCode28.Substring(strCode28.Length - 1, 1));
 
+
                         if (itCode28 == 1)
                         {
                             strSql = "SELECT * " +
                                         "FROM config_list_item " +
                                         "WHERE list_type = 'SANWA_CODE' " +
+                                        "  AND list_value = '" + error_message.Substring(5, 1) + "'" +
                                         "ORDER BY sort_sequence ASC";
 
                             dtTemp = dBUtil.GetDataTable(strSql, null);
