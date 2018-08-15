@@ -60,6 +60,31 @@ namespace SANWA.Utility
             return result;
         }
 
+        public List<ReturnMessage> GetMessage(string AddressID, string Message)
+        {
+            List<ReturnMessage> result = null;
+
+            try
+            {
+                switch (Supplier)
+                {
+                    case "ASYST":
+                        result = ASYSTCodeAnalysis(AddressID, Message);
+                        break;
+
+                    default:
+                        throw new NotImplementedException();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return result;
+        }
+
         private List<ReturnMessage> COGNEXCodeAnalysis(string Message)
         {
             List<ReturnMessage> result;
@@ -419,6 +444,107 @@ namespace SANWA.Utility
                         }
                         result.Add(each);
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return result;
+        }
+
+        private List<ReturnMessage> ASYSTCodeAnalysis(string AddressID, string Message)
+        {
+            List<ReturnMessage> result;
+            string[] msgAry;
+
+            try
+            {
+                result = new List<ReturnMessage>();
+                msgAry = Message.Split('\r');
+
+                foreach (string Msg in msgAry)
+                {
+                    if (Msg.Trim().Equals(""))
+                    {
+                        continue;
+                    }
+                    ReturnMessage each = new ReturnMessage();
+                    each.OrgMsg = Msg;
+                    each.NodeAdr = AddressID;
+                    string[] content = Msg.Replace("\r", "").Replace("\n", "").Substring(2).Split(' ');
+                    for (int i = 0; i < content.Length; i++)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                each.CommandType = content[i];
+                                break;
+
+                            case 1:
+                                switch (content[i])
+                                {
+                                    case "ALARM":
+                                    case "ABORT_CAL":
+                                    case "ABORT_EMPTY_SLOT":
+                                    case "ABORT_HOME":
+                                    case "ABORT_LOCK":
+                                    case "ABORT_MAP":
+                                    case "ABORT_POS":
+                                    case "ABORT_SLOT":
+                                    case "ABORT_STAGE":
+                                    case "ABORT_TWEEKDN":
+                                    case "ABORT_TWEEKUP":
+                                    case "ABORT_UNLOCK":
+                                    case "ABORT_WAFER":
+                                    case "WARNING":
+                                    case "FATAL":
+                                    case "FAILED_SELF-TEST":
+                                        each.Type = ReturnMessage.ReturnType.Error;
+                                        break;
+
+                                    case "BUSY":
+                                    case "DENIED":
+                                    case "INVALID_ARG":
+                                    case "NO_POD":
+                                    case "NOT_READY":
+                                        each.Type = ReturnMessage.ReturnType.Abnormal;
+                                        break;
+
+                                    case "OK":
+                                        each.Type = ReturnMessage.ReturnType.Excuted;
+                                        break;
+
+                                    case "CMPL_CAL":
+                                    case "CMPL_LOCK":
+                                    case "CMPL_MAP":
+                                    case "CMPL_SELF-TEST":
+                                    case "CMPL_TWEEKDN":
+                                    case "CMPL_TWEEKUP":
+                                    case "CMPL_UNLOCK":
+                                    case "REACH_EMPTY_SLOT":
+                                    case "REACH_HOME":
+                                    case "REACH_POS":
+                                    case "REACH_SLOT":
+                                    case "REACH_STAGE":
+                                    case "REACH_WAFER":
+                                        each.Type = ReturnMessage.ReturnType.Finished;
+                                        break;
+
+                                    default:
+                                        each.CommandType = content[i];
+                                        break;
+                                }
+
+                                break;
+
+                            case 2:
+                                each.Command = content[i];
+                                break;
+                        }
+                    }
+                    result.Add(each);
                 }
             }
             catch (Exception ex)

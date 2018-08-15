@@ -39,12 +39,14 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// Load Port Runing Mode
+        /// Load Port Runing Mode [TDK, ASYST]
         /// </summary>
         public enum ModeType
         {
             Online,
-            Maintenance
+            Maintenance,
+            Auto,
+            Manual
         }
 
         /// <summary>
@@ -57,12 +59,13 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// Command Type
+        /// Command Type [TDK, ASYST]
         /// </summary>
         public enum CommandType
         {
             Normal,
-            Finish
+            Finish,
+            HostCommand
         }
 
         /// <summary>
@@ -93,13 +96,28 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// Reset
+        /// Reset [TDK, ASYST]
         /// </summary>
         /// <param name="commandType"> Command Type </param>
         /// <returns></returns>
         public string Reset(CommandType commandType)
         {
-            return CommandAssembly(Supplier, commandType.ToString().Equals("Finish") ? "FIN" : "SET", "Reset");
+            string Command = string.Empty;
+
+            switch (commandType)
+            {
+                case CommandType.Normal:
+                    Command = "SET";
+                    break;
+                case CommandType.Finish:
+                    Command = "FIN";
+                    break;
+                case CommandType.HostCommand:
+                    Command = "HCS";
+                    break;
+            }
+
+            return CommandAssembly(Supplier, Command, "Reset");
         }
 
         /// <summary>
@@ -125,13 +143,28 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// Load Port Runing Mode
+        /// Load Port Runing Mode [TDK, ASYST]
         /// </summary>
         /// <param name="modeType"> Runing Mode Type </param>
         /// <returns></returns>
         public string Mode(ModeType modeType)
         {
-            return CommandAssembly(Supplier, "MOD", modeType.ToString());
+            string Command = string.Empty;
+
+            switch (modeType)
+            {
+                case ModeType.Online:
+                case ModeType.Maintenance:
+                    Command = "MOD";
+                    break;
+
+                case ModeType.Auto:
+                case ModeType.Manual:
+                    Command = "HCS";
+                    break;
+            }
+
+            return CommandAssembly(Supplier, Command, modeType.ToString());
         }
 
         /// <summary>
@@ -181,13 +214,28 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// FOUP Initial Position
+        /// FOUP Initial Position [TDK, ASYST]
         /// </summary>
         /// <param name="commandType"> Command Type </param>
         /// <returns></returns>
         public string InitialPosition(CommandType commandType)
         {
-            return CommandAssembly(Supplier, commandType.ToString().Equals("Finish") ? "FIN" : "MOV", "InitialPosition");
+            string Command = string.Empty;
+
+            switch (commandType)
+            {
+                case CommandType.Normal:
+                    Command = "MOV";
+                    break;
+                case CommandType.Finish:
+                    Command = "FIN";
+                    break;
+                case CommandType.HostCommand:
+                    Command = "HCS";
+                    break;
+            }
+
+            return CommandAssembly(Supplier, Command, "InitialPosition");
         }
 
         /// <summary>
@@ -201,13 +249,28 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// Load FOUP
+        /// Load FOUP [TDK, ASYST]
         /// </summary>
         /// <param name="commandType"> Command Type </param>
         /// <returns></returns>
         public string Load(CommandType commandType)
         {
-            return CommandAssembly(Supplier, commandType.ToString().Equals("Finish") ? "FIN" : "MOV", "Load");
+            string Command = string.Empty;
+
+            switch (commandType)
+            {
+                case CommandType.Normal:
+                    Command = "MOV";
+                    break;
+                case CommandType.Finish:
+                    Command = "FIN";
+                    break;
+                case CommandType.HostCommand:
+                    Command = "HCS";
+                    break;
+            }
+
+            return CommandAssembly(Supplier, Command, "Load");
         }
 
         /// <summary>
@@ -241,13 +304,28 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// Mapping Load
+        /// Mapping Load  [TDK, ASYST]
         /// </summary>
         /// <param name="commandType"> Command Type </param>
         /// <returns></returns>
         public string MappingLoad(CommandType commandType)
         {
-            return CommandAssembly(Supplier, commandType.ToString().Equals("Finish") ? "FIN" : "MOV", "MappingLoad");
+            string Command = string.Empty;
+
+            switch (commandType)
+            {
+                case CommandType.Normal:
+                    Command = "MOV";
+                    break;
+                case CommandType.Finish:
+                    Command = "FIN";
+                    break;
+                case CommandType.HostCommand:
+                    Command = "HCS";
+                    break;
+            }
+            
+            return CommandAssembly(Supplier, Command, "MappingLoad");
         }
 
         /// <summary>
@@ -261,13 +339,28 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// Unload FOUP
+        /// Unload FOUP [TDK, ASYST]
         /// </summary>
         /// <param name="commandType"> Command Type </param>
         /// <returns></returns>
         public string Unload(CommandType commandType)
         {
-            return CommandAssembly(Supplier, commandType.ToString().Equals("Finish") ? "FIN" : "MOV", "Unload");
+            string Command = string.Empty;
+
+            switch (commandType)
+            {
+                case CommandType.Normal:
+                    Command = "MOV";
+                    break;
+                case CommandType.Finish:
+                    Command = "FIN";
+                    break;
+                case CommandType.HostCommand:
+                    Command = "HCS";
+                    break;
+            }
+
+            return CommandAssembly(Supplier, Command, "Unload");
         }
 
         /// <summary>
@@ -371,23 +464,53 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        ///  FOUP Clamp Release
+        ///  FOUP Clamp Release [TDK, ASYST]
         /// </summary>
         /// <param name="commandType"> Command Type </param>
         /// <returns></returns>
         public string FOUPClampRelease(CommandType commandType)
         {
-            return CommandAssembly(Supplier, commandType.ToString().Equals("Finish") ? "FIN" : "MOV", "FOUPClampRelease");
+            string Command = string.Empty;
+
+            switch (commandType)
+            {
+                case CommandType.Normal:
+                    Command = "MOV";
+                    break;
+                case CommandType.Finish:
+                    Command = "FIN";
+                    break;
+                case CommandType.HostCommand:
+                    Command = "HCS";
+                    break;
+            }
+
+            return CommandAssembly(Supplier, Command, "FOUPClampRelease");
         }
 
         /// <summary>
-        ///  FOUP Clamp Fix
+        ///  FOUP Clamp Fix [TDK, ASYST]
         /// </summary>
         /// <param name="commandType"> Command Type </param>
         /// <returns></returns>
         public string FOUPClampFix(CommandType commandType)
         {
-            return CommandAssembly(Supplier, commandType.ToString().Equals("Finish") ? "FIN" : "MOV", "FOUPClampFix");
+            string Command = string.Empty;
+
+            switch (commandType)
+            {
+                case CommandType.Normal:
+                    Command = "MOV";
+                    break;
+                case CommandType.Finish:
+                    Command = "FIN";
+                    break;
+                case CommandType.HostCommand:
+                    Command = "HCS";
+                    break;
+            }
+
+            return CommandAssembly(Supplier, Command, "FOUPClampFix");
         }
 
         /// <summary>
@@ -591,13 +714,28 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        ///  Abort
+        ///  Abort [TDK, ASYST]
         /// </summary>
         /// <param name="commandType"> Command Type </param>
         /// <returns></returns>
         public string Abort(CommandType commandType)
         {
-            return CommandAssembly(Supplier, commandType.ToString().Equals("Finish") ? "FIN" : "MOV", "Abort");
+            string Command = string.Empty;
+
+            switch (commandType)
+            {
+                case CommandType.Normal:
+                    Command = "MOV";
+                    break;
+                case CommandType.Finish:
+                    Command = "FIN";
+                    break;
+                case CommandType.HostCommand:
+                    Command = "HCS";
+                    break;
+            }
+
+            return CommandAssembly(Supplier, Command, "Abort");
         }
 
         /// <summary>
@@ -658,6 +796,19 @@ namespace SANWA.Utility
 
                         break;
 
+                    case "ASYST":
+
+                        strCommandFormat = dtTemp.Rows[0]["code_format"].ToString();
+                        strCommandFormatParameter = string.Empty;
+
+                        foreach (string str in Parameter)
+                        {
+                            strCommandFormatParameter = strCommandFormatParameter + " " + str;
+                        }
+
+                        break;
+
+
                     default:
                         throw new NotImplementedException();
                 }
@@ -667,6 +818,15 @@ namespace SANWA.Utility
             catch (Exception ex)
             {
                 throw new Exception(ex.ToString());
+            }
+
+            switch (Supplier)
+            {
+                case "ASYST":
+
+                    strCommand = strCommand + "\r\n";
+
+                    break;
             }
 
             return strCommand;
