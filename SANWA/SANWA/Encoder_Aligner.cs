@@ -38,7 +38,7 @@ namespace SANWA.Utility
         /// <param name="Sequence"> Euuipment Sequence </param>
         /// <param name="angle"> Align 後 Notch 所要移動的角度 </param>
         /// <returns></returns>
-        public string Align(string Address, string Sequence, string angle ,bool skipHome=false)
+        public string Align(string Address, string Sequence, string angle)
         {
             string Parameter01 = string.Empty;
 
@@ -50,14 +50,32 @@ namespace SANWA.Utility
             {
                 Parameter01 = string.Format("{0}.{1}", Address.ToString(), angle);
             }
-            string cmd = CommandAssembly(Supplier, Address, Sequence, "CMD", "Angle", Parameter01.Split(',')).Trim(new char[] { '\n', '\r', ' ' });
-            if (skipHome)
-            {
-                cmd += ",0,0,1";
-            }
-            return cmd+"\r";
+
+            return CommandAssembly(Supplier, Address, Sequence, "CMD", "Angle", Parameter01);
         }
 
+        /// <summary>
+        /// 執行尋找晶圓(Wafer)缺口後移動至所需的角度位置 [ SANWA ]
+        /// </summary>
+        /// <param name="Address"> Equipment Address </param>
+        /// <param name="Sequence"> Euuipment Sequence </param>
+        /// <param name="angle"> Align 後 Notch 所要移動的角度  </param>
+        /// <param name="notch"> Align 尋邊動作模式 
+        /// <para> 0 : 根據上一次align結果，不再做尋邊動作，直接到notch/flat指定角度，並補正偏心，不先回home </para>
+        /// <para> 1 : normal mode </para>
+        /// <para> 2 : 只做尋邊動作，aligner不做到notch/flat指定角度與補正偏心 </para> </param>
+        /// <param name="ZAxis"> Z軸動作模式
+        /// <para> 0 : 無Z軸 </para>
+        /// <para> 1 : align完成Z軸下降 </para>
+        /// <para> 2 : align完成Z軸上升 </para> </param>                     
+        /// <param name="mode"> 執行模式          
+        /// <para> 0 快速模式，尋邊1圈，並以最短路徑到notch/flat指定角度，並補正偏心 </para>
+        /// <para> 1 normal mode  </para> </param>
+        /// <returns></returns>
+        public string Align(string Address, string Sequence, string angle, string notch, string ZAxis, string mode)
+        {
+            return CommandAssembly(Supplier, Address, Sequence, "CMD", "Align", angle, notch, ZAxis, mode);
+        }
 
         /// <summary>
         /// 設定晶圓(Wafer)大小
