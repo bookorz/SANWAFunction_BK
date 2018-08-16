@@ -38,7 +38,7 @@ namespace SANWA.Utility
         /// <param name="Sequence"> Euuipment Sequence </param>
         /// <param name="angle"> Align 後 Notch 所要移動的角度 </param>
         /// <returns></returns>
-        public string Align(string Address, string Sequence, string angle)
+        public string Align(string Address, string Sequence, string angle ,bool skipHome=false)
         {
             string Parameter01 = string.Empty;
 
@@ -50,9 +50,14 @@ namespace SANWA.Utility
             {
                 Parameter01 = string.Format("{0}.{1}", Address.ToString(), angle);
             }
-
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "Angle", Parameter01.Split(','));
+            string cmd = CommandAssembly(Supplier, Address, Sequence, "CMD", "Angle", Parameter01.Split(',')).Trim(new char[] { '\n', '\r', ' ' });
+            if (skipHome)
+            {
+                cmd += ",0,0,1";
+            }
+            return cmd+"\r";
         }
+
 
         /// <summary>
         /// 設定晶圓(Wafer)大小
