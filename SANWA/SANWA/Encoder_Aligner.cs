@@ -651,7 +651,7 @@ namespace SANWA.Utility
 
                                         strsParameter[i] = itTemp.ToString("D" + dvTemp.Table.Rows[i]["Values_length"].ToString());
 
-                                        if (Command.Equals("Angle"))
+                                        if (i == 0 && (Command.Equals("Angle") || Command.Equals("Align")))
                                         {
                                             strsParameter[i] = strsParameter[i] + "000";
                                         }
