@@ -134,6 +134,25 @@ namespace SANWA.Utility
 
                         break;
 
+                    case "ASYST":
+
+                        for (int i = 0; i < error_message.Split(' ').Length; i++)
+                        {
+                            if (i >= 2)
+                            {
+                                if (strErrorCode.Length == 0)
+                                {
+                                    strErrorCode = error_message.Split(' ')[i].ToString();
+                                }
+                                else
+                                {
+                                    strErrorCode = strErrorCode + " " + error_message.Split(' ')[i].ToString();
+                                }
+                            }
+                        }
+
+                        break;
+
                     default:
 
                         strErrorCode = error_message;
@@ -145,14 +164,14 @@ namespace SANWA.Utility
                 var query = (from a in dtCode.AsEnumerable()
                              where a.Field<string>("node_type") == eqp_type.ToUpper()
                                 && a.Field<string>("vendor") == supplier.ToUpper()
-                                && a.Field<string>("Code_ID") == strErrorCode.ToUpper()
+                                && a.Field<string>("code_id").ToUpper() == strErrorCode.ToUpper()
                              select a).ToList();
 
                 if (query.Count > 0)
                 {
                     dtTemp = query.CopyToDataTable();
                     strAlarmType = dtTemp.Rows[0]["alarm_code_id"].ToString();
-                    strAlarmCode = dtTemp.Rows[0]["Code_ID"].ToString();
+                    strAlarmCode = dtTemp.Rows[0]["code_id"].ToString();
                     alarm.CodeID = string.Format("{0}{1}", strAlarmType, strAlarmCode);
                     alarm.IsStop = dtTemp.Rows[0]["Is_stop"].ToString() == "Y" ? true : false;
                 }
@@ -227,7 +246,6 @@ namespace SANWA.Utility
 
             return alarm;
         }
-
 
         /// <summary>
         /// Get alarm message only ATEL
