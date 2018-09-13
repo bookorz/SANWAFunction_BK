@@ -78,6 +78,8 @@ namespace SANWA.Utility
             {
                 alarm = new AlarmMessage();
 
+                alarm.Return_Code_ID = error_message;
+
                 // * Special rule
                 switch (supplier.ToUpper())
                 {
@@ -118,13 +120,13 @@ namespace SANWA.Utility
 
                         break;
 
-                    case "TDK":
-                    case "KAWASAKI":
-                    case "ATEL":
+                    //case "TDK":
+                    //case "KAWASAKI":
+                    //case "ATEL":
 
-                        strErrorCode = error_message;
+                    //    strErrorCode = error_message;
 
-                        break;
+                    //    break;
 
                     case "ASYST":
 
@@ -163,7 +165,7 @@ namespace SANWA.Utility
                 if (query.Count > 0)
                 {
                     dtTemp = query.CopyToDataTable();
-                    alarm.CodeID = dtTemp.Rows[0]["sys_code_id"].ToString();
+                    alarm.CodeID = strAlarmAxis == string.Empty ? dtTemp.Rows[0]["sys_code_id"].ToString() : dtTemp.Rows[0]["device_code_id"].ToString() + alarm.Return_Code_ID;
                     alarm.IsStop = dtTemp.Rows[0]["Is_stop"].ToString() == "Y" ? true : false;
                     alarm.Code_Type = dtTemp.Rows[0]["return_code_type"].ToString();
                     alarm.Code_Name = dtTemp.Rows[0]["Code_Name"].ToString();

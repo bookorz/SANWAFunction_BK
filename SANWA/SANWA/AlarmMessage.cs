@@ -9,6 +9,7 @@ namespace SANWA.Utility
     public class AlarmMessage
     {
         public string CodeID = string.Empty;
+        public string Return_Code_ID = string.Empty;
         public string Code_Type = string.Empty;
         public string Code_Name = string.Empty;
         public string Code_Cause = string.Empty;
