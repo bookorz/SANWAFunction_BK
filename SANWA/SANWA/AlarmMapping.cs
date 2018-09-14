@@ -56,8 +56,7 @@ namespace SANWA.Utility
         /// <summary>
         /// Get alarm message
         /// </summary>
-        /// <param name="supplier"> 設備供應商 </param>
-        /// <param name="eqp_type"> 設備種類 </param>
+        /// <param name="node_id"> 設備系統代碼 </param>
         /// <param name="error_message"> 錯誤訊息 </param>
         /// <returns></returns>
         public AlarmMessage Get(string node_id, string error_message)
@@ -80,7 +79,6 @@ namespace SANWA.Utility
 
             try
             {
-
                 strSql = "select * from config_node where node_id = '" + node_id + "'";
                 dtTemp = dBUtil.GetDataTable(strSql, null);
 
@@ -97,8 +95,6 @@ namespace SANWA.Utility
 
                 alarm = new AlarmMessage();
                 alarm.Return_Code_ID = error_message;
-
-
 
                 // * Special rule
                 switch (supplier.ToUpper())
@@ -191,6 +187,8 @@ namespace SANWA.Utility
                     alarm.Code_Name = dtTemp.Rows[0]["Code_Name"].ToString();
                     alarm.Code_Cause = strAlarmAxis == string.Empty ? dtTemp.Rows[0]["Code_Desc"].ToString() : strAlarmAxis + " " + dtTemp.Rows[0]["Code_Desc"].ToString();
                     alarm.Code_Cause_English = strAlarmAxisEnglish == string.Empty ? dtTemp.Rows[0]["Code_Desc_EN"].ToString() : strAlarmAxisEnglish + " " + dtTemp.Rows[0]["Code_Desc_EN"].ToString();
+                    alarm.Position = dtTemp.Rows[0]["location"].ToString();
+                    alarm.Code_Group = dtTemp.Rows[0]["category"].ToString();
                 }
                 else
                 {
