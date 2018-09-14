@@ -60,7 +60,7 @@ namespace SANWA.Utility
         /// <param name="eqp_type"> 設備種類 </param>
         /// <param name="error_message"> 錯誤訊息 </param>
         /// <returns></returns>
-        public AlarmMessage Get(string supplier, string eqp_type, string address, string error_message)
+        public AlarmMessage Get(string node_id, string error_message)
         {
             AlarmMessage alarm;
             DataTable dtTemp;
@@ -74,11 +74,31 @@ namespace SANWA.Utility
             string strSql = string.Empty;
             DBUtil dBUtil = new DBUtil();
 
+            string supplier = string.Empty;
+            string eqp_type = string.Empty;
+            Int64 address = 0;
+
             try
             {
-                alarm = new AlarmMessage();
 
+                strSql = "select * from config_node where node_id = '" + node_id + "'";
+                dtTemp = dBUtil.GetDataTable(strSql, null);
+
+                if (dtTemp.Rows.Count > 0)
+                {
+                    supplier = dtTemp.Rows[0]["vendor"].ToString();
+                    eqp_type = dtTemp.Rows[0]["node_type"].ToString();
+                    address = Convert.ToInt64(dtTemp.Rows[0]["sn_no"].ToString());
+                }
+                else
+                {
+                    throw new Exception(string.Format("SANWA.Utility.AlarmMapping\r\nException: {0} config_node id not exists.", node_id.ToUpper()));
+                }
+
+                alarm = new AlarmMessage();
                 alarm.Return_Code_ID = error_message;
+
+
 
                 // * Special rule
                 switch (supplier.ToUpper())
