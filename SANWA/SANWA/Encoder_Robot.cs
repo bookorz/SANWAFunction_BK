@@ -574,7 +574,7 @@ namespace SANWA.Utility
 
             if (Supplier == "SANWA")
             {
-                Parameter01 = string.Format("{0},{1},{2}", Type, No);
+                Parameter01 = string.Format("{0},{1}", Type, No);
             }
             else if (Supplier == "KAWASAKI")
             {
