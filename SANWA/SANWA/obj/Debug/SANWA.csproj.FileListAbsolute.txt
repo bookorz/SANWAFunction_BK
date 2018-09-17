@@ -52,3 +52,15 @@ C:\Users\ethan_huang\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.cspr
 C:\Users\ethan_huang\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.csproj.CopyComplete
 C:\Users\ethan_huang\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.dll
 C:\Users\ethan_huang\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.pdb
+C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\bin\Debug\SANWA.dll
+C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\bin\Debug\SANWA.pdb
+C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\bin\Debug\Dapper.dll
+C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\bin\Debug\log4net.dll
+C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\bin\Debug\Newtonsoft.Json.dll
+C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\bin\Debug\nmodbuspc.dll
+C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\bin\Debug\Dapper.xml
+C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.csprojAssemblyReference.cache
+C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.csproj.CoreCompileInputs.cache
+C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.csproj.CopyComplete
+C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.dll
+C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.pdb
