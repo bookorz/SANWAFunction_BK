@@ -67,15 +67,15 @@ namespace SANWA.Utility
             string strAlarmAxis = string.Empty;
             string strAlarmAxisEnglish = string.Empty;
             string strCode28 = string.Empty;
-            int itFirst = 0;
-            int itCode28 = 0;
+            //int itFirst = 0;
+            //int itCode28 = 0;
             string strErrorCode = string.Empty;
             string strSql = string.Empty;
             DBUtil dBUtil = new DBUtil();
 
             string supplier = string.Empty;
             string eqp_type = string.Empty;
-            Int64 address = 0;
+            string address = string.Empty;
 
             try
             {
@@ -86,14 +86,13 @@ namespace SANWA.Utility
                 {
                     supplier = dtTemp.Rows[0]["vendor"].ToString();
                     eqp_type = dtTemp.Rows[0]["node_type"].ToString();
-                    address = Convert.ToInt64(dtTemp.Rows[0]["sn_no"].ToString());
+                    address = dtTemp.Rows[0]["sn_no"].ToString();
                 }
                 else
                 {
-                    //throw new Exception(string.Format("SANWA.Utility.AlarmMapping\r\nException: {0} config_node id not exists.", node_id.ToUpper()));
                     supplier = "SANWA";
                     eqp_type = "SYSTEM";
-                    address = 0;
+                    address = "0";
                 }
 
                 alarm = new AlarmMessage();
@@ -102,45 +101,49 @@ namespace SANWA.Utility
                 // * Special rule
                 switch (supplier.ToUpper())
                 {
-                    case "SANWA":
+                    //case "SANWA":
 
-                        int s = 0;
-                        if (int.TryParse(error_message.Substring(0, 1), out s))
-                        {
-                            itFirst = s;
-                            strCode28 = Convert.ToString(itFirst, 2);
-                            itCode28 = int.Parse(strCode28.Substring(strCode28.Length - 1, 1));
+                    //    int s = 0;
+                    //    if (int.TryParse(error_message.Substring(0, 1), out s))
+                    //    {
+                    //        itFirst = s;
+                    //        strCode28 = Convert.ToString(itFirst, 2);
+                    //        itCode28 = int.Parse(strCode28.Substring(strCode28.Length - 1, 1));
 
-                            if (itCode28 == 1)
-                            {
-                                strSql = "SELECT * " +
-                                            "FROM config_list_item " +
-                                            "WHERE list_type = 'SANWA_CODE' " +
-                                            "  AND list_value = '" + error_message.Substring(5, 1) + "'" +
-                                            "ORDER BY sort_sequence ASC";
+                    //        if (itCode28 == 1)
+                    //        {
+                    //            strSql = "SELECT * " +
+                    //                        "FROM config_list_item " +
+                    //                        "WHERE list_type = 'SANWA_CODE' " +
+                    //                        "  AND list_value = '" + error_message.Substring(5, 1) + "'" +
+                    //                        "ORDER BY sort_sequence ASC";
 
-                                dtTemp = dBUtil.GetDataTable(strSql, null);
+                    //            dtTemp = dBUtil.GetDataTable(strSql, null);
 
-                                if (dtTemp.Rows.Count > 0)
-                                {
-                                    strAlarmAxis = dtTemp.Rows[0]["list_name"].ToString();
-                                    strAlarmAxisEnglish = dtTemp.Rows[0]["list_name_en"].ToString();
-                                }
-                                else
-                                {
-                                    throw new Exception("SANWA.Utility.AlarmMapping\r\nException: Alarm Axis Code not exists.");
-                                }
+                    //            if (dtTemp.Rows.Count > 0)
+                    //            {
+                    //                strAlarmAxis = dtTemp.Rows[0]["list_name"].ToString();
+                    //                strAlarmAxisEnglish = dtTemp.Rows[0]["list_name_en"].ToString();
+                    //            }
+                    //            else
+                    //            {
+                    //                throw new Exception("SANWA.Utility.AlarmMapping\r\nException: Alarm Axis Code not exists.");
+                    //            }
 
-                                strErrorCode = error_message.Substring(0, 5) + "0" + error_message.Substring(6, 2);
+                    //            strErrorCode = error_message.Substring(0, 5) + "0" + error_message.Substring(6, 2);
 
-                            }
-                            else
-                            {
-                                strErrorCode = error_message;
-                            }
-                        }
+                    //        }
+                    //        else
+                    //        {
+                    //            strErrorCode = error_message;
+                    //        }
+                    //    }
+                    //    else
+                    //    {
+                    //        strErrorCode = error_message;
+                    //    }
 
-                        break;
+                    //    break;
 
                     //case "TDK":
                     //case "KAWASAKI":
@@ -181,7 +184,7 @@ namespace SANWA.Utility
                              where a.Field<string>("node_type") == eqp_type.ToUpper()
                                 && a.Field<string>("vendor") == supplier.ToUpper()
                                 && a.Field<string>("return_code").ToUpper() == strErrorCode.ToUpper()
-                                && a.Field<Int64>("device_address_id") == Convert.ToInt64(address)
+                                && a.Field<string>("device_address_id") == address
                              select a).ToList();
 
                 if (query.Count > 0)
@@ -198,8 +201,6 @@ namespace SANWA.Utility
                 }
                 else
                 {
-                    //throw new Exception(string.Format("SANWA.Utility.AlarmMapping\r\nException: {0} {1} Alarm type not exists.", supplier.ToUpper(), eqp_type.ToUpper()));
-
                     alarm.CodeID = error_message;
                     alarm.IsStop = false;
                     alarm.Code_Type = error_message;
