@@ -29,7 +29,7 @@ namespace SANWA.Utility
 
                 dtCode = new DataTable();
 
-                strSql = "SELECT * FROM view_alarm_code WHERE equipment_model_id = @equipment_model_id";
+                strSql = @"SELECT * FROM view_alarm_code WHERE equipment_model_id = @equipment_model_id";
 
                 keyValues.Add("@equipment_model_id", Config.SystemConfig.Get().SystemMode);
 
@@ -75,7 +75,7 @@ namespace SANWA.Utility
 
             string supplier = string.Empty;
             string eqp_type = string.Empty;
-            Int64 address = 0;
+            string address = string.Empty;
 
             try
             {
@@ -86,14 +86,14 @@ namespace SANWA.Utility
                 {
                     supplier = dtTemp.Rows[0]["vendor"].ToString();
                     eqp_type = dtTemp.Rows[0]["node_type"].ToString();
-                    address = Convert.ToInt64(dtTemp.Rows[0]["sn_no"].ToString());
+                    address = dtTemp.Rows[0]["sn_no"].ToString();
                 }
                 else
                 {
                     //throw new Exception(string.Format("SANWA.Utility.AlarmMapping\r\nException: {0} config_node id not exists.", node_id.ToUpper()));
                     supplier = "SANWA";
                     eqp_type = "SYSTEM";
-                    address = 0;
+                    address = "0";
                 }
 
                 alarm = new AlarmMessage();
@@ -139,6 +139,10 @@ namespace SANWA.Utility
                                 strErrorCode = error_message;
                             }
                         }
+                        else
+                        {
+                            strErrorCode = error_message;
+                        }
 
                         break;
 
@@ -181,7 +185,7 @@ namespace SANWA.Utility
                              where a.Field<string>("node_type") == eqp_type.ToUpper()
                                 && a.Field<string>("vendor") == supplier.ToUpper()
                                 && a.Field<string>("return_code").ToUpper() == strErrorCode.ToUpper()
-                                && a.Field<Int64>("device_address_id") == Convert.ToInt64(address)
+                                && a.Field<string>("device_address_id") == address
                              select a).ToList();
 
                 if (query.Count > 0)
