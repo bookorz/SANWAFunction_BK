@@ -177,12 +177,25 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// Status
+        /// Status [TDK, ASYST]
         /// </summary>
         /// <returns></returns>
         public string Status()
         {
-            return CommandAssembly(Supplier, "GET", "Status");
+            string Command = string.Empty;
+
+            switch (Supplier)
+            {
+                case "ASYST":
+                    Command = CommandAssembly(Supplier, "FSR", "Status");
+                    break;
+
+                case "TDK":
+                    Command = CommandAssembly(Supplier, "GET", "Status");
+                    break;
+            }
+
+            return Command;
         }
 
         /// <summary>
@@ -204,13 +217,26 @@ namespace SANWA.Utility
         }
 
         /// <summary>
-        /// Wafer Sorting
+        /// Wafer Sorting [TDK, ASYST]
         /// </summary>
         /// <param name="sortingType"> Sorting Type</param>
         /// <returns></returns>
         public string WaferSorting(MappingSortingType sortingType)
         {
-            return CommandAssembly(Supplier, "GET", string.Format("WaferSorting_{0}", sortingType.ToString()));
+            string Command = string.Empty;
+
+            switch (Supplier)
+            {
+                case "ASYST":
+                    Command = CommandAssembly(Supplier, "FSR", "WaferSorting");
+                    break;
+
+                case "TDK":
+                    Command = CommandAssembly(Supplier, "GET", string.Format("WaferSorting_{0}", sortingType.ToString()));
+                    break;
+            }
+
+            return Command;
         }
 
         /// <summary>
