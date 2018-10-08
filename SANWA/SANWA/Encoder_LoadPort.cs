@@ -50,6 +50,15 @@ namespace SANWA.Utility
         }
 
         /// <summary>
+        /// Load Port Parameter state [TDK, ASYST]
+        /// </summary>
+        public enum ParamState
+        {
+            Enable,
+            Disable           
+        }
+
+        /// <summary>
         /// Wafer Sorting Type
         /// </summary>
         public enum MappingSortingType
@@ -739,6 +748,20 @@ namespace SANWA.Utility
         }
 
         /// <summary>
+        /// Load Port Advancing box sensing pads sensor [TDK, ASYST]
+        /// </summary>
+        /// <param name="modeType"> Runing Mode Type </param>
+        /// <returns></returns>
+        public string EQASP(ParamState state)
+        {
+            string Command = string.Empty;
+
+            Command = "PRM";
+
+            return CommandAssembly(Supplier, Command, string.Format("EQASP_{0}", state.ToString()));
+        }
+
+        /// <summary>
         ///  Resum
         /// </summary>
         /// <param name="commandType"> Command Type </param>
@@ -844,8 +867,8 @@ namespace SANWA.Utility
             {
                 strLen = Convert.ToString(Command.Length + 4, 16).PadLeft(2, '0');
                 
-                chrLH = Convert.ToInt32(strLen.Substring(0, 1), 16);
-                chrLL = Convert.ToInt32(strLen.Substring(1, 1), 16);
+                chrLH = 0;
+                chrLL = Convert.ToInt32(strLen, 16);
         strLen = Convert.ToChar(chrLH).ToString() + Convert.ToChar(chrLL).ToString();
         sCheckSum = ProcCheckSum(strLen, Command);
         strCommsnd = string.Format("{0}{1}{2}{3}{4}{5}{6}{7}", Convert.ToChar(1), strLen, Convert.ToChar(48), string.Empty, Convert.ToChar(48), Command, sCheckSum, Convert.ToChar(3));

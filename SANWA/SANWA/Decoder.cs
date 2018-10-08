@@ -106,7 +106,7 @@ namespace SANWA.Utility
                     each.OrgMsg = Msg;
                     switch (Msg)
                     {
-                        
+
                         default:
                             each.Type = ReturnMessage.ReturnType.Finished;
                             each.Value = Msg;
@@ -123,7 +123,7 @@ namespace SANWA.Utility
             return result;
         }
 
-        private List<ReturnMessage> HSTCodeAnalysis(string Message)
+        private List<ReturnMessage> HSTCodeAnalysis(string Msg)
         {
             List<ReturnMessage> result;
             string[] msgAry;
@@ -131,31 +131,32 @@ namespace SANWA.Utility
             try
             {
                 result = new List<ReturnMessage>();
-                msgAry = Message.Split(new string[] { "\r\n" }, StringSplitOptions.None);
-                foreach (string Msg in msgAry)
+                //msgAry = Message.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+                //foreach (string Msg in msgAry)
+                //{
+                //if (Msg.Trim().Equals(""))
+                //{
+                //    continue;
+                //}
+                ReturnMessage each = new ReturnMessage();
+                each.NodeAdr = "1";
+                each.Command = "";
+                each.OrgMsg = Msg;
+                switch (Msg)
                 {
-                    if (Msg.Trim().Equals(""))
-                    {
-                        continue;
-                    }
-                    ReturnMessage each = new ReturnMessage();
-                    each.NodeAdr = "1";
-                    each.Command = "";
-                    each.OrgMsg = Msg;
-                    switch (Msg)
-                    {
-                        case "1":
-                        case "0":
-                            each.Type = ReturnMessage.ReturnType.Excuted;
-                            each.Value = Msg;
-                            break;
-                        default:
-                            each.Type = ReturnMessage.ReturnType.Finished;
-                            each.Value = Msg;
-                            break;
-                    }
-                    result.Add(each);
+                    case "1\r\n":
+                        each.Type = ReturnMessage.ReturnType.Excuted;
+                        break;
+                    case "-2\r\n":
+                        each.Type = ReturnMessage.ReturnType.Error;
+                        break;
+                    default:
+                        each.Type = ReturnMessage.ReturnType.Finished;
+                        each.Value = Msg.Replace("\r\n","");
+                        break;
                 }
+                result.Add(each);
+                //}
             }
             catch (Exception ex)
             {
@@ -356,16 +357,16 @@ namespace SANWA.Utility
                                 case "RAS":
                                     each.Type = ReturnMessage.ReturnType.Error;
                                     break;
-                                //case "RIF":
-                                //    each.Type = ReturnMessage.ReturnType.ReInformation;
-                                //    break;
+                                    //case "RIF":
+                                    //    each.Type = ReturnMessage.ReturnType.ReInformation;
+                                    //    break;
                             }
                             each.CommandType = content[i];
                             break;
                         case 1:
 
                             each.Command = content[i];
-                            if (each.Type == ReturnMessage.ReturnType.Information || each.Type == ReturnMessage.ReturnType.ReInformation)
+                            if (each.Type == ReturnMessage.ReturnType.Information || each.Type == ReturnMessage.ReturnType.ReInformation || each.Type == ReturnMessage.ReturnType.Error)
                             {
                                 each.FinCommand = TDKFinCommand(each.Command);
                             }
@@ -401,7 +402,7 @@ namespace SANWA.Utility
             try
             {
                 result = new List<ReturnMessage>();
-                
+
                 strMsg = Message.Replace("\r", "").Replace("\n", "").Trim();
 
                 if (strMsg.Equals(">") || strMsg.Equals(">*"))
