@@ -46,32 +46,9 @@ namespace SANWA.Utility
                     case "ATEL":
                         result = ATELCodeAnalysis(Message);
                         break;
-
-                    default:
-                        throw new NotImplementedException();
-
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.ToString());
-            }
-
-            return result;
-        }
-
-        public List<ReturnMessage> GetMessage(string AddressID, string Message)
-        {
-            List<ReturnMessage> result = null;
-
-            try
-            {
-                switch (Supplier)
-                {
                     case "ASYST":
-                        result = ASYSTCodeAnalysis(AddressID, Message);
+                        result = ASYSTCodeAnalysis(Message);
                         break;
-
                     default:
                         throw new NotImplementedException();
 
@@ -84,6 +61,7 @@ namespace SANWA.Utility
 
             return result;
         }
+
 
         private List<ReturnMessage> COGNEXCodeAnalysis(string Message)
         {
@@ -152,7 +130,7 @@ namespace SANWA.Utility
                         break;
                     default:
                         each.Type = ReturnMessage.ReturnType.Finished;
-                        each.Value = Msg.Replace("\r\n","");
+                        each.Value = Msg.Replace("\r\n", "");
                         break;
                 }
                 result.Add(each);
@@ -455,7 +433,7 @@ namespace SANWA.Utility
             return result;
         }
 
-        private List<ReturnMessage> ASYSTCodeAnalysis(string AddressID, string Message)
+        private List<ReturnMessage> ASYSTCodeAnalysis(string Message)
         {
             List<ReturnMessage> result;
             string[] msgAry;
@@ -463,7 +441,7 @@ namespace SANWA.Utility
             try
             {
                 result = new List<ReturnMessage>();
-                msgAry = Message.Split('\r');
+                msgAry = Message.Split(new string[] { "\r\n" }, StringSplitOptions.None);
 
                 foreach (string Msg in msgAry)
                 {
@@ -473,78 +451,111 @@ namespace SANWA.Utility
                     }
                     ReturnMessage each = new ReturnMessage();
                     each.OrgMsg = Msg;
-                    each.NodeAdr = AddressID;
-                    string[] content = Msg.Replace("\r", "").Replace("\n", "").Substring(2).Split(' ');
+                    each.NodeAdr = "00";
+                    string[] content = Msg.Replace("\r", "").Replace("\n", "").Split(' ');
                     for (int i = 0; i < content.Length; i++)
                     {
-                        switch (i)
+                        switch (each.CommandType)
                         {
-                            case 0:
-                                each.CommandType = content[i];
-                                break;
-
-                            case 1:
-                                switch (content[i])
+                            case "FSD2":
+                                switch (content[i].Substring(content[i].IndexOf("=")+1))
                                 {
-                                    case "ALARM":
-                                    case "ABORT_CAL":
-                                    case "ABORT_EMPTY_SLOT":
-                                    case "ABORT_HOME":
-                                    case "ABORT_LOCK":
-                                    case "ABORT_MAP":
-                                    case "ABORT_POS":
-                                    case "ABORT_SLOT":
-                                    case "ABORT_STAGE":
-                                    case "ABORT_TWEEKDN":
-                                    case "ABORT_TWEEKUP":
-                                    case "ABORT_UNLOCK":
-                                    case "ABORT_WAFER":
-                                    case "WARNING":
-                                    case "FATAL":
-                                    case "FAILED_SELF-TEST":
-                                        each.Type = ReturnMessage.ReturnType.Error;
+                                    case "F":
+                                        each.Value += "1";
                                         break;
-
-                                    case "BUSY":
-                                    case "DENIED":
-                                    case "INVALID_ARG":
-                                    case "NO_POD":
-                                    case "NOT_READY":
-                                        each.Type = ReturnMessage.ReturnType.Abnormal;
+                                    case "C":
+                                        each.Value += "2";
                                         break;
-
-                                    case "OK":
-                                        each.Type = ReturnMessage.ReturnType.Excuted;
+                                    case "E":
+                                        each.Value += "0";
                                         break;
-
-                                    case "CMPL_CAL":
-                                    case "CMPL_LOCK":
-                                    case "CMPL_MAP":
-                                    case "CMPL_SELF-TEST":
-                                    case "CMPL_TWEEKDN":
-                                    case "CMPL_TWEEKUP":
-                                    case "CMPL_UNLOCK":
-                                    case "REACH_EMPTY_SLOT":
-                                    case "REACH_HOME":
-                                    case "REACH_POS":
-                                    case "REACH_SLOT":
-                                    case "REACH_STAGE":
-                                    case "REACH_WAFER":
-                                        each.Type = ReturnMessage.ReturnType.Finished;
-                                        break;
-
-                                    default:
-                                        each.CommandType = content[i];
+                                    case "U":
+                                        each.Value += "?";
                                         break;
                                 }
-
+                                each.Type = ReturnMessage.ReturnType.Excuted;
                                 break;
+                            case "FSD0":
+                                if (!each.Value.Equals(""))
+                                {
+                                    each.Value += ",";
+                                }
+                                each.Value += content[i];
 
-                            case 2:
-                                each.Command = content[i];
+                                each.Type = ReturnMessage.ReturnType.Excuted;
+                                break;
+                            default:
+
+                                switch (i)
+                                {
+                                    case 0:
+                                        each.CommandType = content[i];
+                                        break;
+                                    case 1:
+                                        switch (content[i])
+                                        {
+                                            case "ALARM":
+                                            case "ABORT_CAL":
+                                            case "ABORT_EMPTY_SLOT":
+                                            case "ABORT_HOME":
+                                            case "ABORT_LOCK":
+                                            case "ABORT_MAP":
+                                            case "ABORT_POS":
+                                            case "ABORT_SLOT":
+                                            case "ABORT_STAGE":
+                                            case "ABORT_TWEEKDN":
+                                            case "ABORT_TWEEKUP":
+                                            case "ABORT_UNLOCK":
+                                            case "ABORT_WAFER":
+                                            case "WARNING":
+                                            case "FATAL":
+                                            case "FAILED_SELF-TEST":
+                                                each.Type = ReturnMessage.ReturnType.Error;
+                                                break;
+
+                                            case "BUSY":
+                                            case "DENIED":
+                                            case "INVALID_ARG":
+                                            case "NO_POD":
+                                            case "NOT_READY":
+                                                each.Type = ReturnMessage.ReturnType.Abnormal;
+                                                break;
+
+                                            case "OK":
+                                                each.Type = ReturnMessage.ReturnType.Excuted;
+                                                break;
+
+                                            case "CMPL_CAL":
+                                            case "CMPL_LOCK":
+                                            case "CMPL_MAP":
+                                            case "CMPL_SELF-TEST":
+                                            case "CMPL_TWEEKDN":
+                                            case "CMPL_TWEEKUP":
+                                            case "CMPL_UNLOCK":
+                                            case "REACH_EMPTY_SLOT":
+                                            case "REACH_HOME":
+                                            case "REACH_POS":
+                                            case "REACH_SLOT":
+                                            case "REACH_STAGE":
+                                            case "REACH_WAFER":
+                                                each.Type = ReturnMessage.ReturnType.Finished;
+                                                break;
+
+                                            default:
+                                                each.Command = content[i];
+                                                break;
+                                        }
+
+                                        break;
+
+                                    case 2:
+                                        each.Command = content[i];
+                                        break;
+                                }
                                 break;
                         }
                     }
+
                     result.Add(each);
                 }
             }
