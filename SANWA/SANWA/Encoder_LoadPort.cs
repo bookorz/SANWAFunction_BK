@@ -73,8 +73,7 @@ namespace SANWA.Utility
         public enum CommandType
         {
             Normal,
-            Finish,
-            HostCommand
+            Finish
         }
 
         /// <summary>
@@ -116,13 +115,20 @@ namespace SANWA.Utility
             switch (commandType)
             {
                 case CommandType.Normal:
-                    Command = "SET";
+                    switch (Supplier)
+                    {
+                        case "TDK":
+                            Command = "SET";
+                            break;
+
+                        case "ASYST":
+                            Command = "HCS";
+                            break;
+                    }
                     break;
+
                 case CommandType.Finish:
                     Command = "FIN";
-                    break;
-                case CommandType.HostCommand:
-                    Command = "HCS";
                     break;
             }
 
@@ -260,13 +266,20 @@ namespace SANWA.Utility
             switch (commandType)
             {
                 case CommandType.Normal:
-                    Command = "MOV";
+                    switch (Supplier)
+                    {
+                        case "TDK":
+                            Command = "MOV";
+                            break;
+
+                        case "ASYST":
+                            Command = "HCS";
+                            break;
+                    }
                     break;
+
                 case CommandType.Finish:
                     Command = "FIN";
-                    break;
-                case CommandType.HostCommand:
-                    Command = "HCS";
                     break;
             }
 
@@ -295,13 +308,20 @@ namespace SANWA.Utility
             switch (commandType)
             {
                 case CommandType.Normal:
-                    Command = "MOV";
+                    switch (Supplier)
+                    {
+                        case "TDK":
+                            Command = "MOV";
+                            break;
+
+                        case "ASYST":
+                            Command = "HCS";
+                            break;
+                    }
                     break;
+
                 case CommandType.Finish:
                     Command = "FIN";
-                    break;
-                case CommandType.HostCommand:
-                    Command = "HCS";
                     break;
             }
 
@@ -350,13 +370,20 @@ namespace SANWA.Utility
             switch (commandType)
             {
                 case CommandType.Normal:
-                    Command = "MOV";
+                    switch (Supplier)
+                    {
+                        case "TDK":
+                            Command = "MOV";
+                            break;
+
+                        case "ASYST":
+                            Command = "HCS";
+                            break;
+                    }
                     break;
+
                 case CommandType.Finish:
                     Command = "FIN";
-                    break;
-                case CommandType.HostCommand:
-                    Command = "HCS";
                     break;
             }
             
@@ -385,13 +412,20 @@ namespace SANWA.Utility
             switch (commandType)
             {
                 case CommandType.Normal:
-                    Command = "MOV";
+                    switch (Supplier)
+                    {
+                        case "TDK":
+                            Command = "MOV";
+                            break;
+
+                        case "ASYST":
+                            Command = "HCS";
+                            break;
+                    }
                     break;
+
                 case CommandType.Finish:
                     Command = "FIN";
-                    break;
-                case CommandType.HostCommand:
-                    Command = "HCS";
                     break;
             }
 
@@ -510,13 +544,20 @@ namespace SANWA.Utility
             switch (commandType)
             {
                 case CommandType.Normal:
-                    Command = "MOV";
+                    switch (Supplier)
+                    {
+                        case "TDK":
+                            Command = "MOV";
+                            break;
+
+                        case "ASYST":
+                            Command = "HCS";
+                            break;
+                    }
                     break;
+
                 case CommandType.Finish:
                     Command = "FIN";
-                    break;
-                case CommandType.HostCommand:
-                    Command = "HCS";
                     break;
             }
 
@@ -535,13 +576,20 @@ namespace SANWA.Utility
             switch (commandType)
             {
                 case CommandType.Normal:
-                    Command = "MOV";
+                    switch (Supplier)
+                    {
+                        case "TDK":
+                            Command = "MOV";
+                            break;
+
+                        case "ASYST":
+                            Command = "HCS";
+                            break;
+                    }
                     break;
+
                 case CommandType.Finish:
                     Command = "FIN";
-                    break;
-                case CommandType.HostCommand:
-                    Command = "HCS";
                     break;
             }
 
@@ -760,13 +808,20 @@ namespace SANWA.Utility
             switch (commandType)
             {
                 case CommandType.Normal:
-                    Command = "MOV";
+                    switch (Supplier)
+                    {
+                        case "TDK":
+                            Command = "MOV";
+                            break;
+
+                        case "ASYST":
+                            Command = "HCS";
+                            break;
+                    }
                     break;
+
                 case CommandType.Finish:
                     Command = "FIN";
-                    break;
-                case CommandType.HostCommand:
-                    Command = "HCS";
                     break;
             }
 
