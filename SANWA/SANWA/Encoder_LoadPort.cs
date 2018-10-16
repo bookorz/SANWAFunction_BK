@@ -55,7 +55,7 @@ namespace SANWA.Utility
         public enum ParamState
         {
             Enable,
-            Disable           
+            Disable
         }
 
         /// <summary>
@@ -74,6 +74,11 @@ namespace SANWA.Utility
         {
             Normal,
             Finish
+        }
+
+        public enum EventType
+        {
+            Complete
         }
 
         /// <summary>
@@ -143,6 +148,74 @@ namespace SANWA.Utility
         public string Initialization(CommandType commandType)
         {
             return CommandAssembly(Supplier, commandType.ToString().Equals("Finish") ? "FIN" : "SET", "Initialization");
+        }
+
+        /// <summary>
+        /// Move to slot number
+        /// </summary>
+        /// <param name="commandType"> Command Type </param>
+        /// <param name="Slot">Move to slot number</param>
+        /// <returns></returns>
+        public string Slot(CommandType commandType, string Slot)
+        {
+            string Command = string.Empty;
+            try
+            {
+                switch (commandType)
+                {
+                    case CommandType.Normal:
+                        switch (Supplier)
+                        {
+                            case "ASYST":
+                                Command = "HCS";
+                                break;
+                        }
+                        break;
+
+                }
+                Slot = Convert.ToInt32(Slot).ToString();//Remove 0
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            return CommandAssembly(Supplier, Command, "Slot", new string[] { Slot });
+        }
+
+        public string SetEvent(CommandType commandType, EventType evtType, ParamState state)
+        {
+            string Command = string.Empty;
+            string parm = string.Empty;
+            try
+            {
+                switch (Supplier)
+                {
+                    case "ASYST":
+                        switch (evtType)
+                        {
+                            case EventType.Complete:
+
+                                Command = "EDER";
+                                if(state == ParamState.Enable)
+                                {
+                                    parm = "ON";
+                                }
+                                else if(state == ParamState.Disable)
+                                {
+                                    parm = "OFF";
+                                }
+                                break;
+                        }
+                        break;
+
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            return CommandAssembly(Supplier, Command, Command+"_"+ parm);
         }
 
         /// <summary>
@@ -386,7 +459,7 @@ namespace SANWA.Utility
                     Command = "FIN";
                     break;
             }
-            
+
             return CommandAssembly(Supplier, Command, "MappingLoad");
         }
 
@@ -947,12 +1020,12 @@ namespace SANWA.Utility
             try
             {
                 strLen = Convert.ToString(Command.Length + 4, 16).PadLeft(2, '0');
-                
+
                 chrLH = 0;
                 chrLL = Convert.ToInt32(strLen, 16);
-        strLen = Convert.ToChar(chrLH).ToString() + Convert.ToChar(chrLL).ToString();
-        sCheckSum = ProcCheckSum(strLen, Command);
-        strCommsnd = string.Format("{0}{1}{2}{3}{4}{5}{6}{7}", Convert.ToChar(1), strLen, Convert.ToChar(48), string.Empty, Convert.ToChar(48), Command, sCheckSum, Convert.ToChar(3));
+                strLen = Convert.ToChar(chrLH).ToString() + Convert.ToChar(chrLL).ToString();
+                sCheckSum = ProcCheckSum(strLen, Command);
+                strCommsnd = string.Format("{0}{1}{2}{3}{4}{5}{6}{7}", Convert.ToChar(1), strLen, Convert.ToChar(48), string.Empty, Convert.ToChar(48), Command, sCheckSum, Convert.ToChar(3));
             }
             catch (Exception ex)
             {

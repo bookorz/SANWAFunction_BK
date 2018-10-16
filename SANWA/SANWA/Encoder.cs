@@ -12,6 +12,7 @@ namespace SANWA.Utility
         public EncoderRobot Robot;
         public EncoderOCR OCR;
         public EncoderLoadPort LoadPort;
+        public Encoder_SmartTag SmartTag;
 
         private string Supplier;
         private DataTable dtCommand;
@@ -44,13 +45,17 @@ namespace SANWA.Utility
                 keyValues.Add("@vendor", Supplier);
 
                 dtCommand = dBUtil.GetDataTable(strSql, keyValues);
-
-                if (dtCommand.Rows.Count > 0)
+                if (Supplier.Equals("SMARTTAG"))
+                {
+                    SmartTag = new Encoder_SmartTag(Supplier);
+                }
+                else if (dtCommand.Rows.Count > 0)
                 {
                     Aligner = new EncoderAligner(Supplier, dtCommand);
                     Robot = new EncoderRobot(Supplier, dtCommand);
                     OCR = new EncoderOCR(Supplier, dtCommand);
                     LoadPort = new EncoderLoadPort(Supplier, dtCommand, EncoderLoadPort.CommandMode.TDK_A);
+                    
                 }
                 else
                 {

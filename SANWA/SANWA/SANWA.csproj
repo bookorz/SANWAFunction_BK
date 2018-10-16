@@ -80,6 +80,7 @@
     <Compile Include="Encoder_DIO.cs" />
     <Compile Include="Encoder_LoadPort.cs" />
     <Compile Include="Encoder_OCR.cs" />
+    <Compile Include="Encoder_SmartTag.cs" />
     <Compile Include="FTP.cs" />
     <Compile Include="IEncoder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -178,7 +178,7 @@ namespace SANWA.Utility
             string Command = string.Empty;
             string CMD = Supplier == "SANWA" ? "SET" : "SET";
 
-            if (Supplier == "SANWA")
+            if (Supplier == "SANWA" || Supplier == "ATEL_NEW")
             {
                 Command = "Excitation";
                 Parameter01 = sv;
@@ -218,10 +218,14 @@ namespace SANWA.Utility
             switch (Supplier)
             {
                 case "SANWA":
+
                     Parameter01 = string.Format("{0},{1},{2},{3},{4}", Point, Slot, Arm, Alignment, "0");
                     strMsg = CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Parameter01.Split(','));
                     break;
-
+                case "ATEL_NEW":
+                    Parameter01 = string.Format("{0},{1},{2},{3}", Point, Slot, Arm, "0");
+                    strMsg = CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Parameter01.Split(','));
+                    break;
                 case "KAWASAKI":
                     Parameter01 = string.Format("{0},{1},{2},{3}", Address.ToString(), Arm, Point, Slot);
                     strMsg = CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Parameter01.Split(','));
@@ -306,6 +310,7 @@ namespace SANWA.Utility
             switch (Supplier)
             {
                 case "SANWA":
+                case "ATEL_NEW":
                     Parameter01 = null;
                     break;
 
@@ -338,7 +343,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string HomeOrgin(string Address, string Sequence)
         {
-            string Parameter01 = Supplier == "SANWA" ? null : Address.ToString();
+            string Parameter01 = Supplier == "KAWASAKI" ?  Address.ToString() :null;
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "HOMEToOrgin", Parameter01);
         }
@@ -376,9 +381,9 @@ namespace SANWA.Utility
         {
             string Parameter01 = string.Empty;
             string CMD = Supplier == "SANWA" ? "GET" : "GET";
-            string Command = Supplier == "SANWA" ? "Mapping" : "MappingGet";
+            string Command = Supplier == "KAWASAKI" ? "MappingGet" : "Mapping";
 
-            if (Supplier == "SANWA")
+            if (Supplier == "SANWA" || Supplier == "ATEL_NEW")
             {
                 Parameter01 = no;
             }
@@ -403,7 +408,7 @@ namespace SANWA.Utility
         {
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SANWA")
+            if (Supplier == "SANWA" || Supplier == "ATEL_NEW")
             {
                 Parameter01 = string.Format("{0},{1},{2}", pno, col, slot);
             }
@@ -427,7 +432,7 @@ namespace SANWA.Utility
             string Parameter01 = string.Empty;
             string CMD = Supplier == "SANWA" ? "SET" : "SET";
 
-            if (Supplier == "SANWA")
+            if (Supplier == "SANWA" || Supplier == "ATEL_NEW")
             {
                 Parameter01 = vl;
             }
@@ -448,7 +453,8 @@ namespace SANWA.Utility
         public string GetMode(string Address, string Sequence)
         {
             string CMD = Supplier == "SANWA" ? "GET" : "GET";
-            string CMDType = Supplier == "SANWA" ? "Mode" : "ModeGet";
+            //string CMDType = Supplier == "SANWA" ? "Mode" : "ModeGet";
+            string CMDType = Supplier == "KAWASAKI" ? "ModeGet" : "Mode";
             return CommandAssembly(Supplier, Address, Sequence, CMD, CMDType, null);
         }
 
@@ -465,7 +471,7 @@ namespace SANWA.Utility
         {
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SANWA")
+            if (Supplier == "SANWA"|| Supplier == "ATEL_NEW")
             {
                 Parameter01 = string.Format("{0},{1},{2}", axis, type, pos);
             }
@@ -568,11 +574,11 @@ namespace SANWA.Utility
         public string Parameter(string Address, string Sequence, string Type, string No)
         {
             string CMD = Supplier == "SANWA" ? "GET" : "GET";
-            string Command = Supplier == "SANWA" ? "Parameter" : "ParameterGet";
+            string Command = Supplier == "KAWASAKI" ? "ParameterGet" : "Parameter";
 
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SANWA")
+            if (Supplier == "SANWA" || Supplier == "ATEL_NEW")
             {
                 Parameter01 = string.Format("{0},{1}", Type, No);
             }
@@ -698,6 +704,7 @@ namespace SANWA.Utility
             switch (Supplier)
             {
                 case "SANWA":
+                case "ATEL_NEW":
                     Parameter01 = string.Format("{0},{1},{2},{3}", Point, Slot, Arm, "0");
                     strMsg = CommandAssembly(Supplier, Address, Sequence, "CMD", "PutWafer", Parameter01.Split(','));
                     break;
@@ -808,7 +815,7 @@ namespace SANWA.Utility
 
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SANWA")
+            if (Supplier == "SANWA" || Supplier == "ATEL_NEW")
             {
                 Parameter01 = string.Format("{0},{1},{2}", Type, No, Data);
             }
@@ -934,9 +941,9 @@ namespace SANWA.Utility
         public string setTeachPoint(string Address, string Sequence, string pno, string arm, string slot)
         {
             string Parameter01 = string.Empty;
-            string CMD = Supplier == "SANWA" ? "SET" : "CMD";
+            string CMD = Supplier == "KAWASAKI" ?  "CMD":"SET" ;
 
-            if (Supplier == "SANWA")
+            if (Supplier == "SANWA" || Supplier == "ATEL_NEW")
             {
                 Parameter01 = pno;
             }
@@ -1030,6 +1037,7 @@ namespace SANWA.Utility
             switch (Supplier)
             {
                 case "SANWA":
+                case "ATEL_NEW":
                     Parameter01 = null;
                     Command = "DeviceStatusSpeed";
                     break;
@@ -1112,7 +1120,7 @@ namespace SANWA.Utility
         public string TeachPoint(string Address, string Sequence, string pno)
         {
             string CMD = Supplier == "SANWA" ? "GET" : "GET";
-            string Command = Supplier == "SANWA" ? "Teach" : "TeachGet";
+            string Command = Supplier == "KAWASAKI" ?  "TeachGet" :"Teach";
 
             return CommandAssembly(Supplier, Address, Sequence, CMD, Command, pno);
         }
@@ -1150,7 +1158,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string WaferHold(string Address, string Sequence, string arm)
         {
-            string Parameter01 = Supplier == "SANWA" ? arm : (Address.ToString() + "," + arm);
+            string Parameter01 = Supplier == "KAWASAKI" ?   (Address.ToString() + "," + arm):arm;
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "WaferHold", Parameter01.Split(','));
         }
@@ -1164,7 +1172,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string WaferReleaseHold(string Address, string Sequence, string arm)
         {
-            string Parameter01 = Supplier == "SANWA" ? arm : (Address.ToString() + "," + arm);
+            string Parameter01 = Supplier == "KAWASAKI" ?   (Address.ToString() + "," + arm):arm;
 
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "WaferRelease", Parameter01.Split(','));
         }
@@ -1179,10 +1187,10 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string WaferStatus(string Address, string Sequence, string arm, string pno)
         {
-            string CMD = Supplier == "SANWA" ? "GET" : "CMD";
+            string CMD = Supplier == "KAWASAKI" ?   "CMD":"GET";
             string Parameter01 = string.Empty;
 
-            if (Supplier == "SANWA")
+            if (Supplier == "SANWA" || Supplier == "ATEL_NEW")
             {
                 Parameter01 = arm;
             }
@@ -1371,7 +1379,7 @@ namespace SANWA.Utility
                 switch (Supplier)
                 {
                     case "SANWA":
-
+                    case "ATEL_NEW":
                         #region SANWA
 
                         if (Parameter != null && Parameter.Length != 0)
@@ -1697,6 +1705,7 @@ namespace SANWA.Utility
             {
                 case "SANWA":
                 case "ATEL":
+                case "ATEL_NEW":
                     strCommand = strCommand + "\r";
                     break;
 

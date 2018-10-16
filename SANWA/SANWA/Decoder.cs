@@ -24,6 +24,7 @@ namespace SANWA.Utility
                 switch (Supplier)
                 {
                     case "SANWA":
+                    case "ATEL_NEW":
                         result = SANWACodeAnalysis(Message);
                         break;
 
@@ -49,6 +50,10 @@ namespace SANWA.Utility
                     case "ASYST":
                         result = ASYSTCodeAnalysis(Message);
                         break;
+                    case "SMARTTAG":
+                        result = SmartTagCodeAnalysis(Message);
+
+                        break;
                     default:
                         throw new NotImplementedException();
 
@@ -62,6 +67,136 @@ namespace SANWA.Utility
             return result;
         }
 
+        private List<ReturnMessage> SmartTagCodeAnalysis(string Message)
+        {
+            List<ReturnMessage> result;
+           
+
+            try
+            {
+                result = new List<ReturnMessage>();
+                ReturnMessage r = new ReturnMessage();
+                r.NodeAdr = "00";
+                if (Message.IndexOf("CA") != -1)
+                {
+                   
+                    r.Type = ReturnMessage.ReturnType.Excuted;
+                    result.Add(r);
+                   
+                }
+                else if (Message.IndexOf("60") != -1)
+                {
+                    if (Message.Length > 2)
+                    {
+                        r.Type = ReturnMessage.ReturnType.Information;
+                        r.FinCommand = "9F FF";
+                        r.Value = parseTag(Message);
+                        r.Value = r.Value.Substring(0, Message.Length - 16);
+                    }
+                    else
+                    {
+                        r.Type = ReturnMessage.ReturnType.Excuted;
+                        
+                      
+                    }
+                    result.Add(r);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+
+            return result;
+        }
+
+        private string parseTag(string tag)
+        {
+            string[] datas = tag.Replace("60 AF 0A ", "").Split(' ');
+            StringBuilder result = new StringBuilder();
+            int lenResult = 0;
+            foreach (string data in datas)
+            {
+                if (data.Equals(""))
+                    continue;
+                lenResult++;
+                if (lenResult > 240)
+                    break;//超出資料範圍
+                try
+                {
+                    string chr1 = getReadMappingChar(data.Substring(0, 1));
+                    string chr2 = getReadMappingChar(data.Substring(1, 1));
+                    string temp = System.Convert.ToChar(System.Convert.ToUInt32(chr2 + chr1, 16)).ToString();
+                    if (!chr2.Equals("0") || !chr1.Equals("0"))
+                        result.Append(temp + "");//trim null
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.StackTrace);
+                }
+            }
+            return result.ToString();
+        }
+
+        private string getReadMappingChar(string tag)
+        {
+            Dictionary<string, string> charMap = new Dictionary<string, string>();
+            charMap.Add("0", "0");
+            charMap.Add("1", "8");
+            charMap.Add("2", "4");
+            charMap.Add("3", "C");
+            charMap.Add("4", "2");
+            charMap.Add("5", "A");
+            charMap.Add("6", "6");
+            charMap.Add("7", "E");
+            charMap.Add("8", "1");
+            charMap.Add("9", "9");
+            charMap.Add("A", "5");
+            charMap.Add("B", "D");
+            charMap.Add("C", "3");
+            charMap.Add("D", "B");
+            charMap.Add("E", "7");
+            charMap.Add("F", "F");
+            return charMap[tag];
+        }
+
+        private string CalculateReadChecksum(string dataToCalculate, string checkString)
+        {
+            byte[] byteToCalculate = Encoding.ASCII.GetBytes(dataToCalculate);
+            //byte[] byteToCheck = HexStringToByteArray(checkString);
+
+            int checkSum = 0;
+            byte[] bdata = { 0x50 };
+            //基底 50
+            foreach (byte b in bdata)
+            {
+                checkSum += b;
+            }
+            //ASCII 資料 加總
+            foreach (byte chData in byteToCalculate)
+            {
+                checkSum += chData;
+            }
+
+            // check sum 附加碼轉 ASCII
+            string check1 = checkString.Replace(" ", "").Substring(0, 4);
+            string chkChar1 = getReadMappingChar(check1.Substring(0, 1));
+            string chkChar2 = getReadMappingChar(check1.Substring(1, 1));
+            string chkChar3 = getReadMappingChar(check1.Substring(2, 1));
+            string chkChar4 = getReadMappingChar(check1.Substring(3, 1));
+            int checkTemp = Int32.Parse(chkChar2 + chkChar1 + chkChar4 + chkChar3, System.Globalization.NumberStyles.HexNumber);
+            checkSum = checkSum + checkTemp;
+
+            // Check sum 加密
+            string temp = checkSum.ToString("X4");
+            string charEncode1 = getReadMappingChar(temp.Substring(0, 1));
+            string charEncode2 = getReadMappingChar(temp.Substring(1, 1));
+            string charEncode3 = getReadMappingChar(temp.Substring(2, 1));
+            string charEncode4 = getReadMappingChar(temp.Substring(3, 1));
+
+            string result = checkString + " " + charEncode4 + charEncode3 + " " + charEncode2 + charEncode1 + " ";
+            return result;
+        }
 
         private List<ReturnMessage> COGNEXCodeAnalysis(string Message)
         {
@@ -539,6 +674,12 @@ namespace SANWA.Utility
                                             case "REACH_STAGE":
                                             case "REACH_WAFER":
                                                 each.Type = ReturnMessage.ReturnType.Finished;
+                                                break;
+
+                                            case "POD_ARRIVED":
+                                            case "POD_REMOVED":
+                                                each.Type = ReturnMessage.ReturnType.Event;
+                                                each.Command = content[i];
                                                 break;
 
                                             default:
