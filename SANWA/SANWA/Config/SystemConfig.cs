@@ -19,6 +19,7 @@ namespace SANWA.Utility.Config
         public string OCR2ExePath { get; set; }
         public string MappingData { get; set; }
         public string EFEMInterfaceConn { get; set; }
+        public bool SaftyCheckByPass { get; set; }
 
         public static SystemConfig Get()
         {

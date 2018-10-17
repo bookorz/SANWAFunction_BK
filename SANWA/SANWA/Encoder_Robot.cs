@@ -65,7 +65,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string ArmLocation(string Address, string Sequence, string Type, string Unit)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "ArmLocation", Type, Unit);
+            return CommandAssembly(Supplier, Address, Sequence, "GET", "ArmLocation", Type, Unit);
         }
 
         /// <summary>
