@@ -251,7 +251,15 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string GetWaferToContinue(string Address, string Sequence, string Arm, string Point, string Alignment, string Slot)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Point, Slot, Arm, Alignment, "3");
+            switch (Supplier)
+            {
+
+                case "ATEL_NEW":
+                    return CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Point, Slot, Arm, "3");
+
+                default:
+                    return CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Point, Slot, Arm, Alignment, "3");
+            }
         }
 
         /// <summary>
@@ -279,7 +287,16 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string GetWaferToStandBy(string Address, string Sequence, string Arm, string Point, string Alignment, string Slot)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Point, Slot, Arm, Alignment, "1");
+            switch (Supplier)
+            {
+
+                case "ATEL_NEW":
+                    return CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Point, Slot, Arm, "1");
+             
+                default:
+                    return CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Point, Slot, Arm, Alignment, "1");
+              
+            }
         }
 
         /// <summary>
@@ -294,7 +311,15 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string GetWaferToUp(string Address, string Sequence, string Arm, string Point, string Alignment, string Slot)
         {
-            return CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Point, Slot, Arm, Alignment, "2"); ;
+            switch (Supplier)
+            {
+
+                case "ATEL_NEW":
+                    return CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Point, Slot, Arm, "2");
+
+                default:
+                    return CommandAssembly(Supplier, Address, Sequence, "CMD", "GetWafer", Point, Slot, Arm, Alignment, "2"); ;
+            }
         }
 
         /// <summary>
@@ -747,6 +772,7 @@ namespace SANWA.Utility
         /// <returns></returns>
         public string PutWaferToDown(string Address, string Sequence, string Arm, string Point, string Slot)
         {
+
             return CommandAssembly(Supplier, Address, Sequence, "CMD", "PutWafer", Point, Slot, Arm, "2");
         }
 

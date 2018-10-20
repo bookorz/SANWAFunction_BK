@@ -79,7 +79,7 @@ namespace SANWA.Utility
 
             try
             {
-                strSql = "select * from config_node where node_id = '" + node_id + "'";
+                strSql = "select * from config_node where node_id = '" + node_id + "' and equipment_model_id = '"+SANWA.Utility.Config.SystemConfig.Get().SystemMode+"'";
                 dtTemp = dBUtil.GetDataTable(strSql, null);
 
                 if (dtTemp.Rows.Count > 0)
