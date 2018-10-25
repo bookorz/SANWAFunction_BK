@@ -647,6 +647,7 @@ namespace SANWA.Utility
                                             case "FATAL":
                                             case "FAILED_SELF-TEST":
                                                 each.Type = ReturnMessage.ReturnType.Error;
+                                                //each.Command = content[i];
                                                 break;
 
                                             case "BUSY":
@@ -684,6 +685,7 @@ namespace SANWA.Utility
                                                 break;
 
                                             default:
+                                                
                                                 each.Command = content[i];
                                                 break;
                                         }
@@ -691,7 +693,21 @@ namespace SANWA.Utility
                                         break;
 
                                     case 2:
-                                        each.Command = content[i];
+                                        if (each.CommandType.Equals("ARS"))
+                                        {
+                                            for (int p = 2; p < content.Length; p++)
+                                            {
+                                                if (!each.Value.Equals(""))
+                                                {
+                                                    each.Value += " ";
+                                                }
+                                                each.Value += content[p];
+                                            }
+                                        }
+                                        else
+                                        {
+                                            each.Command = content[i];
+                                        }
                                         break;
                                 }
                                 break;

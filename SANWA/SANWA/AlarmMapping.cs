@@ -153,24 +153,24 @@ namespace SANWA.Utility
 
                     //    break;
 
-                    case "ASYST":
+                    //case "ASYST":
 
-                        for (int i = 0; i < error_message.Split(' ').Length; i++)
-                        {
-                            if (i >= 2)
-                            {
-                                if (strErrorCode.Length == 0)
-                                {
-                                    strErrorCode = error_message.Split(' ')[i].ToString();
-                                }
-                                else
-                                {
-                                    strErrorCode = strErrorCode + " " + error_message.Split(' ')[i].ToString();
-                                }
-                            }
-                        }
+                    //    for (int i = 0; i < error_message.Split(' ').Length; i++)
+                    //    {
+                    //        if (i >= 2)
+                    //        {
+                    //            if (strErrorCode.Length == 0)
+                    //            {
+                    //                strErrorCode = error_message.Split(' ')[i].ToString();
+                    //            }
+                    //            else
+                    //            {
+                    //                strErrorCode = strErrorCode + " " + error_message.Split(' ')[i].ToString();
+                    //            }
+                    //        }
+                    //    }
 
-                        break;
+                    //    break;
 
                     default:
 

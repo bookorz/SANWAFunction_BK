@@ -64,4 +64,3 @@ C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.csproj.Core
 C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.csproj.CopyComplete
 C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.dll
 C:\Users\book\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.pdb
-C:\Users\ethan_huang\source\repos\SANWAFunction\SANWA\SANWA\obj\Debug\SANWA.csprojAssemblyReference.cache
