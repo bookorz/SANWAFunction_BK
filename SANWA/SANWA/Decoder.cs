@@ -296,9 +296,10 @@ namespace SANWA.Utility
                         continue;
                     }
                     ReturnMessage each = new ReturnMessage();
-                    each.OrgMsg = Msg;
-                    each.NodeAdr = Msg[1].ToString();
-                    string[] content = Msg.Replace("\r", "").Replace("\n", "").Substring(2).Split(':');
+                    each.OrgMsg = Msg.Substring(Msg.IndexOf("$"));
+                    
+                    each.NodeAdr = each.OrgMsg[1].ToString();
+                    string[] content = each.OrgMsg.Replace("\r", "").Replace("\n", "").Substring(2).Split(':');
                     for (int i = 0; i < content.Length; i++)
                     {
                         switch (i)
