@@ -48,8 +48,8 @@ namespace SANWA
 
         public string SetLCDData(string Data)
         {
-            
-            return "FF FF D0 FF F5 FF "+ parseWriteData(Data+"                ") + CalculateWriteChecksum(Data);
+            Data += "                ";
+            return "FF FF D0 FF F5 FF "+ parseWriteData(Data) + CalculateWriteChecksum(Data);
         }
 
         private string parseWriteData(string text)

@@ -86,12 +86,12 @@ namespace SANWA.Utility
                 }
                 else if (Message.IndexOf("60") != -1)
                 {
-                    if (Message.Length > 2)
+                    if (Message.Replace(" 00", "").Length > 2)
                     {
                         r.Type = ReturnMessage.ReturnType.Information;
                         r.FinCommand = "9F FF";
                         r.Value = parseTag(Message);
-                        r.Value = r.Value.Substring(0, Message.Length - 16);
+                        //r.Value = r.Value.Substring(0, Message.Length - 16);
                     }
                     else
                     {
@@ -100,6 +100,16 @@ namespace SANWA.Utility
                       
                     }
                     result.Add(r);
+                }
+                else if (Message.IndexOf("A8") != -1)
+                {
+                    if (Message.Replace(" 00", "").Length > 2)
+                    {
+                        r.Type = ReturnMessage.ReturnType.Error;
+                        r.FinCommand = "9F FF";
+                        r.Value = "Check sum faild";
+                        //r.Value = r.Value.Substring(0, Message.Length - 16);
+                    }
                 }
             }
             catch (Exception ex)
@@ -112,7 +122,7 @@ namespace SANWA.Utility
 
         private string parseTag(string tag)
         {
-            string[] datas = tag.Replace("60 AF 0A ", "").Split(' ');
+            string[] datas = tag.Replace("60 00 AF 0A ", "").Split(' ');
             StringBuilder result = new StringBuilder();
             int lenResult = 0;
             foreach (string data in datas)
@@ -120,7 +130,7 @@ namespace SANWA.Utility
                 if (data.Equals(""))
                     continue;
                 lenResult++;
-                if (lenResult > 240)
+                if (lenResult > 240-16)
                     break;//超出資料範圍
                 try
                 {
